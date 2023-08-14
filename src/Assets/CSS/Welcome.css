@@ -1,0 +1,70 @@
+.main-message {
+    width: 60%;
+    display: inline-block;
+}
+
+
+@media screen and (max-width: 500px) {
+    .main-message {
+        width: 100%;
+    }
+}
+
+.main-intro {
+    color: whitesmoke;
+    font-size: 80px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center; 
+}
+
+
+@media screen and (max-width: 500px) {
+    .main-intro {
+        padding-top: 50px;
+        font-size: 50px;
+    }
+
+    .main-intro {
+        display: block;
+    }
+
+    .my-photo {
+        margin-left: 0px !important;
+        margin-top: 20px;
+    }
+
+    .body-intro {
+        margin-right: 30px;
+    }
+}
+
+.body-intro {
+    margin-left: 30px;
+    font-size: .9em;
+    font-weight: 100;
+    line-height: 1.6;
+    font-size: 20px;
+    color: hsl(0, 0%, 41%);
+    display: block;
+    position: relative;
+    margin-top: 5%;
+}
+
+.body-intro ::before {
+    content: " ";
+    width: 2px;
+    background: linear-gradient(0deg,var(--grad-2)0%,var(--grad-1)100%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -30px;
+}
+
+.my-photo {
+    margin-left: 150px;
+    width: 250px;
+    border: 2px solid rgb(164, 46, 207);
+    border-radius: 50%;
+    padding: 4px;
+}

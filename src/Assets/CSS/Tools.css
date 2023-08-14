@@ -1,0 +1,52 @@
+
+
+@media screen and (max-width: 500px) {
+    .tools {
+        width: 100%;
+    }
+
+    .tools-explained {
+        width: 100% !important;
+    }
+
+    .none {
+        display: none !important;
+    }
+}
+
+.none {
+    color: #1d1d20 !important;
+}
+
+.tools-explained {
+    width: 65%;
+    display: inline-block;
+}
+
+.tool-animation {
+    color:whitesmoke;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+  
+.tool-animation {
+    background: linear-gradient(to right, whitesmoke 0, hsl(275, 95%, 48%) 10%, whitesmoke 20%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 6s infinite linear;
+  }
+
+  
+  @keyframes shine {
+    0% {
+      background-position: -100px;
+    }
+    60% {
+      background-position: 900px;
+    }
+    100% {
+      background-position: 1600px;
+    }
+  }

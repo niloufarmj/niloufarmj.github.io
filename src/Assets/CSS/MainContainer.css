@@ -1,0 +1,102 @@
+.main-container {
+    padding: 5%;
+    padding-bottom: 10%;
+}
+
+.inner-container {
+    top: -300px;
+    padding: 3%;
+}
+
+.main-container .main-container-inner .inner-container {
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: 2;
+    position: relative;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    overflow: hidden;
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+    .main-container {
+        padding: 3%;
+    }
+
+    .main-container-inner {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .main-container .main-container-inner {
+        padding: 20px;
+    }
+    
+}
+    
+@media screen and (min-width: 900px) {
+    .main-container .main-container-inner {
+        max-height: 791px;
+        height: 100vh;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    [data-name=corner-bottom-right], [data-name=corner-top-left] {
+        opacity: 1;
+    }
+}
+
+[data-name=corner-top-left] {
+    top: 0;
+    left: 0;
+}
+
+[data-name=corner-bottom-right], [data-name=corner-top-left] {
+    opacity: 1;
+    transition: all ease-in-out;
+}
+
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+
+:root {
+    --grad-1: rgb(47, 140, 255);
+    --grad-2: rgb(164, 46, 207);
+}
+
+
+.gradient1 {
+    stop-color: var(--grad-1);
+    transition: all .3s ease-in-out;
+}
+
+.gradient1 :hover {
+    stop-color: var(--grad-2);
+}
+
+.gradient2 {
+    stop-color: var(--grad-2);
+    transition: all .3s ease-in-out;
+}
+
+.gradient2 :hover {
+    stop-color: var(--grad-1);
+}
+
+.svg {
+    z-index: 1;
+    position: relative;
+    display: inline;
+}
+
+.svg-buttom {
+    display: inline;
+}
