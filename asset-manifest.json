@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/niloufarmj.github.io/static/css/main.fb81d833.css",
-    "main.js": "/niloufarmj.github.io/static/js/main.05baa483.js",
-    "static/js/787.676fbc64.chunk.js": "/niloufarmj.github.io/static/js/787.676fbc64.chunk.js",
-    "static/media/quera-white.png": "/niloufarmj.github.io/static/media/quera-white.a0cae8b81e7657280abc.png",
-    "static/media/quera-gray.png": "/niloufarmj.github.io/static/media/quera-gray.407b4283b49cb190f6d0.png",
-    "static/media/linkedin-gray.png": "/niloufarmj.github.io/static/media/linkedin-gray.f0e4f026fd1d1a8d2447.png",
-    "static/media/linkedin-white.png": "/niloufarmj.github.io/static/media/linkedin-white.4a7ef277243267c25788.png",
-    "static/media/me.jpeg": "/niloufarmj.github.io/static/media/me.e929e2907a0343879c1e.jpeg",
-    "static/media/logo.png": "/niloufarmj.github.io/static/media/logo.8d1f90ad1fd9224cdf87.png",
-    "index.html": "/niloufarmj.github.io/index.html",
-    "main.fb81d833.css.map": "/niloufarmj.github.io/static/css/main.fb81d833.css.map",
-    "main.05baa483.js.map": "/niloufarmj.github.io/static/js/main.05baa483.js.map",
-    "787.676fbc64.chunk.js.map": "/niloufarmj.github.io/static/js/787.676fbc64.chunk.js.map"
+    "main.css": "/personal-website/static/css/main.fb81d833.css",
+    "main.js": "/personal-website/static/js/main.12367ef1.js",
+    "static/js/787.676fbc64.chunk.js": "/personal-website/static/js/787.676fbc64.chunk.js",
+    "static/media/quera-white.png": "/personal-website/static/media/quera-white.a0cae8b81e7657280abc.png",
+    "static/media/quera-gray.png": "/personal-website/static/media/quera-gray.407b4283b49cb190f6d0.png",
+    "static/media/linkedin-gray.png": "/personal-website/static/media/linkedin-gray.f0e4f026fd1d1a8d2447.png",
+    "static/media/linkedin-white.png": "/personal-website/static/media/linkedin-white.4a7ef277243267c25788.png",
+    "static/media/me.jpeg": "/personal-website/static/media/me.e929e2907a0343879c1e.jpeg",
+    "static/media/logo.png": "/personal-website/static/media/logo.8d1f90ad1fd9224cdf87.png",
+    "index.html": "/personal-website/index.html",
+    "main.fb81d833.css.map": "/personal-website/static/css/main.fb81d833.css.map",
+    "main.12367ef1.js.map": "/personal-website/static/js/main.12367ef1.js.map",
+    "787.676fbc64.chunk.js.map": "/personal-website/static/js/787.676fbc64.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fb81d833.css",
-    "static/js/main.05baa483.js"
+    "static/js/main.12367ef1.js"
   ]
 }
