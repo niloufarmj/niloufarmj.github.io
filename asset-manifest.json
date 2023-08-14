@@ -1,16 +1,21 @@
 {
   "files": {
-    "main.css": "/niloufarmj.github.io/static/css/main.073c9b0a.css",
-    "main.js": "/niloufarmj.github.io/static/js/main.be08167d.js",
+    "main.css": "/niloufarmj.github.io/static/css/main.fb81d833.css",
+    "main.js": "/niloufarmj.github.io/static/js/main.05baa483.js",
     "static/js/787.676fbc64.chunk.js": "/niloufarmj.github.io/static/js/787.676fbc64.chunk.js",
-    "static/media/logo.svg": "/niloufarmj.github.io/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/quera-white.png": "/niloufarmj.github.io/static/media/quera-white.a0cae8b81e7657280abc.png",
+    "static/media/quera-gray.png": "/niloufarmj.github.io/static/media/quera-gray.407b4283b49cb190f6d0.png",
+    "static/media/linkedin-gray.png": "/niloufarmj.github.io/static/media/linkedin-gray.f0e4f026fd1d1a8d2447.png",
+    "static/media/linkedin-white.png": "/niloufarmj.github.io/static/media/linkedin-white.4a7ef277243267c25788.png",
+    "static/media/me.jpeg": "/niloufarmj.github.io/static/media/me.e929e2907a0343879c1e.jpeg",
+    "static/media/logo.png": "/niloufarmj.github.io/static/media/logo.8d1f90ad1fd9224cdf87.png",
     "index.html": "/niloufarmj.github.io/index.html",
-    "main.073c9b0a.css.map": "/niloufarmj.github.io/static/css/main.073c9b0a.css.map",
-    "main.be08167d.js.map": "/niloufarmj.github.io/static/js/main.be08167d.js.map",
+    "main.fb81d833.css.map": "/niloufarmj.github.io/static/css/main.fb81d833.css.map",
+    "main.05baa483.js.map": "/niloufarmj.github.io/static/js/main.05baa483.js.map",
     "787.676fbc64.chunk.js.map": "/niloufarmj.github.io/static/js/787.676fbc64.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.be08167d.js"
+    "static/css/main.fb81d833.css",
+    "static/js/main.05baa483.js"
   ]
 }
