@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Menu from "../Components/Menu";
 import DataHolder from "../Components/DataHolder";
 import { useState } from "react";
-
+import { Grid, createTheme, ThemeProvider } from "@mui/material";
 
 function HobbiesPage() {
   const navigate = useNavigate();
@@ -47,16 +47,33 @@ function HobbiesPage() {
     },
   ];
 
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 900,
+        lg: 1280,
+        xl: 1920,
+        custom: 1000, // Custom breakpoint at 1000px
+      },
+    },
+  });
+
   return (
     <>
-      <Menu title={""} items={menuData} />
-      <DataHolder
-        title={projectDatas[currentIndex].title}
-        photo={projectDatas[currentIndex].photo}
-        explanation={projectDatas[currentIndex].explanations}
-        github={projectDatas[currentIndex].github}
-        link={projectDatas[currentIndex].links}
-      />
+      <ThemeProvider theme={theme}>
+        <Grid container>
+          <Menu align="left" title={""} items={menuData} />
+          <DataHolder
+            title={projectDatas[currentIndex].title}
+            photo={projectDatas[currentIndex].photo}
+            explanation={projectDatas[currentIndex].explanations}
+            github={projectDatas[currentIndex].github}
+            link={projectDatas[currentIndex].links}
+          />
+        </Grid>
+      </ThemeProvider>
     </>
   );
 }

@@ -9,10 +9,12 @@ import SkillsPage from "./SkillsPage"
 import PlayPage from "./PlayPage"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "../Assets/CSS/MainContainer.css";
+import { Grid } from "@mui/material";
 
 function MainContainer() {
   return (
     <>
+    <Grid></Grid>
       <div className="main-container">
         <div className="main-container-inner">
           <div className="svg">
@@ -75,9 +77,9 @@ function MainContainer() {
                     x2="100%"
                     y2="100%"
                   >
-                    <stop offset="0" class="gradient1"></stop>
-                    <stop offset=".5" class="gradient2"></stop>
-                    <stop offset="1" class="gradient1"></stop>
+                    <stop offset="0" className="gradient1"></stop>
+                    <stop offset=".5" className="gradient2"></stop>
+                    <stop offset="1" className="gradient1"></stop>
                   </linearGradient>
                 </defs>
                 <path

@@ -1,27 +1,14 @@
 
 
-@media screen and (max-width: 500px) {
-    .tools {
-        width: 100%;
-    }
-
-    .tools-explained {
-        width: 100% !important;
-    }
-
-    .none {
-        display: none !important;
-    }
+.tools {
+  font-size: 18px;
+  position: relative;
+  display: block;
+  padding: 7%;
 }
 
-.none {
-    color: #1d1d20 !important;
-}
 
-.tools-explained {
-    width: 65%;
-    display: inline-block;
-}
+
 
 .tool-animation {
     color:whitesmoke;

@@ -17,7 +17,7 @@ function Header() {
     <>
       <div className="header">
         <img className="logo" width="60px" height="60px" src={logo} alt="logo"/>
-        <div class="header-right">
+        <div className="header-right">
           <a
             href="https://www.github.com/niloufarmj"
             onMouseEnter={() => setGithub(githubWhite)}

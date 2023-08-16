@@ -1,27 +1,31 @@
 .main-message {
-    width: 60%;
     display: inline-block;
-}
-
-
-@media screen and (max-width: 500px) {
-    .main-message {
-        width: 100%;
-    }
 }
 
 .main-intro {
     color: whitesmoke;
-    font-size: 80px;
+    font-size: 70px;
     padding-left: 20px;
     display: flex;
     align-items: center; 
+    text-align: "justify";
+    text-justify: "inter-word";
 }
 
+@media screen and (max-width: 1095px) {
+    .main-intro {
+        font-size: 60px;
+    }
+    .my-photo {
+        margin-top: 20px;
+    }
+    .title {
+        padding-top: 50px;
+    }
+}
 
 @media screen and (max-width: 500px) {
     .main-intro {
-        padding-top: 50px;
         font-size: 50px;
     }
 
@@ -62,9 +66,10 @@
 }
 
 .my-photo {
-    margin-left: 150px;
+    
     width: 250px;
     border: 2px solid rgb(164, 46, 207);
     border-radius: 50%;
     padding: 4px;
 }
+

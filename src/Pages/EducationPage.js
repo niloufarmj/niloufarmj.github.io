@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Menu from "../Components/Menu";
 import DataHolder from "../Components/DataHolder";
 import { useState } from "react";
+import { Grid, createTheme, ThemeProvider } from "@mui/material";
 
 function EducationPage() {
   const navigate = useNavigate();
@@ -16,8 +17,8 @@ function EducationPage() {
         "• Jan 2018 – Dec 2023",
         "• University ranking #5 in Iran and #1042 in the world",
         "• Main Courses: Basic and Advanced Programming, Discrete Mathematics, Algorithms, Data Structure, Operating System, Database, Artifical Intelligence, Signals and Systems, Computer Vision, Internet Engineering",
-        "• GPA: 2.94 out of 4"
-      ]
+        "• GPA: 2.94 out of 4",
+      ],
     },
     {
       title: "Diploma of Mathematics and Physics",
@@ -56,7 +57,7 @@ function EducationPage() {
         "https://www.coursera.org/account/accomplishments/certificate/7TNFBQTEYT8Y",
         "https://www.coursera.org/account/accomplishments/certificate/6A2VFQPVMB6H",
         "https://www.coursera.org/account/accomplishments/certificate/9VR86848CK26",
-      ]
+      ],
     },
     {
       title: "←",
@@ -67,7 +68,7 @@ function EducationPage() {
       explanations: [
         "From my early years in elementary school, I exhibited a diligent and persevering nature. Throughout my academic journey, I consistently achieved top grades, maintaining an A in all subjects up to high school. My pursuit of excellence continued as I delved into the realms of mathematics and physics during my diploma studies, consistently ranking first in class.",
         "My dedication was particularly evident when preparing for the university entrance exam. Amidst fierce competition, I secured a commendable position, ranking 700th out of 150,000 candidates, allowing me to gain admission to one of Iran's premier universities. While in university, my focus shifted from mere grades to a genuine thirst for knowledge and exploration. I was driven by a passion to learn and engage in novel experiences.",
-        "As a testament to my commitment, I successfully graduated last year. My journey has been marked by a transition from a studious child to a university graduate driven by intellectual curiosity and a desire to embrace new challenges and opportunities."
+        "As a testament to my commitment, I successfully graduated last year. My journey has been marked by a transition from a studious child to a university graduate driven by intellectual curiosity and a desire to embrace new challenges and opportunities.",
       ],
     },
   ];
@@ -77,16 +78,37 @@ function EducationPage() {
     else return undefined;
   });
 
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 900,
+        lg: 1280,
+        xl: 1920,
+        custom: 1000, // Custom breakpoint at 1000px
+      },
+    },
+  });
+
   return (
     <>
-      <Menu title={"Educational Background"} items={menuData} />
-      <DataHolder
-        title={projectDatas[currentIndex].title}
-        photo={projectDatas[currentIndex].photo}
-        explanation={projectDatas[currentIndex].explanations}
-        github={projectDatas[currentIndex].github}
-        link={projectDatas[currentIndex].links}
-      />
+      <ThemeProvider theme={theme}>
+        <Grid container spacing={2}>
+          <Menu
+            align="left"
+            title={"Educational Background"}
+            items={menuData}
+          />
+          <DataHolder
+            title={projectDatas[currentIndex].title}
+            photo={projectDatas[currentIndex].photo}
+            explanation={projectDatas[currentIndex].explanations}
+            github={projectDatas[currentIndex].github}
+            link={projectDatas[currentIndex].links}
+          />
+        </Grid>
+      </ThemeProvider>
     </>
   );
 }

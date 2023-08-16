@@ -20,11 +20,30 @@
     padding-top: 20px;
     font-size: 20px;
     align-items: end;
-    margin-left: 75%;
+    margin-left: 70%;
     text-decoration: none;
 }
 
-@media screen and (max-width: 500px) {
+
+@media screen and (min-width: 600px) and (max-width: 750px) {
+    .contact {
+        margin-left: 25% !important;
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 950px) {
+    .contact {
+        margin-left: 40% !important;
+    }
+}
+
+@media screen and (min-width: 950px) and (max-width: 1450px) {
+    .contact {
+        margin-left: 60% !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
     .main-container {
         padding: 3%;
     }
@@ -34,7 +53,7 @@
     }
 
     .contact {
-        margin-left: 40%;
+        margin-left: 10% !important;
     }
 }
 

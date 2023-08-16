@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Menu from "../Components/Menu";
 import DataHolder from "../Components/DataHolder";
 import { useState } from "react";
+import { Grid, createTheme, ThemeProvider } from "@mui/material";
 
 function JobExperiencePage() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ function JobExperiencePage() {
         "• Collaborated with team members through GitHub and ClickUp for efficient project management.",
         "• Employed SignalRConnection for seamless communication between the client and server of 'Chandkhaan' to build multiplayer.",
         "• Utilized Unity’s real-time 3D platform to design and enhance the user experience.",
-      ]
+      ],
     },
     {
       title: "Game Development and Design Internship",
@@ -29,8 +30,7 @@ function JobExperiencePage() {
         "• Learning to design 3D models with 3Ds Max and Blender",
         "• Working with Unity engine and developing games in C#",
         "• Collaborating with teammates using GitLab",
-        
-      ]
+      ],
     },
     {
       title: "Full-Stack Development",
@@ -41,7 +41,7 @@ function JobExperiencePage() {
         "• Refactoring Back-end of Rahkaran to communicate with front-end using C# .Net",
         "• Planning and collaborating with teammates using Scrum and Skype for Business",
         "• Experience with Azure Devops",
-      ]
+      ],
     },
     {
       title: "Front-end Development Internship",
@@ -59,8 +59,8 @@ function JobExperiencePage() {
         "• Basic Programming – in charge of challenges and homeworks – Dr. Sadeq Ali-akbari",
         "• Advanced Programming – in charge of homeworks and teaching project fundamentals (MVC arch + javafx) – Dr. Sadeq Ali-Akbari",
         "• Advanced Programming – in charge of challenges and homeworks and final project – Dr. Maede Mosharraf",
-        "• Signals and Systems – in charge of paper homeworks and teaching matlab fundamentals – Dr. Salimi"
-      ]
+        "• Signals and Systems – in charge of paper homeworks and teaching matlab fundamentals – Dr. Salimi",
+      ],
     },
     {
       title: "←",
@@ -68,17 +68,34 @@ function JobExperiencePage() {
     },
   ];
 
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 900,
+        lg: 1280,
+        xl: 1920,
+        custom: 1000, // Custom breakpoint at 1000px
+      },
+    },
+  });
+
   return (
     <>
-      <Menu title={"projects"} items={projectDatas} />
-      <DataHolder
-        title={projectDatas[currentIndex].title}
-        photo={projectDatas[currentIndex].photo}
-        explanation={projectDatas[currentIndex].explanations}
-        github={projectDatas[currentIndex].github}
-      />
+      <ThemeProvider theme={theme}>
+        <Grid container>
+          <Menu align="left" title={"projects"} items={projectDatas} />
+          <DataHolder
+            title={projectDatas[currentIndex].title}
+            photo={projectDatas[currentIndex].photo}
+            explanation={projectDatas[currentIndex].explanations}
+            github={projectDatas[currentIndex].github}
+          />
+        </Grid>
+      </ThemeProvider>
     </>
   );
-  }
-  
+}
+
 export default JobExperiencePage;
