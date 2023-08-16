@@ -61,7 +61,7 @@ function SkillsPage() {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme} >
         <Grid container>
           <Menu align="left" title={menuData.title} items={menuData.items} />
 
