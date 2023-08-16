@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.fb81d833.css",
-    "main.js": "/static/js/main.ef8da445.js",
+    "main.css": "/static/css/main.962f61be.css",
+    "main.js": "/static/js/main.cca54813.js",
     "static/js/787.676fbc64.chunk.js": "/static/js/787.676fbc64.chunk.js",
     "static/media/quera-white.png": "/static/media/quera-white.a0cae8b81e7657280abc.png",
     "static/media/quera-gray.png": "/static/media/quera-gray.407b4283b49cb190f6d0.png",
@@ -10,12 +10,12 @@
     "static/media/me.jpeg": "/static/media/me.e929e2907a0343879c1e.jpeg",
     "static/media/logo.png": "/static/media/logo.8d1f90ad1fd9224cdf87.png",
     "index.html": "/index.html",
-    "main.fb81d833.css.map": "/static/css/main.fb81d833.css.map",
-    "main.ef8da445.js.map": "/static/js/main.ef8da445.js.map",
+    "main.962f61be.css.map": "/static/css/main.962f61be.css.map",
+    "main.cca54813.js.map": "/static/js/main.cca54813.js.map",
     "787.676fbc64.chunk.js.map": "/static/js/787.676fbc64.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb81d833.css",
-    "static/js/main.ef8da445.js"
+    "static/css/main.962f61be.css",
+    "static/js/main.cca54813.js"
   ]
 }
