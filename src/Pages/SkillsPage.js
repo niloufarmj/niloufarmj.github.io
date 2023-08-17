@@ -65,7 +65,7 @@ function SkillsPage() {
         <Grid container>
           <Menu align="left" title={menuData.title} items={menuData.items} />
 
-          <Grid item xs={7}>
+          <Grid item xs={11} sm={11} md={6} lg={7} xl={4} custom={6}>
             <div className="tools">
               <span className={"menu-item tool-animation"}>
                 {explainedTools[itemsDisplayIndex]}
