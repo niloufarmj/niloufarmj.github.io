@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.962f61be.css",
-    "main.js": "/static/js/main.4a589ff8.js",
+    "main.js": "/static/js/main.c90fefa7.js",
     "static/js/787.676fbc64.chunk.js": "/static/js/787.676fbc64.chunk.js",
     "static/media/quera-white.png": "/static/media/quera-white.a0cae8b81e7657280abc.png",
     "static/media/quera-gray.png": "/static/media/quera-gray.407b4283b49cb190f6d0.png",
@@ -11,11 +11,11 @@
     "static/media/logo.png": "/static/media/logo.8d1f90ad1fd9224cdf87.png",
     "index.html": "/index.html",
     "main.962f61be.css.map": "/static/css/main.962f61be.css.map",
-    "main.4a589ff8.js.map": "/static/js/main.4a589ff8.js.map",
+    "main.c90fefa7.js.map": "/static/js/main.c90fefa7.js.map",
     "787.676fbc64.chunk.js.map": "/static/js/787.676fbc64.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.962f61be.css",
-    "static/js/main.4a589ff8.js"
+    "static/js/main.c90fefa7.js"
   ]
 }
