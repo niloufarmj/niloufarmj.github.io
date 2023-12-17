@@ -28,12 +28,12 @@ function HomePage() {
         title: "Projects",
       },
       {
-        onClick: () => navigate("/hobbies"),
-        title: "Hobbies",
+        onClick: () => navigate("/courses"),
+        title: "Courses",
       },
       {
-        onClick: () => navigate("/play"),
-        title: "Wanna Have Some Fun?",
+        onClick: () => navigate("/artwork"),
+        title: "Art Works",
       },
     ],
   };

@@ -4,29 +4,27 @@ import DataHolder from "../Components/DataHolder";
 import { useState } from "react";
 import { Grid, createTheme, ThemeProvider } from "@mui/material";
 
-function HobbiesPage() {
+function CoursesPage() {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const projectDatas = [
+  const coursesDatas = [
     {
-      title: "Hobbies",
+      title: "HarvardX: CS50's Introduction to Game Development",
       onClick: () => setCurrentIndex(0),
       explanations: [
-        "• Painting with Acrylic (click to see my pinterest board)",
-        "• Drawing with Pen (click to see my pinterest board)",
-        "• Photography (click to see my pinterest board)",
-        "• Playing Video Games",
-        "• Reading Books about Literature, Phylosophy and Psychiatry",
-        "• Watiching Movies and Anime",
+        "• Pong",
+        "• Flappy Bird",
+        "• Breakout",
+        "• Match 3",
+        "• Super Mario Bros",
       ],
       links: [
-        "https://www.pinterest.com/niliparr/my-acrylic-paintings/",
-        "https://www.pinterest.com/niliparr/my-rapid-pen-drawings/",
-        "https://www.pinterest.com/niliparr/aesthetic-views/",
-        "",
-        "",
-        "",
+        "https://github.com/niloufarmj/CS50_Pong",
+        "https://github.com/niloufarmj/CS50_FlappyBird",
+        "https://github.com/niloufarmj/CS50_Breakout",
+        "https://github.com/niloufarmj/CS50_Match3",
+        "https://github.com/niloufarmj/CS50_SuperMario"
       ],
     },
 
@@ -40,12 +38,7 @@ function HobbiesPage() {
     },
   ];
 
-  const menuData = [
-    {
-      title: "←",
-      onClick: () => navigate("/"),
-    },
-  ];
+  
 
   const theme = createTheme({
     breakpoints: {
@@ -64,13 +57,13 @@ function HobbiesPage() {
     <>
       <ThemeProvider theme={theme}>
         <Grid container>
-          <Menu align="left" title={""} items={menuData} />
+          <Menu align="left" title={""} items={coursesDatas} />
           <DataHolder
-            title={projectDatas[currentIndex].title}
-            photo={projectDatas[currentIndex].photo}
-            explanation={projectDatas[currentIndex].explanations}
-            github={projectDatas[currentIndex].github}
-            link={projectDatas[currentIndex].links}
+            title={coursesDatas[currentIndex].title}
+            photo={coursesDatas[currentIndex].photo}
+            explanation={coursesDatas[currentIndex].explanations}
+            github={coursesDatas[currentIndex].github}
+            link={coursesDatas[currentIndex].links}
           />
         </Grid>
       </ThemeProvider>
@@ -78,4 +71,4 @@ function HobbiesPage() {
   );
 }
 
-export default HobbiesPage;
+export default CoursesPage;

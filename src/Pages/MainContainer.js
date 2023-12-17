@@ -2,14 +2,14 @@ import Header from "../Components/Header";
 import HomePage from "./HomePage";
 import Footer from "../Components/Footer";
 import EducationPage from "./EducationPage";
-import HobbiesPage from "./HobbiesPage";
 import JobExperiencePage from "./JobExperiencePage";
 import ProjectsPage from "./ProjectsPage";
 import SkillsPage from "./SkillsPage"
-import PlayPage from "./PlayPage"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "../Assets/CSS/MainContainer.css";
 import { Grid } from "@mui/material";
+import CoursesPage from "./CoursesPage";
+import ArtWorksPage from "./ArtWorksPage";
 
 function MainContainer() {
   return (
@@ -47,11 +47,11 @@ function MainContainer() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/education" element={<EducationPage />} />
-                <Route path="/hobbies" element={<HobbiesPage />} />
+                <Route path="/courses" element={<CoursesPage />} />
                 <Route path="/workexperience" element={<JobExperiencePage />} />
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/skills" element={<SkillsPage />} />
-                <Route path="/play" element={<PlayPage />} />
+                <Route path="/artwork" element={<ArtWorksPage />} />
               </Routes>
             </BrowserRouter>
             <Footer />

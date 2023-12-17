@@ -8,7 +8,7 @@ function JobExperiencePage() {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const projectDatas = [
+  const experienceDatas = [
     {
       title: "Unity Developer",
       onClick: () => setCurrentIndex(0),
@@ -26,7 +26,7 @@ function JobExperiencePage() {
       title: "Game Development and Design Internship",
       onClick: () => setCurrentIndex(1),
       explanations: [
-        "• Concealland Studio, Velenjak, Tehran, Iran, July 2022 – Nov 2022",
+        "• Concealland Studio, Velenjak, Tehran, Iran, Aug 2022 – Nov 2022",
         "• Learning to design 3D models with 3Ds Max and Blender",
         "• Working with Unity engine and developing games in C#",
         "• Collaborating with teammates using GitLab",
@@ -36,7 +36,7 @@ function JobExperiencePage() {
       title: "Full-Stack Development",
       onClick: () => setCurrentIndex(2),
       explanations: [
-        "• System Group, Vanak, Tehran, Iran, Aug 2021 – June 2022",
+        "• System Group, Vanak, Tehran, Iran, Nov 2020 - Jul 2022",
         "• Building Front-end of Fanoos using Angular and RxJs",
         "• Refactoring Back-end of Rahkaran to communicate with front-end using C# .Net",
         "• Planning and collaborating with teammates using Scrum and Skype for Business",
@@ -47,7 +47,8 @@ function JobExperiencePage() {
       title: "Front-end Development Internship",
       onClick: () => setCurrentIndex(3),
       explanations: [
-        "• Walvira Enghelab, Tehran, Iran, Aug 2020 – May 2021",
+        "• Walvira Enghelab, Tehran, Iran, Aug 2019 – Oct 2020",
+        "• Interned for 6 months, demonstrating exceptional performance, and subsequently promoted to a part-time role, where I contributed for an additional 6 months",
         "• Designed and developed dynamic and responsive websites using HTML, CSS, JavaScript and jQuery",
         "• Worked with REST APIs to retrieve and display data from databases",
       ],
@@ -85,12 +86,12 @@ function JobExperiencePage() {
     <>
       <ThemeProvider theme={theme}>
         <Grid container>
-          <Menu align="left" title={"projects"} items={projectDatas} />
+          <Menu align="left" title={"Experiences"} items={experienceDatas} />
           <DataHolder
-            title={projectDatas[currentIndex].title}
-            photo={projectDatas[currentIndex].photo}
-            explanation={projectDatas[currentIndex].explanations}
-            github={projectDatas[currentIndex].github}
+            title={experienceDatas[currentIndex].title}
+            photo={experienceDatas[currentIndex].photo}
+            explanation={experienceDatas[currentIndex].explanations}
+            github={experienceDatas[currentIndex].github}
           />
         </Grid>
       </ThemeProvider>
