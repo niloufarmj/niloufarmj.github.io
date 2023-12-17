@@ -4,6 +4,10 @@ import DataHolder from "../Components/DataHolder";
 import { useState } from "react";
 import { Grid, createTheme, ThemeProvider } from "@mui/material";
 
+import flappy from "../Assets/Media/videos/FlappyBird.mp4"
+import pong from "../Assets/Media/videos/Pong.mp4"
+import match3 from "../Assets/Media/videos/Match3.mp4"
+
 function CoursesPage() {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,23 +23,102 @@ function CoursesPage() {
         "• Match 3",
         "• Super Mario Bros",
       ],
-      links: [
+      githubs: [
         "https://github.com/niloufarmj/CS50_Pong",
         "https://github.com/niloufarmj/CS50_FlappyBird",
         "https://github.com/niloufarmj/CS50_Breakout",
         "https://github.com/niloufarmj/CS50_Match3",
         "https://github.com/niloufarmj/CS50_SuperMario"
       ],
+      certificates: [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      videos:[
+        pong,
+        flappy,
+        "",
+        match3,
+        ""
+      ]
+    },
+    {
+      title: "Game Design: Art and Concepts",
+      onClick: () => setCurrentIndex(1),
+      explanations: [
+        "• Introduction to Game Design",
+        "• Story and Narrative Development for Video Games",
+        "• World Design for Video Games",
+        "• Character Design for Video Games",
+        "• Game Design Document: Define the Art & Concepts",
+      ],
+      certificates: [
+        "https://coursera.org/share/14fd0a3a3db44a4ec9f35a3a3aee367f",
+        "https://coursera.org/share/1127ab29b6759de68dac12ebc752276e",
+        "https://coursera.org/share/48c529b80e91a6a0db911a422b3bf5f0",
+        " ",
+        "https://coursera.org/share/ebd6c65f7e839d2ef4a4389a0e6b5d98"
+      ],
+      githubs: [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      videos: [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      title: "Meta Front-End Developer Professional Certificate",
+      onClick: () => setCurrentIndex(2),
+      explanations: [
+        "• Introduction to Front-End Development",
+        "• Programming with JavaScript",
+        "• Version Control",
+        "• HTML and CSS in Depth",
+        "• React Basics",
+        "• Advanced React",
+      ],
+      certificates: [
+        "https://coursera.org/share/b79ba831134bbef23c36768ca071b9d4",
+        "https://coursera.org/share/e51a1003efbd0b7182aca531e7ebf6f0",
+        "https://coursera.org/share/9953c74eaeb424f9a3d65622b611e193",
+        "https://coursera.org/share/46ad3a2bc364ae1507ce7fd49a348c1c",
+        "https://coursera.org/share/4292a69ffca4738dfebf707a3e76d14b",
+        "https://coursera.org/share/d7b1009ecdb3db7421f52ad7b197af74"
+      ],
+      githubs: [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      videos: [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      title: "←",
+      onClick: () => navigate("/"),
     },
 
-    {
-      title: "Click Each Item to See More!",
-      explanations: [
-        "From my early years in elementary school, I exhibited a diligent and persevering nature. Throughout my academic journey, I consistently achieved top grades, maintaining an A in all subjects up to high school. My pursuit of excellence continued as I delved into the realms of mathematics and physics during my diploma studies, consistently ranking first in class.",
-        "My dedication was particularly evident when preparing for the university entrance exam. Amidst fierce competition, I secured a commendable position, ranking 700th out of 150,000 candidates, allowing me to gain admission to one of Iran's premier universities. While in university, my focus shifted from mere grades to a genuine thirst for knowledge and exploration. I was driven by a passion to learn and engage in novel experiences.",
-        "As a testament to my commitment, I successfully graduated last year. My journey has been marked by a transition from a studious child to a university graduate driven by intellectual curiosity and a desire to embrace new challenges and opportunities.",
-      ],
-    },
+    
   ];
 
   
@@ -57,13 +140,15 @@ function CoursesPage() {
     <>
       <ThemeProvider theme={theme}>
         <Grid container>
-          <Menu align="left" title={""} items={coursesDatas} />
+          <Menu align="left" title={""} items={coursesDatas} lg={5}/>
           <DataHolder
             title={coursesDatas[currentIndex].title}
-            photo={coursesDatas[currentIndex].photo}
             explanation={coursesDatas[currentIndex].explanations}
-            github={coursesDatas[currentIndex].github}
-            link={coursesDatas[currentIndex].links}
+            githubs={coursesDatas[currentIndex].githubs}
+            certificates={coursesDatas[currentIndex].certificates}
+            videos={coursesDatas[currentIndex].videos}
+            opener={true}
+            lg={6}
           />
         </Grid>
       </ThemeProvider>
