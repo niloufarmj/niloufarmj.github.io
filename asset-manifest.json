@@ -1,8 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.ca385e93.css",
-    "main.js": "/static/js/main.ad77bc8d.js",
+    "main.css": "/static/css/main.188f865d.css",
+    "main.js": "/static/js/main.465eb072.js",
     "static/js/787.676fbc64.chunk.js": "/static/js/787.676fbc64.chunk.js",
+    "static/media/Cars.mp4": "/static/media/Cars.ddee92afc30a91fb7db8.mp4",
+    "static/media/FlappyBird.mp4": "/static/media/FlappyBird.a69fe907a9a43dc1498c.mp4",
+    "static/media/Match3.mp4": "/static/media/Match3.5d0be47fae927c43d8fc.mp4",
+    "static/media/DiceKid.mp4": "/static/media/DiceKid.75fcd7c0b2a7bed87860.mp4",
+    "static/media/RollaBall.mp4": "/static/media/RollaBall.b6493af7dc5d73d5bc20.mp4",
+    "static/media/Pong.mp4": "/static/media/Pong.aa1d57fcdf4e5e6d2cf3.mp4",
+    "static/media/DigitalClock.mp4": "/static/media/DigitalClock.4d16f20183699885208c.mp4",
     "static/media/_ (8).jpeg": "/static/media/_ (8).d0cb628f62c218f70984.jpeg",
     "static/media/_ (5).jpeg": "/static/media/_ (5).24062b7a6b81ca4ee18b.jpeg",
     "static/media/_ (1).jpeg": "/static/media/_ (1).214fc0ab6f90189350e3.jpeg",
@@ -26,12 +33,12 @@
     "static/media/me.jpeg": "/static/media/me.e929e2907a0343879c1e.jpeg",
     "static/media/logo.png": "/static/media/logo.8d1f90ad1fd9224cdf87.png",
     "index.html": "/index.html",
-    "main.ca385e93.css.map": "/static/css/main.ca385e93.css.map",
-    "main.ad77bc8d.js.map": "/static/js/main.ad77bc8d.js.map",
+    "main.188f865d.css.map": "/static/css/main.188f865d.css.map",
+    "main.465eb072.js.map": "/static/js/main.465eb072.js.map",
     "787.676fbc64.chunk.js.map": "/static/js/787.676fbc64.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca385e93.css",
-    "static/js/main.ad77bc8d.js"
+    "static/css/main.188f865d.css",
+    "static/js/main.465eb072.js"
   ]
 }
