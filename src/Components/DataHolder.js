@@ -76,6 +76,7 @@ function DataHolder(params) {
                       <a
                         className="link"
                         onClick={() => changeOpened(index)}
+                        href=""
                       >
                         <span className="menu-item-span">{value}</span>
                       </a>
