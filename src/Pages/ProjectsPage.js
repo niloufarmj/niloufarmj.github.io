@@ -4,9 +4,14 @@ import DataHolder from "../Components/DataHolder";
 import { useState } from "react";
 import { Grid, createTheme, ThemeProvider } from "@mui/material";
 
+import cars from "../Assets/Media/videos/Cars.mp4"
+import diceKid from "../Assets/Media/videos/DiceKid.mp4"
+import clock from "../Assets/Media/videos/DigitalClock.mp4"
+import roll from "../Assets/Media/videos/RollaBall.mp4"
+
 function ProjectsPage() {
   const navigate = useNavigate();
-  const [currentIndex, setCurrentIndex] = useState(6);
+  const [currentIndex, setCurrentIndex] = useState(9);
 
   const projectDatas = [
     {
@@ -46,17 +51,16 @@ function ProjectsPage() {
       github: "https://github.com/niloufarmj/IE-Project-Reddit",
     },
     {
-      title: "ChandKhaan",
+      title: "Wall Fallower Omni Bot",
       onClick: () => setCurrentIndex(3),
       explanations: [
-        "• An Android card game reminiscent of TFT from League of Legends, as a member of the Rhino team",
-        "• Engaged in teamwork with two other members using GitHub for version control, facilitating smooth collaboration.",
-        "• Contributed to the development of a dynamic online multiplayer experience where players engage in card-based battles.",
-        "• Designed the game architecture to enable continuous exchange of combat data between the client and the backend server.",
-        "• Demonstrated expertise in Unity 3D by setting up game objects and ensuring smooth gameplay mechanics.",
-        "• Played an integral role in preparing the game for release, anticipated within the next one to two months.",
-        "• Managed a private repository for the project, ensuring version control and codebase management.",
+        "• Implemented a clone of Reddit using React and Express JS for a university Internet Engineering course project",
+        "• Collaborated with a teammate via GitHub to develop and maintain the project",
+        "• Created and integrated various features such as user authentication, post creation, and comment sections",
+        "• Utilized RESTful API design principles for efficient and scalable communication between the client and server",
+        "• Demonstrated proficiency in web development and teamwork skills",
       ],
+      github: "https://github.com/niloufarmj/IE-Project-Reddit",
     },
     {
       title: "Gmail Demo",
@@ -67,6 +71,47 @@ function ProjectsPage() {
         "• Implemented features such as sending and receiving emails and managing user accounts",
       ],
       github: "https://github.com/niloufarmj/gmail_demo",
+    },
+    {
+      title: "Jetpack Joyride",
+      onClick: () => setCurrentIndex(5),
+      explanations: [
+        "• Created a clone of Jetpack Joyride game as university basic programming project using C++ and SBLD (refined version of SDL)",
+        "• Implemented dynamic gameplay mechanics, allowing players to control a character equipped with a jetpack",
+        "• Designed captivating visuals and user-friendly interfaces using SBDL and asset libraries",
+        "• Incorporated various game elements, including obstacles and power-ups",
+        "• Showcased programming skills by implementing features like random obstacle generation, collision detection, and game state management"
+      ],
+      github: "https://github.com/niloufarmj/SBU-BP-JetpackJoyride/",
+    },
+    {
+      title: "Two Cars",
+      onClick: () => setCurrentIndex(6),
+      explanations: [
+        "• Developed a clone of'Two Cars' game using C++ and the SBDL library as basic programming mini project",
+        "• Implemented gameplay mechanics where players control two cars simultaneously to avoid obstacles",
+        "• Incorporated challenging gameplay elements, such as increasing speed and randomly generated obstacles, to keep players engaged",
+        "• Demonstrated programming skills by implementing features like car movement, collision detection, and score tracking",
+        "• Provided multiple game states, including a home page, game over screen, and pause functionality, to enhance the overall player experience",
+      ],
+      github: "https://github.com/niloufarmj/SBU-BP-Two-Cars",
+    },
+    {
+      title: "Hobby Projects",
+      onClick: () => setCurrentIndex(7),
+      explanations: [
+        "• Dice Kid",
+        "• Roll a Ball",
+        "• Car Game",
+        "• Digital Clock"
+      ],
+      videos:[
+        diceKid, 
+        roll,
+        cars,
+        clock
+      ],
+      github: "https://github.com/niloufarmj/Hobby-Projects"
     },
     {
       title: "←",
@@ -83,7 +128,7 @@ function ProjectsPage() {
   ];
 
   const menuData = projectDatas.map((value, index) => {
-    if (index < 6) return value;
+    if (index < 9) return value;
     else return undefined;
   });
 
@@ -110,6 +155,8 @@ function ProjectsPage() {
             photo={projectDatas[currentIndex].photo}
             explanation={projectDatas[currentIndex].explanations}
             github={projectDatas[currentIndex].github}
+            videos={projectDatas[currentIndex].videos}
+            opener={ currentIndex == 7 }
           />
         </Grid>
       </ThemeProvider>

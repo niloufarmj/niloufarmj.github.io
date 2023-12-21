@@ -11,7 +11,7 @@ function SkillsPage() {
     "React.js, Angular, Flutter, JavaFX, Django, Node.js, .Net",
     "RxJs, Bootstrap, Webpack, Threejs, MindAR, NavMesh, MLAgent",
     "Unity Engine, Unreal Engine, Android Studio, Git, Linux",
-    "Persian(native), English",
+    "Persian(native), English(IELTS Academic 7.5)",
   ];
 
   const navigate = useNavigate();

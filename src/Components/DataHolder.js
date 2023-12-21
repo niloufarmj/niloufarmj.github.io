@@ -110,6 +110,9 @@ function DataHolder(params) {
                           <span className="menu-item-span underline">Certificate</span>
                         </a>
                     }
+                    {itemOpened[index] && params.certificates == null && itemOpened[index] && params.githubs == null &&
+                        <div style={{marginBottom: "50px"}}></div>
+                    }
                   </>
                 );
               })}

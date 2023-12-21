@@ -6,7 +6,7 @@ import { Grid, createTheme, ThemeProvider } from "@mui/material";
 
 function EducationPage() {
   const navigate = useNavigate();
-  const [currentIndex, setCurrentIndex] = useState(5);
+  const [currentIndex, setCurrentIndex] = useState(4);
 
   const projectDatas = [
     {
@@ -40,26 +40,6 @@ function EducationPage() {
       ],
     },
     {
-      title: "Courses",
-      onClick: () => setCurrentIndex(3),
-      explanations: [
-        "• HTML and CSS in depth",
-        "• Programming with JavaScript",
-        "• Advanced React",
-        "• Foundations of User Experience (UX) Design",
-        "• Introduction to Augmented Reality and ARCore",
-        "• Version Control",
-      ],
-      links: [
-        "https://www.coursera.org/account/accomplishments/certificate/V5UGGU7YR4SG",
-        "https://www.coursera.org/account/accomplishments/certificate/PVBWA7VKUH3A",
-        "https://www.coursera.org/account/accomplishments/certificate/Q29AFU7ERYFV",
-        "https://www.coursera.org/account/accomplishments/certificate/7TNFBQTEYT8Y",
-        "https://www.coursera.org/account/accomplishments/certificate/6A2VFQPVMB6H",
-        "https://www.coursera.org/account/accomplishments/certificate/9VR86848CK26",
-      ],
-    },
-    {
       title: "←",
       onClick: () => navigate("/"),
     },
@@ -74,7 +54,7 @@ function EducationPage() {
   ];
 
   const menuData = projectDatas.map((value, index) => {
-    if (index < 5) return value;
+    if (index < 4) return value;
     else return undefined;
   });
 

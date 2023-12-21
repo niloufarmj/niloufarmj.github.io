@@ -10,6 +10,7 @@ import "../Assets/CSS/MainContainer.css";
 import { Grid } from "@mui/material";
 import CoursesPage from "./CoursesPage";
 import ArtWorksPage from "./ArtWorksPage";
+import HobbyProjectsPage from "./HobbyProjectsPage";
 
 function MainContainer() {
   return (
