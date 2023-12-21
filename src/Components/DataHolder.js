@@ -25,7 +25,7 @@ function DataHolder(params) {
 
   return (
     <>
-      <Grid item xs={11} sm={11} md={6} lg={params.lg !== null ? params.lg : 7} xl={4} custom={6}>
+      <Grid item xs={11} sm={11} md={6} lg={params.lg != null ? params.lg : 7} xl={4} custom={6}>
         <div className="main-message">
           <div className="main-intro">
             <Grid container>
@@ -34,7 +34,7 @@ function DataHolder(params) {
                   <div className="title">{params.title}</div>
                 </div>
               </Grid>
-              {params.photo !== null && (
+              {params.photo != null && (
                 <Grid item xs>
                   <div className="center">
                     <img
@@ -52,7 +52,7 @@ function DataHolder(params) {
               params.explanation.map((value, index) => {
                 return (
                   <>
-                    {params.link !== null && params.link[index] !== "" && (
+                    {params.link != null && params.link[index] !== "" && (
                       <a
                         className="link"
                         target="_blank"
@@ -73,15 +73,14 @@ function DataHolder(params) {
                       </p>
                     )}
                     {params.opener && 
-                      <a
-                        className="link"
+                      <button
+                        className="button-link"
                         onClick={() => changeOpened(index)}
-                        href="#"
                       >
                         <span className="menu-item-span">{value}</span>
-                      </a>
+                      </button>
                     }
-                    {itemOpened[index] && params.videos !== null && params.videos[index] !== "" &&
+                    {itemOpened[index] && params.videos != null && params.videos[index] !== "" &&
                       
                         <Player
                           playsInline
@@ -89,7 +88,7 @@ function DataHolder(params) {
                         >
                         </Player>
                     }
-                    {itemOpened[index] && params.githubs !== null && params.githubs[index] !== "" &&
+                    {itemOpened[index] && params.githubs != null && params.githubs[index] !== "" &&
                         <a
                           className="menu-item"
                           target="_blank"
@@ -100,7 +99,7 @@ function DataHolder(params) {
                           <span className="menu-item-span underline">Github</span>
                         </a>
                     }
-                    {itemOpened[index] && params.certificates !== null && params.certificates[index] !== "" &&
+                    {itemOpened[index] && params.certificates != null && params.certificates[index] !== "" &&
                         <a
                           className="menu-item"
                           target="_blank"

@@ -78,6 +78,26 @@
     
 }
 
+.button-link {
+    color: #ccc;
+    margin-bottom: 20px;
+    margin-left: 0;
+    padding-bottom: 10px;
+    line-height: 1.5;
+    text-decoration: none;
+    display: block;
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    font-size: 18px;
+    font-family: Montserrat-Regular;
+}
+
+.button-link:hover {
+    letter-spacing: 0.7px;
+    margin-left: 4px;
+}
+
 .link:hover {
     letter-spacing: 0.7px;
     margin-left: 4px;
