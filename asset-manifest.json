@@ -1,16 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.5e58f036.css",
-    "main.js": "/static/js/main.52cd00cf.js",
+    "main.css": "/static/css/main.32d94d71.css",
+    "main.js": "/static/js/main.81469433.js",
     "static/js/787.676fbc64.chunk.js": "/static/js/787.676fbc64.chunk.js",
+    "static/media/Bug2.mp4": "/static/media/Bug2.8fb4fca18e667ca14360.mp4",
+    "static/media/Museumore.mp4": "/static/media/Museumore.0e15abd1a4b88fda5ea5.mp4",
+    "static/media/Bug1.mp4": "/static/media/Bug1.595f38b838f9511b8856.mp4",
+    "static/media/Jetpack.mp4": "/static/media/Jetpack.2125db908c586e100df5.mp4",
     "static/media/Cars.mp4": "/static/media/Cars.ddee92afc30a91fb7db8.mp4",
     "static/media/FlappyBird.mp4": "/static/media/FlappyBird.a69fe907a9a43dc1498c.mp4",
+    "static/media/2cars.mp4": "/static/media/2cars.c5a315b1e3eec56945a5.mp4",
+    "static/media/Bug0.mp4": "/static/media/Bug0.642031a27169812dbe54.mp4",
     "static/media/Match3.mp4": "/static/media/Match3.5d0be47fae927c43d8fc.mp4",
     "static/media/DiceKid.mp4": "/static/media/DiceKid.75fcd7c0b2a7bed87860.mp4",
     "static/media/RollaBall.mp4": "/static/media/RollaBall.b6493af7dc5d73d5bc20.mp4",
     "static/media/Pong.mp4": "/static/media/Pong.aa1d57fcdf4e5e6d2cf3.mp4",
     "static/media/DigitalClock.mp4": "/static/media/DigitalClock.4d16f20183699885208c.mp4",
     "static/media/_ (8).jpeg": "/static/media/_ (8).d0cb628f62c218f70984.jpeg",
+    "static/media/Othello.mp4": "/static/media/Othello.90d52af62b07a9563f70.mp4",
+    "static/media/login.png": "/static/media/login.b2d2fe145098c0e17294.png",
     "static/media/_ (5).jpeg": "/static/media/_ (5).24062b7a6b81ca4ee18b.jpeg",
     "static/media/_ (1).jpeg": "/static/media/_ (1).214fc0ab6f90189350e3.jpeg",
     "static/media/3.jpg": "/static/media/3.cd5c3839799a4053d86c.jpg",
@@ -24,6 +32,9 @@
     "static/media/8.jpg": "/static/media/8.f22127549837832cb532.jpg",
     "static/media/7.jpg": "/static/media/7.fb6c7a021526252d3fb7.jpg",
     "static/media/6.jpg": "/static/media/6.2f5347c4ab869b661efb.jpg",
+    "static/media/homepage.png": "/static/media/homepage.ea11beccf60ad175046b.png",
+    "static/media/communitypage.png": "/static/media/communitypage.bf19ebaa80885f83d464.png",
+    "static/media/userprofile.png": "/static/media/userprofile.b522e1047b8ac165febb.png",
     "static/media/_ (4).jpeg": "/static/media/_ (4).83b6a76c0676200b9921.jpeg",
     "static/media/_ (2).jpeg": "/static/media/_ (2).05c37ade25a0e84766a0.jpeg",
     "static/media/quera-white.png": "/static/media/quera-white.a0cae8b81e7657280abc.png",
@@ -33,12 +44,12 @@
     "static/media/me.jpeg": "/static/media/me.e929e2907a0343879c1e.jpeg",
     "static/media/logo.png": "/static/media/logo.8d1f90ad1fd9224cdf87.png",
     "index.html": "/index.html",
-    "main.5e58f036.css.map": "/static/css/main.5e58f036.css.map",
-    "main.52cd00cf.js.map": "/static/js/main.52cd00cf.js.map",
+    "main.32d94d71.css.map": "/static/css/main.32d94d71.css.map",
+    "main.81469433.js.map": "/static/js/main.81469433.js.map",
     "787.676fbc64.chunk.js.map": "/static/js/787.676fbc64.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5e58f036.css",
-    "static/js/main.52cd00cf.js"
+    "static/css/main.32d94d71.css",
+    "static/js/main.81469433.js"
   ]
 }
