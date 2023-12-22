@@ -8,6 +8,7 @@ import uniEng from "../Assets/Media/Diplomas/uni - diploma.jpeg"
 import uniFa from "../Assets/Media/Diplomas/دانشگاه - مدرک.jpg"
 import schoolEng from "../Assets/Media/Diplomas/school - diploma.jpeg"
 import schoolFa from "../Assets/Media/Diplomas/متوسطه - مدرک.jpg"
+import ili from "../Assets/Media/Diplomas/ili.jpeg"
 
 function EducationPage() {
   const navigate = useNavigate();
@@ -71,7 +72,13 @@ function EducationPage() {
         "• overall average rating: outstanding (91 - 100)",
         "• the levels are in accordance with the CFER",
       ],
-      hasMedia: true
+      hasMedia: true,
+      media: [
+        {
+          type: "image",
+          src: ili
+        }
+      ]
     },
     {
       title: "←",
