@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.969a934e.css",
-    "main.js": "/static/js/main.c9dcace1.js",
+    "main.js": "/static/js/main.99ff6fd8.js",
     "static/js/787.676fbc64.chunk.js": "/static/js/787.676fbc64.chunk.js",
     "static/media/Bug2.mp4": "/static/media/Bug2.8fb4fca18e667ca14360.mp4",
     "static/media/Museumore.mp4": "/static/media/Museumore.0e15abd1a4b88fda5ea5.mp4",
@@ -35,6 +35,7 @@
     "static/media/3.jpeg": "/static/media/3.3a241d05588e0977b4f2.jpeg",
     "static/media/uni - diploma.jpeg": "/static/media/uni - diploma.7438b5e8088bee04ef28.jpeg",
     "static/media/6.jpeg": "/static/media/6.7d00e373bdaee84c00db.jpeg",
+    "static/media/ili.jpeg": "/static/media/ili.58c875a6acbf05df647f.jpeg",
     "static/media/7.jpeg": "/static/media/7.7875d825a270345bb4b5.jpeg",
     "static/media/1.jpg": "/static/media/1.223060560f43cf0c7ee4.jpg",
     "static/media/8.jpg": "/static/media/8.f22127549837832cb532.jpg",
@@ -64,11 +65,11 @@
     "static/media/logo.png": "/static/media/logo.8d1f90ad1fd9224cdf87.png",
     "index.html": "/index.html",
     "main.969a934e.css.map": "/static/css/main.969a934e.css.map",
-    "main.c9dcace1.js.map": "/static/js/main.c9dcace1.js.map",
+    "main.99ff6fd8.js.map": "/static/js/main.99ff6fd8.js.map",
     "787.676fbc64.chunk.js.map": "/static/js/787.676fbc64.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.969a934e.css",
-    "static/js/main.c9dcace1.js"
+    "static/js/main.99ff6fd8.js"
   ]
 }
