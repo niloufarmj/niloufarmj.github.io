@@ -28,7 +28,7 @@ function DataHolder(params) {
       <Grid item xs={11} sm={11} md={6} lg={params.lg != null ? params.lg : 7} xl={4} custom={6}>
         <div className="main-message">
           <div className="main-intro">
-            <Grid container>
+            <Grid container justifyContent="center" mnn>
               <Grid item xs>
                 <div className="center">
                   <div className="title">{params.title}</div>
@@ -110,13 +110,13 @@ function DataHolder(params) {
                           <span className="menu-item-span underline">Certificate</span>
                         </a>
                     }
-                    {itemOpened[index] && params.certificates === null && itemOpened[index] && params.githubs === null &&
+                    {itemOpened[index] && params.certificates == null && itemOpened[index] && params.githubs == null &&
                         <div style={{marginBottom: "50px"}}></div>
                     }
                   </>
                 );
               })}
-            {params.github !== null && (
+            {params.github != null && (
               <a
                 className="menu-item"
                 target="_blank"

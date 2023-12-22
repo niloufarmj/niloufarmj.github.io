@@ -76,21 +76,31 @@ function SkillsPage() {
                 style={{ paddingRight: "10% !important" }}
               >
                 <p style={{ textAlign: "justify", textJustify: "inter-word" }}>
-                  My programming journey ignited during my university's
-                  inaugural year, starting with C/C++ and progressing to
-                  advanced Java concepts. Through pivotal courses like Data
-                  Structures, Algorithm Design, and more, I gained insights into
-                  the realm of programming and computer science. These learnings
-                  materialized in various projects and internships. Beginning as
-                  a frontend intern, I mastered HTML, CSS, JavaScript, and
-                  jQuery. Transitioning into a fullstack developer, I honed
-                  Angular and revamped C# code. This journey led me to delve
-                  into game development, where I gained proficiency in C# and
-                  Unity engine. Beyond academia, I delved into online platforms
-                  like Udemy and Coursera, acquiring skills in Angular, React,
-                  Flutter, and more. My journey, paralleling the evolution of
-                  programming languages, has been marked by milestones that
-                  shaped my expertise.
+                  My programming journey began during my university years, where I delved into languages like C/C++,
+                   Java, Python, and Lua. Courses like Data Structures and Algorithm Design fueled my passion
+                    for programming and computer science. I applied these learnings to various projects and internships, 
+                    starting as a frontend intern and mastering HTML, CSS, JavaScript, and jQuery.
+
+                </p>
+                <p style={{ textAlign: "justify", textJustify: "inter-word" }}>
+                As I transitioned into a fullstack developer, I honed my skills in Angular 
+                and revamped C# code. Along the way, I discovered the exciting world of 
+                game development, where I gained proficiency in C#, Unity, Lua, and Love2D.
+                 I also explored Python and the Django framework.
+
+
+                </p>
+                <p style={{ textAlign: "justify", textJustify: "inter-word" }}>
+                To expand my knowledge, I turned to online platforms like Udemy and Coursera, 
+                where I acquired skills in Angular, React, Flutter, and more. 
+                Additionally, I've dabbled in digital art tools like 3ds Max, Blender, and Illustrator 
+                for modeling and design.
+                Throughout my journey, I've embraced version control using Git, 
+                allowing for efficient collaboration and code management.
+                </p>
+
+                <p style={{ textAlign: "justify", textJustify: "inter-word" }}>
+                I'm excited to continue growing in these areas and explore new possibilities in the ever-evolving world of technology.
                 </p>
               </div>
             </div>

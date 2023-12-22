@@ -46,9 +46,9 @@ function EducationPage() {
     {
       title: "Click Each Item to See More!",
       explanations: [
-        "From my early years in elementary school, I exhibited a diligent and persevering nature. Throughout my academic journey, I consistently achieved top grades, maintaining an A in all subjects up to high school. My pursuit of excellence continued as I delved into the realms of mathematics and physics during my diploma studies, consistently ranking first in class.",
-        "My dedication was particularly evident when preparing for the university entrance exam. Amidst fierce competition, I secured a commendable position, ranking 700th out of 150,000 candidates, allowing me to gain admission to one of Iran's premier universities. While in university, my focus shifted from mere grades to a genuine thirst for knowledge and exploration. I was driven by a passion to learn and engage in novel experiences.",
-        "As a testament to my commitment, I successfully graduated last year. My journey has been marked by a transition from a studious child to a university graduate driven by intellectual curiosity and a desire to embrace new challenges and opportunities.",
+        "Since my early years in elementary school, I've been dedicated and hardworking. I consistently achieved top grades, maintaining an A throughout high school. During my diploma studies, I developed a strong passion for mathematics and physics, ranking first in class.",
+        "To secure a place at one of Iran's premier universities, I faced tough competition and ranked 700th out of 150,000 candidates in the entrance exam. In university, I shifted my focus from grades to a genuine desire for knowledge and new experiences.",
+        "Last year, I successfully graduated, marking an important milestone. I've transformed from a diligent student to a curious graduate ready to embrace new challenges. With expertise in game development, art, and front-end design, I'm excited to create captivating experiences that engage and inspire others.",
       ],
     },
   ];

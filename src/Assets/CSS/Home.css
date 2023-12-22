@@ -80,6 +80,7 @@
 
 .button-link {
     color: #ccc;
+    margin-top: 10px;
     margin-bottom: 20px;
     margin-left: 0;
     padding-bottom: 10px;
@@ -88,7 +89,6 @@
     display: block;
     background: none!important;
     border: none;
-    padding: 0!important;
     font-size: 18px;
     font-family: Montserrat-Regular;
 }

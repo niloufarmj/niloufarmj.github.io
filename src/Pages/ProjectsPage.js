@@ -156,7 +156,7 @@ function ProjectsPage() {
             explanation={projectDatas[currentIndex].explanations}
             github={projectDatas[currentIndex].github}
             videos={projectDatas[currentIndex].videos}
-            opener={ currentIndex === 7 }
+            opener={ currentIndex == 7 }
           />
         </Grid>
       </ThemeProvider>
