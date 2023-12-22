@@ -165,7 +165,7 @@ function DataHolder(params) {
                         {/* Set sm=6 if there is more than one media item, otherwise set sm=12 to take up the full width */}
                         {(value.type === "video" && (
                           <div style={{width: "90%", marginBottom: "20px", marginTop: "20px"}}>
-                            <Player className="dataholder-img" playsInline src={value.src}></Player>
+                            <Player  playsInline src={value.src}></Player>
                           </div>
                         )) || <div style={{width: "80%"}}>
                           <img className="dataholder-img" src={value.src} alt="Media" />
