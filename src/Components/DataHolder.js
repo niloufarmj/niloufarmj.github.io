@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import "../Assets/CSS/Welcome.css";
 import React from "react";
 import { Player } from "video-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "video-react/dist/video-react.css";
 
 function DataHolder(params) {
@@ -28,6 +28,10 @@ function DataHolder(params) {
     });
   };
 
+  const hasValue = (obj) => {
+    return !(obj === null || obj === undefined)
+  }
+
   console.log(params.about)
 
   return (
@@ -37,7 +41,7 @@ function DataHolder(params) {
         xs={11}
         sm={11}
         md={6}
-        lg={params.lg != null ? params.lg : 7}
+        lg={(hasValue(params.lg)) ? params.lg : 7}
         xl={4}
         custom={6}
       >
@@ -63,15 +67,14 @@ function DataHolder(params) {
             </Grid>
           </div>
           <span className="body-intro">
-            {params.explanation !== null &&
-              (params.hasMedia === null ||
-                params.hasMedia === undefined ||
+            {hasValue(params.explanation) &&
+              (!hasValue(params.hasMedia) ||
                 params.hasMedia === false ||
-                (params.hasMedia === true && params.about == true)) &&
+                (params.hasMedia === true && params.about === true)) &&
               params.explanation.map((value, index) => {
                 return (
                   <>
-                    {params.link != null && params.link[index] !== "" && (
+                    {hasValue(params.link) && params.link[index] !== "" && (
                       <a
                         className="link"
                         target="_blank"
@@ -81,7 +84,7 @@ function DataHolder(params) {
                         <span className="menu-item-span">{value}</span>
                       </a>
                     )}
-                    {(params.link == null || params.link[index] === "") &&
+                    {(!hasValue(params.link) || params.link[index] === "") &&
                       !params.opener && (
                         <p
                           style={{
@@ -101,7 +104,7 @@ function DataHolder(params) {
                       </button>
                     )}
                     {itemOpened[index] &&
-                      params.videos != null &&
+                      hasValue(params.videos) &&
                       params.videos[index] !== "" && (
                         <Player
                           playsInline
@@ -109,7 +112,7 @@ function DataHolder(params) {
                         ></Player>
                       )}
                     {itemOpened[index] &&
-                      params.githubs != null &&
+                      hasValue(params.githubs) &&
                       params.githubs[index] !== "" && (
                         <a
                           className="menu-item"
@@ -124,7 +127,7 @@ function DataHolder(params) {
                         </a>
                       )}
                     {itemOpened[index] &&
-                      params.certificates != null &&
+                      hasValue(params.certificates) &&
                       params.certificates[index] !== "" && (
                         <a
                           className="menu-item"
@@ -139,17 +142,16 @@ function DataHolder(params) {
                         </a>
                       )}
                     {itemOpened[index] &&
-                      params.certificates == null &&
-                      itemOpened[index] &&
-                      params.githubs == null && (
+                      !hasValue(params.certificates) &&
+                      !hasValue(params.githubs) && (
                         <div style={{ marginBottom: "50px" }}></div>
                       )}
                   </>
                 );
               })}
-            {params.hasMedia === true &&
+            {params.hasMedia &&
               params.about === false &&
-              params.media != null && (
+              hasValue(params.media) && (
                 <Grid container spacing={2}>
                   {params.media.map((value, index) => {
                     return (
@@ -162,8 +164,10 @@ function DataHolder(params) {
                         {" "}
                         {/* Set sm=6 if there is more than one media item, otherwise set sm=12 to take up the full width */}
                         {(value.type === "video" && (
-                          <Player playsInline src={value.src}></Player>
-                        )) || <div style={{width: "90%"}}>
+                          <div style={{width: "90%", marginBottom: "20px", marginTop: "20px"}}>
+                            <Player className="dataholder-img" playsInline src={value.src}></Player>
+                          </div>
+                        )) || <div style={{width: "80%"}}>
                           <img className="dataholder-img" src={value.src} alt="Media" />
                           </div>}
                       </Grid>
@@ -171,27 +175,27 @@ function DataHolder(params) {
                   })}
                 </Grid>
               )}
-            {params.hasMedia != null && params.hasMedia == true && (
+            {params.hasMedia && (
               <>
-                <a
+                <buttom
                   className="bottom-link"
                   target="_blank"
                   rel="noreferrer"
                   onClick={params.aboutClicked}
                 >
                   <span className="bottom-link-span underline">About</span>
-                </a>
-                <a
+                </buttom>
+                <buttom
                   className="bottom-link"
                   target="_blank"
                   rel="noreferrer"
                   onClick={params.mediaClicked}
                 >
                   <span className="bottom-link-span underline">Media</span>
-                </a>
+                </buttom>
               </>
             )}
-            {params.github != null && (
+            {hasValue(params.github) && (
               <a
                 className="bottom-link"
                 target="_blank"

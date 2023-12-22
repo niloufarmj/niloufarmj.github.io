@@ -4,14 +4,25 @@ import DataHolder from "../Components/DataHolder";
 import { useState } from "react";
 import { Grid, createTheme, ThemeProvider } from "@mui/material";
 
+import uniEng from "../Assets/Media/Diplomas/uni - diploma.jpeg"
+import uniFa from "../Assets/Media/Diplomas/دانشگاه - مدرک.jpg"
+import schoolEng from "../Assets/Media/Diplomas/school - diploma.jpeg"
+import schoolFa from "../Assets/Media/Diplomas/متوسطه - مدرک.jpg"
+
 function EducationPage() {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(4);
+  const [about, setAbout] = useState(true)
+
+  const menuItemClicked = (index) => {
+    setCurrentIndex(index)
+    setAbout(true)
+  }
 
   const projectDatas = [
     {
       title: "Bachelor in Computer Science",
-      onClick: () => setCurrentIndex(0),
+      onClick: () => menuItemClicked(0),
       explanations: [
         "• Shahid Beheshti University, Velenjak, Tehran, Iran",
         "• Jan 2018 – Dec 2023",
@@ -19,21 +30,41 @@ function EducationPage() {
         "• Main Courses: Basic and Advanced Programming, Discrete Mathematics, Algorithms, Data Structure, Operating System, Database, Artifical Intelligence, Signals and Systems, Computer Vision, Internet Engineering",
         "• GPA: 2.94 out of 4",
       ],
-      hasMedia: true
+      hasMedia: true,
+      media: [
+        {
+          type: "image",
+          src: uniEng
+        },
+        {
+          type: "image",
+          src: uniFa
+        }
+      ]
     },
     {
       title: "Diploma of Mathematics and Physics",
-      onClick: () => setCurrentIndex(1),
+      onClick: () => menuItemClicked(1),
       explanations: [
         "• Abou-Ali Sina Highschool, Sattarkhan, Tehran, Iran",
         "• Jan 2016 – Dec 2018",
         "• GPA: 4 out of 4",
       ],
-      hasMedia: true
+      hasMedia: true,
+      media: [
+        {
+          type: "image",
+          src: schoolEng
+        },
+        {
+          type: "image",
+          src: schoolFa
+        }
+      ]
     },
     {
       title: "Completion of English Advanced Level ",
-      onClick: () => setCurrentIndex(2),
+      onClick: () => menuItemClicked(2),
       explanations: [
         "• Iran Language Institute, Ekbatan, Tehran, Iran",
         "• Jan 2012 – Sep 2016",
@@ -90,6 +121,10 @@ function EducationPage() {
             github={projectDatas[currentIndex].github}
             link={projectDatas[currentIndex].links}
             hasMedia={projectDatas[currentIndex].hasMedia}
+            about={about}
+            media={projectDatas[currentIndex].media}
+            mediaClicked={() => setAbout(false)}
+            aboutClicked={() => setAbout(true)}
           />
         </Grid>
       </ThemeProvider>

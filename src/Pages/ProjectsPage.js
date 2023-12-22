@@ -124,11 +124,11 @@ function ProjectsPage() {
         },
         {
           type: 'video', 
-          src: bug1
+          src: bug2
         },
         {
           type: 'video', 
-          src: bug2
+          src: bug1
         }
       ]
     },
@@ -242,7 +242,7 @@ function ProjectsPage() {
             explanation={projectDatas[currentIndex].explanations}
             github={projectDatas[currentIndex].github}
             videos={projectDatas[currentIndex].videos}
-            opener={ currentIndex == 7 }
+            opener={ currentIndex === 7 }
             hasMedia={projectDatas[currentIndex].hasMedia}
             media={projectDatas[currentIndex].media} 
             about={about}

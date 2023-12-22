@@ -4,14 +4,38 @@ import DataHolder from "../Components/DataHolder";
 import { useState } from "react";
 import { Grid, createTheme, ThemeProvider } from "@mui/material";
 
+import chandkhaan1 from "../Assets/Media/Works/chandkhaan1.jpg"
+import chandkhaan2 from "../Assets/Media/Works/chandkhaan2.jpg"
+import chandkhaan3 from "../Assets/Media/Works/chandkhaan3.jpg"
+import chandkhaan4 from "../Assets/Media/Works/chandkhaan4.jpg"
+
+import ropart1 from "../Assets/Media/videos/Ropart1.mp4"
+import ropart2 from "../Assets/Media/videos/Ropart2.mp4"
+import ropart3 from "../Assets/Media/videos/Ropart3.mp4"
+import under from "../Assets/Media/videos/UnderGround.mp4"
+import mapna1 from "../Assets/Media/Works/mapna1.jpg"
+import mapna2 from "../Assets/Media/Works/mapna2.jpg"
+
+import mart1 from "../Assets/Media/Works/mart1.jpg"
+import mart2 from "../Assets/Media/Works/mart2.jpg"
+import mart3 from "../Assets/Media/Works/mart3.jpg"
+import morning from "../Assets/Media/Works/morning.jpg"
+import cal from "../Assets/Media/Works/calculator.jpg"
+
 function JobExperiencePage() {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [about, setAbout] = useState(true)
+
+  const menuItemClicked = (index) => {
+    setCurrentIndex(index)
+    setAbout(true)
+  }
 
   const experienceDatas = [
     {
       title: "Unity Developer",
-      onClick: () => setCurrentIndex(0),
+      onClick: () => menuItemClicked(0),
       explanations: [
         "• Studio Rhino, Velenjak, Tehran, Iran, April 2023 – OnGoing",
         "• Involved in the creation of 'Chandkhaan', an Android game inspired by 'Teamfight Tactics' from 'League of Legends.'",
@@ -21,22 +45,66 @@ function JobExperiencePage() {
         "• Employed SignalRConnection for seamless communication between the client and server of 'Chandkhaan' to build multiplayer.",
         "• Utilized Unity’s real-time 3D platform to design and enhance the user experience.",
       ],
-      hasMedia: true
+      hasMedia: true,
+      media: [
+        {
+          type: 'image',
+          src: chandkhaan1
+        },
+        {
+          type: 'image',
+          src: chandkhaan2
+        },
+        {
+          type: 'image',
+          src: chandkhaan3
+        },
+        {
+          type: 'image',
+          src: chandkhaan4
+        },
+      ]
     },
     {
       title: "Game Development and Design Internship",
-      onClick: () => setCurrentIndex(1),
+      onClick: () => menuItemClicked(1),
       explanations: [
         "• Concealland Studio, Velenjak, Tehran, Iran, Aug 2022 – Nov 2022",
         "• Learning to design 3D models with 3Ds Max and Blender",
         "• Working with Unity engine and developing games in C#",
         "• Collaborating with teammates using GitLab",
       ],
-      hasMedia: true
+      hasMedia: true,
+      media: [
+        {
+          type: 'video',
+          src: ropart1
+        },
+        {
+          type: 'video',
+          src: ropart2
+        },
+        {
+          type: 'video',
+          src: ropart3
+        },
+        {
+          type: 'video',
+          src: under
+        },
+        {
+          type: 'image',
+          src: mapna1
+        },
+        {
+          type: 'image',
+          src: mapna2
+        },
+      ]
     },
     {
       title: "Full-Stack Development",
-      onClick: () => setCurrentIndex(2),
+      onClick: () => menuItemClicked(2),
       explanations: [
         "• System Group, Vanak, Tehran, Iran, Nov 2020 - Jul 2022",
         "• Building Front-end of Fanoos using Angular and RxJs",
@@ -48,18 +116,40 @@ function JobExperiencePage() {
     },
     {
       title: "Front-end Development Internship",
-      onClick: () => setCurrentIndex(3),
+      onClick: () => menuItemClicked(3),
       explanations: [
         "• Walvira Enghelab, Tehran, Iran, Aug 2019 – Oct 2020",
         "• Interned for 6 months, demonstrating exceptional performance, and subsequently promoted to a part-time role, where I contributed for an additional 6 months",
         "• Designed and developed dynamic and responsive websites using HTML, CSS, JavaScript and jQuery",
         "• Worked with REST APIs to retrieve and display data from databases",
       ],
-      hasMedia: true
+      hasMedia: true,
+      media: [
+        {
+          type: 'image',
+          src: mart1
+        },
+        {
+          type: 'image',
+          src: mart2
+        },
+        {
+          type: 'image',
+          src: mart3
+        },
+        {
+          type: 'image',
+          src: morning
+        },
+        {
+          type: 'image',
+          src: cal
+        }
+      ]
     },
     {
       title: "Teacher Assistance and Mentorship",
-      onClick: () => setCurrentIndex(4),
+      onClick: () => menuItemClicked(4),
       explanations: [
         "• Basic Programming – in charge of challenges and homeworks – Dr. Sadeq Ali-akbari",
         "• Advanced Programming – in charge of homeworks and teaching project fundamentals (MVC arch + javafx) – Dr. Sadeq Ali-Akbari",
@@ -98,6 +188,10 @@ function JobExperiencePage() {
             explanation={experienceDatas[currentIndex].explanations}
             github={experienceDatas[currentIndex].github}
             hasMedia={experienceDatas[currentIndex].hasMedia}
+            about={about}
+            media={experienceDatas[currentIndex].media}
+            mediaClicked={() => setAbout(false)}
+            aboutClicked={() => setAbout(true)}
           />
         </Grid>
       </ThemeProvider>
