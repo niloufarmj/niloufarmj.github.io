@@ -205,6 +205,16 @@ function DataHolder(params) {
                 <span className="bottom-link-span underline">Github</span>
               </a>
             )}
+            {hasValue(params.certificate) && (
+              <a
+                className="bottom-link"
+                target="_blank"
+                rel="noreferrer"
+                href={params.certificate}
+              >
+                <span className="bottom-link-span underline">Certificate</span>
+              </a>
+            )}
           </span>
         </div>
       </Grid>

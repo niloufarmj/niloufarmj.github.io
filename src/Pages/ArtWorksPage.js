@@ -28,6 +28,9 @@ import oil3 from "../Assets/Media/Oil/3.jpg"
 import oil4 from "../Assets/Media/Oil/4.jpg"
 import oil5 from "../Assets/Media/Oil/5.jpg"
 
+import fox from "../Assets/Media/3D/Fox.mp4"
+import house from "../Assets/Media/3D/House.mp4"
+
 
 function ArtWorksPage() {
   const navigate = useNavigate();
@@ -73,27 +76,15 @@ function ArtWorksPage() {
         oil3,
         oil4,
         oil5
-      ],
+      ]
     },
     {
       title: "3D Models",
       onClick: () => setCurrentIndex(3),
-      items: [
-        "• Walvira Enghelab, Tehran, Iran, Aug 2019 – Oct 2020",
-        "• Interned for 6 months, demonstrating exceptional performance, and subsequently promoted to a part-time role, where I contributed for an additional 6 months",
-        "• Designed and developed dynamic and responsive websites using HTML, CSS, JavaScript and jQuery",
-        "• Worked with REST APIs to retrieve and display data from databases",
-      ],
-    },
-    {
-      title: "2D illustrations",
-      onClick: () => setCurrentIndex(4),
-      items: [
-        "• Basic Programming – in charge of challenges and homeworks – Dr. Sadeq Ali-akbari",
-        "• Advanced Programming – in charge of homeworks and teaching project fundamentals (MVC arch + javafx) – Dr. Sadeq Ali-Akbari",
-        "• Advanced Programming – in charge of challenges and homeworks and final project – Dr. Maede Mosharraf",
-        "• Signals and Systems – in charge of paper homeworks and teaching matlab fundamentals – Dr. Salimi",
-      ],
+      videos: [
+        fox,
+        house
+      ]
     },
     {
       title: "←",
@@ -123,6 +114,7 @@ function ArtWorksPage() {
             title={gallaryData[currentIndex].title}
             items={gallaryData[currentIndex].items}
             link={gallaryData[currentIndex].link}
+            videos={gallaryData[currentIndex].videos}
           />
         </Grid>
       </ThemeProvider>

@@ -30,13 +30,7 @@ function CoursesPage() {
         "https://github.com/niloufarmj/CS50_Match3",
         "https://github.com/niloufarmj/CS50_SuperMario"
       ],
-      certificates: [
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
+      
       videos:[
         pong,
         flappy,
@@ -59,23 +53,10 @@ function CoursesPage() {
         "https://coursera.org/share/14fd0a3a3db44a4ec9f35a3a3aee367f",
         "https://coursera.org/share/1127ab29b6759de68dac12ebc752276e",
         "https://coursera.org/share/48c529b80e91a6a0db911a422b3bf5f0",
-        " ",
+        "https://coursera.org/share/ef2bff53be68709f8dbe8131f79f1fa5",
         "https://coursera.org/share/ebd6c65f7e839d2ef4a4389a0e6b5d98"
       ],
-      githubs: [
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      videos: [
-        "",
-        "",
-        "",
-        "",
-        ""
-      ]
+      certificate: "https://coursera.org/share/58b67f7d0fa9576c918de3709723a081"
     },
     {
       title: "Meta Front-End Developer Professional Certificate",
@@ -95,22 +76,20 @@ function CoursesPage() {
         "https://coursera.org/share/46ad3a2bc364ae1507ce7fd49a348c1c",
         "https://coursera.org/share/4292a69ffca4738dfebf707a3e76d14b",
         "https://coursera.org/share/d7b1009ecdb3db7421f52ad7b197af74"
+      ]
+    },
+    {
+      title: "Other Courses",
+      onClick: () => setCurrentIndex(3),
+      explanations: [
+        "• Serious Gaming by Erasmus University Rotterdam",
+        "• Introduction to Augmented Reality and ARCore by Daydream",
+        "• Foundations of User Experience (UX) Design by Google",
       ],
-      githubs: [
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      videos: [
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+      certificates: [
+        "https://coursera.org/share/ce97886aec9bebeae7e332fa50392918",
+        "https://coursera.org/share/b1e58ce6823c83cd118f2447d13ecc18",
+        "https://coursera.org/share/5dc0acb0315be5f8247ec9ea19407c11"
       ]
     },
     {
@@ -146,6 +125,7 @@ function CoursesPage() {
             explanation={coursesDatas[currentIndex].explanations}
             githubs={coursesDatas[currentIndex].githubs}
             certificates={coursesDatas[currentIndex].certificates}
+            certificate={coursesDatas[currentIndex].certificate}
             videos={coursesDatas[currentIndex].videos}
             opener={true}
             lg={6}

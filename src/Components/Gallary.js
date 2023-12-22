@@ -1,10 +1,15 @@
 import { Grid } from "@mui/material";
 import "../Assets/CSS/Welcome.css";
 import React from "react";
+import { Player } from "video-react";
 import "../Assets/CSS/Gallary.css";
 
 function Gallary(params) {
-  console.log(params.items)
+ 
+  const hasValue = (obj) => {
+    return !(obj === null || obj === undefined)
+  }
+
   return (
     <>
       <Grid item xs={11} sm={11} md={6} lg={7} xl={4} custom={6}>
@@ -12,7 +17,7 @@ function Gallary(params) {
           <div className="main-intro">
             <Grid container>
               <Grid item xs>
-                <div className="center">
+                <div>
                   <div className="title">{params.title}</div>
                 </div>
               </Grid>
@@ -21,7 +26,7 @@ function Gallary(params) {
           </div>
           <span className="body-intro">
             <Grid container>
-                {params.items.map((value, index) => {
+                {hasValue(params.items) && params.items.map((value, index) => {
                     return(
                         <Grid item xl>
                             <img
@@ -34,7 +39,25 @@ function Gallary(params) {
                         
                     })
                 }
-                {params.link != null &&
+                {hasValue(params.videos) && 
+                <Grid container spacing={2}>
+                  { params.videos.map((value, index) => {
+                    return(
+                      <Grid
+                        item
+                        xs={12}
+                        key={index}
+                      >
+                        <div style={{ marginBottom: "20px", marginTop: "20px"}}>
+                            <Player  playsInline src={value}></Player>
+                          </div>
+                      </Grid>
+                    )
+                        
+                  })}
+                  </Grid>
+                }
+                {hasValue(params.link) &&
                     <Grid item xl>
                         <div className="gallary-item gallary-link">
                             <a 
