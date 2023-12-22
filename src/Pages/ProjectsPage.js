@@ -122,13 +122,11 @@ function ProjectsPage() {
       title: "Wall Fallower Omni Bot",
       onClick: () => menuItemClicked(3),
       explanations: [
-        "• Implemented a clone of Reddit using React and Express JS for a university Internet Engineering course project",
-        "• Collaborated with a teammate via GitHub to develop and maintain the project",
-        "• Created and integrated various features such as user authentication, post creation, and comment sections",
-        "• Utilized RESTful API design principles for efficient and scalable communication between the client and server",
-        "• Demonstrated proficiency in web development and teamwork skills",
+        "• Omni directional robot proto with a simple wall following controller",
+        "• Utilized three main algorithms: bug 0, bug 1 and bug 2",
+        "• Implemented with Python and simulated in Webots and tested with Matlab",
       ],
-      github: "https://github.com/niloufarmj/IE-Project-Reddit",
+      github: "https://github.com/niloufarmj/SBU-Robotics",
       hasMedia: true,
       media: [
         {
