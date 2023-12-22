@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Menu from "../Components/Menu";
 import DataHolder from "../Components/DataHolder";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Grid, createTheme, ThemeProvider } from "@mui/material";
 
 import chandkhaan1 from "../Assets/Media/Works/chandkhaan1.jpg"
@@ -9,8 +9,8 @@ import chandkhaan2 from "../Assets/Media/Works/chandkhaan2.jpg"
 import chandkhaan3 from "../Assets/Media/Works/chandkhaan3.jpg"
 import chandkhaan4 from "../Assets/Media/Works/chandkhaan4.jpg"
 
-import ropart1 from "../Assets/Media/videos/Ropart1.mp4"
-import ropart2 from "../Assets/Media/videos/Ropart2.mp4"
+// import ropart1 from "../Assets/Media/videos/Ropart1.mp4"
+// import ropart2 from "../Assets/Media/videos/Ropart2.mp4"
 import ropart3 from "../Assets/Media/videos/Ropart3.mp4"
 import under from "../Assets/Media/videos/UnderGround.mp4"
 import mapna1 from "../Assets/Media/Works/mapna1.jpg"
@@ -21,6 +21,7 @@ import mart2 from "../Assets/Media/Works/mart2.jpg"
 import mart3 from "../Assets/Media/Works/mart3.jpg"
 import morning from "../Assets/Media/Works/morning.jpg"
 import cal from "../Assets/Media/Works/calculator.jpg"
+import yalda from "../Assets/Media/Works/yalda.jpeg"
 
 function JobExperiencePage() {
   const navigate = useNavigate();
@@ -30,7 +31,21 @@ function JobExperiencePage() {
   const menuItemClicked = (index) => {
     setCurrentIndex(index)
     setAbout(true)
+
+    // Scroll to top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
+
+  useEffect(() => {
+    // Scroll to top when the currentIndex changes
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [currentIndex]);
 
   const experienceDatas = [
     {
@@ -76,14 +91,14 @@ function JobExperiencePage() {
       ],
       hasMedia: true,
       media: [
-        {
-          type: 'video',
-          src: ropart1
-        },
-        {
-          type: 'video',
-          src: ropart2
-        },
+        // {
+        //   type: 'video',
+        //   src: ropart1
+        // },
+        // {
+        //   type: 'video',
+        //   src: ropart2
+        // },
         {
           type: 'video',
           src: ropart3
@@ -144,6 +159,10 @@ function JobExperiencePage() {
         {
           type: 'image',
           src: cal
+        },
+        {
+          type: 'image',
+          src: yalda
         }
       ]
     },

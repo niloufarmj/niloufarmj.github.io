@@ -2,7 +2,7 @@ import Menu from "../Components/Menu";
 import { useNavigate } from "react-router-dom";
 import { Grid, createTheme, ThemeProvider } from "@mui/material";
 import Gallary from "../Components/Gallary";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import acrylic1 from "../Assets/Media/Acrylic/1.jpeg"
 import acrylic2 from "../Assets/Media/Acrylic/2.jpeg"
@@ -36,10 +36,28 @@ function ArtWorksPage() {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const menuItemClicked = (index) => {
+    setCurrentIndex(index)
+
+    // Scroll to top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
+  useEffect(() => {
+    // Scroll to top when the currentIndex changes
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [currentIndex]);
+
   const gallaryData = [
     {
       title: "Acrylic Paintings",
-      onClick: () => setCurrentIndex(0),
+      onClick: () => menuItemClicked(0),
       items: [
         acrylic1,
         acrylic2,
@@ -54,7 +72,7 @@ function ArtWorksPage() {
     },
     {
       title: "Rapid Pen Drawings",
-      onClick: () => setCurrentIndex(1),
+      onClick: () => menuItemClicked(1),
       items: [
         rapid1,
         rapid2,
@@ -69,7 +87,7 @@ function ArtWorksPage() {
     },
     {
       title: "Oil Color Paintings",
-      onClick: () => setCurrentIndex(2),
+      onClick: () => menuItemClicked(2),
       items: [
         oil1,
         oil2,
@@ -80,7 +98,7 @@ function ArtWorksPage() {
     },
     {
       title: "3D Models",
-      onClick: () => setCurrentIndex(3),
+      onClick: () => menuItemClicked(3),
       videos: [
         fox,
         house

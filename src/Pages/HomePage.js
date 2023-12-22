@@ -4,9 +4,18 @@ import { useNavigate } from "react-router-dom";
 import myPhoto from "../Assets/Media/me.jpeg";
 import DataHolder from "../Components/DataHolder";
 import { Grid, createTheme, ThemeProvider } from "@mui/material";
+import { useEffect } from "react";
 
 function HomePage() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Scroll to top when the currentIndex changes
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, );
 
   var menuData = {
     title: "Content Pages",

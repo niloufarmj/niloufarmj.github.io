@@ -1,5 +1,5 @@
 import "../Assets/CSS/Tools.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Menu from "../Components/Menu";
 import { useNavigate } from "react-router-dom";
 import { Grid, createTheme, ThemeProvider } from "@mui/material";
@@ -14,6 +14,24 @@ function SkillsPage() {
     "Persian(native), English(IELTS Academic 7.5)",
   ];
 
+  const menuItemClicked = (index) => {
+    setItemDisplayIndex(index)
+
+    // Scroll to top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
+  useEffect(() => {
+    // Scroll to top when the currentIndex changes
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [itemsDisplayIndex]);
+
   const navigate = useNavigate();
 
   const menuData = {
@@ -21,23 +39,23 @@ function SkillsPage() {
     items: [
       {
         title: "Programming Languages",
-        onClick: () => setItemDisplayIndex(0),
+        onClick: () => menuItemClicked(0),
       },
       {
         title: "Frameworks",
-        onClick: () => setItemDisplayIndex(1),
+        onClick: () => menuItemClicked(1),
       },
       {
         title: "Libraries and Plugins",
-        onClick: () => setItemDisplayIndex(2),
+        onClick: () => menuItemClicked(2),
       },
       {
         title: "Dev Tools",
-        onClick: () => setItemDisplayIndex(3),
+        onClick: () => menuItemClicked(3),
       },
       {
         title: "Speaking Languages",
-        onClick: () => setItemDisplayIndex(4),
+        onClick: () => menuItemClicked(4),
       },
       {
         title: "←",

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Menu from "../Components/Menu";
 import DataHolder from "../Components/DataHolder";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Grid, createTheme, ThemeProvider } from "@mui/material";
 
 import cars from "../Assets/Media/videos/Cars.mp4"
@@ -31,8 +31,21 @@ function ProjectsPage() {
   const menuItemClicked = (index) => {
     setCurrentIndex(index)
     setAbout(true)
+
+    // Scroll to top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
 
+  useEffect(() => {
+    // Scroll to top when the currentIndex changes
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [currentIndex]);
 
   const projectDatas = [
     {

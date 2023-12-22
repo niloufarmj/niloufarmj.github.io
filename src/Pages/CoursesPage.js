@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Menu from "../Components/Menu";
 import DataHolder from "../Components/DataHolder";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Grid, createTheme, ThemeProvider } from "@mui/material";
 
 import flappy from "../Assets/Media/videos/FlappyBird.mp4"
@@ -11,11 +11,29 @@ import match3 from "../Assets/Media/videos/Match3.mp4"
 function CoursesPage() {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
+  
+  const menuItemClicked = (index) => {
+    setCurrentIndex(index)
+
+    // Scroll to top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
+  useEffect(() => {
+    // Scroll to top when the currentIndex changes
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [currentIndex]);
 
   const coursesDatas = [
     {
       title: "HarvardX: CS50's Introduction to Game Development",
-      onClick: () => setCurrentIndex(0),
+      onClick: () => menuItemClicked(0),
       explanations: [
         "• Pong",
         "• Flappy Bird",
@@ -41,7 +59,7 @@ function CoursesPage() {
     },
     {
       title: "Game Design: Art and Concepts",
-      onClick: () => setCurrentIndex(1),
+      onClick: () => menuItemClicked(1),
       explanations: [
         "• Introduction to Game Design",
         "• Story and Narrative Development for Video Games",
@@ -80,7 +98,7 @@ function CoursesPage() {
     },
     {
       title: "Other Courses",
-      onClick: () => setCurrentIndex(3),
+      onClick: () => menuItemClicked(3),
       explanations: [
         "• Serious Gaming by Erasmus University Rotterdam",
         "• Introduction to Augmented Reality and ARCore by Daydream",
