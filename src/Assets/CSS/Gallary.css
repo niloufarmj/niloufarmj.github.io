@@ -21,3 +21,16 @@
     align-items: center;
     justify-content: center;
 }
+
+.dataholder-img {
+    border: 2px solid rgb(164, 46, 207);
+    border-radius: 5%;
+    padding: 10px;
+    margin: 10px;
+    transition: all .3s ease-in-out;
+    width: 100%;
+}
+
+.dataholder-img:hover {
+    scale: 1.1;
+}

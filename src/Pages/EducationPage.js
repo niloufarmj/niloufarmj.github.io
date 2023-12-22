@@ -19,6 +19,7 @@ function EducationPage() {
         "• Main Courses: Basic and Advanced Programming, Discrete Mathematics, Algorithms, Data Structure, Operating System, Database, Artifical Intelligence, Signals and Systems, Computer Vision, Internet Engineering",
         "• GPA: 2.94 out of 4",
       ],
+      hasMedia: true
     },
     {
       title: "Diploma of Mathematics and Physics",
@@ -28,6 +29,7 @@ function EducationPage() {
         "• Jan 2016 – Dec 2018",
         "• GPA: 4 out of 4",
       ],
+      hasMedia: true
     },
     {
       title: "Completion of English Advanced Level ",
@@ -38,6 +40,7 @@ function EducationPage() {
         "• overall average rating: outstanding (91 - 100)",
         "• the levels are in accordance with the CFER",
       ],
+      hasMedia: true
     },
     {
       title: "←",
@@ -86,6 +89,7 @@ function EducationPage() {
             explanation={projectDatas[currentIndex].explanations}
             github={projectDatas[currentIndex].github}
             link={projectDatas[currentIndex].links}
+            hasMedia={projectDatas[currentIndex].hasMedia}
           />
         </Grid>
       </ThemeProvider>

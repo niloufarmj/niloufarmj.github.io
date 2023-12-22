@@ -21,6 +21,7 @@ function JobExperiencePage() {
         "• Employed SignalRConnection for seamless communication between the client and server of 'Chandkhaan' to build multiplayer.",
         "• Utilized Unity’s real-time 3D platform to design and enhance the user experience.",
       ],
+      hasMedia: true
     },
     {
       title: "Game Development and Design Internship",
@@ -31,6 +32,7 @@ function JobExperiencePage() {
         "• Working with Unity engine and developing games in C#",
         "• Collaborating with teammates using GitLab",
       ],
+      hasMedia: true
     },
     {
       title: "Full-Stack Development",
@@ -42,6 +44,7 @@ function JobExperiencePage() {
         "• Planning and collaborating with teammates using Scrum and Skype for Business",
         "• Experience with Azure Devops",
       ],
+      hasMedia: false
     },
     {
       title: "Front-end Development Internship",
@@ -52,6 +55,7 @@ function JobExperiencePage() {
         "• Designed and developed dynamic and responsive websites using HTML, CSS, JavaScript and jQuery",
         "• Worked with REST APIs to retrieve and display data from databases",
       ],
+      hasMedia: true
     },
     {
       title: "Teacher Assistance and Mentorship",
@@ -62,6 +66,7 @@ function JobExperiencePage() {
         "• Advanced Programming – in charge of challenges and homeworks and final project – Dr. Maede Mosharraf",
         "• Signals and Systems – in charge of paper homeworks and teaching matlab fundamentals – Dr. Salimi",
       ],
+      hasMedia: false
     },
     {
       title: "←",
@@ -92,6 +97,7 @@ function JobExperiencePage() {
             photo={experienceDatas[currentIndex].photo}
             explanation={experienceDatas[currentIndex].explanations}
             github={experienceDatas[currentIndex].github}
+            hasMedia={experienceDatas[currentIndex].hasMedia}
           />
         </Grid>
       </ThemeProvider>

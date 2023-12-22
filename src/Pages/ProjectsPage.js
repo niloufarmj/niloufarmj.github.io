@@ -9,14 +9,35 @@ import diceKid from "../Assets/Media/videos/DiceKid.mp4"
 import clock from "../Assets/Media/videos/DigitalClock.mp4"
 import roll from "../Assets/Media/videos/RollaBall.mp4"
 
+import museumore from "../Assets/Media/videos/Museumore.mp4"
+import othello from "../Assets/Media/videos/Othello.mp4"
+import jetpack from "../Assets/Media/videos/Jetpack.mp4"
+import twoCars from "../Assets/Media/videos/2cars.mp4"
+import bug0 from "../Assets/Media/videos/Bug0.mp4"
+import bug1 from "../Assets/Media/videos/Bug1.mp4"
+import bug2 from "../Assets/Media/videos/Bug2.mp4"
+
+import cp from "../Assets/Media/Works/communitypage.png"
+import hp from "../Assets/Media/Works/homepage.png"
+import login from "../Assets/Media/Works/login.png"
+import up from "../Assets/Media/Works/userprofile.png"
+
+
 function ProjectsPage() {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(9);
+  const [about, setAbout] = useState(true)
+
+  const menuItemClicked = (index) => {
+    setCurrentIndex(index)
+    setAbout(true)
+  }
+
 
   const projectDatas = [
     {
       title: "Museumore",
-      onClick: () => setCurrentIndex(0),
+      onClick: () => menuItemClicked(0),
       explanations: [
         "• Augmented Reality Web Application For Museums and Galleries",
         "• Designed and developed a clean and modern UI using React",
@@ -26,10 +47,18 @@ function ProjectsPage() {
         "• Deployed and used in Shahid Beheshit Central Library Archive",
       ],
       github: "https://github.com/niloufarmj/museumore-ar-project",
+      hasMedia: true,
+      media: [
+        {
+          type: 'video', 
+          src: museumore
+        }
+      ],
+      
     },
     {
       title: "Othello Game",
-      onClick: () => setCurrentIndex(1),
+      onClick: () => menuItemClicked(1),
       explanations: [
         "• An implementation of an AI player for the board game Othello",
         "• Implemented with Java and JavaFX",
@@ -37,10 +66,17 @@ function ProjectsPage() {
         "• Collaborated and maintained using GitHub as university AI course project",
       ],
       github: "https://github.com/niloufarmj/othello_AI",
+      hasMedia: true,
+      media: [
+        {
+          type: 'video', 
+          src: othello
+        }
+      ]
     },
     {
       title: "Reddit Clone",
-      onClick: () => setCurrentIndex(2),
+      onClick: () => menuItemClicked(2),
       explanations: [
         "• Implemented a clone of Reddit using React and Express JS for a university Internet Engineering course project",
         "• Collaborated with a teammate via GitHub to develop and maintain the project",
@@ -49,10 +85,29 @@ function ProjectsPage() {
         "• Demonstrated proficiency in web development and teamwork skills",
       ],
       github: "https://github.com/niloufarmj/IE-Project-Reddit",
+      hasMedia: true,
+      media: [
+        {
+          type: 'image', 
+          src: login
+        },
+        {
+          type: 'image', 
+          src: hp
+        },
+        {
+          type: 'image', 
+          src: cp
+        },
+        {
+          type: 'image', 
+          src: up
+        },
+      ]
     },
     {
       title: "Wall Fallower Omni Bot",
-      onClick: () => setCurrentIndex(3),
+      onClick: () => menuItemClicked(3),
       explanations: [
         "• Implemented a clone of Reddit using React and Express JS for a university Internet Engineering course project",
         "• Collaborated with a teammate via GitHub to develop and maintain the project",
@@ -61,20 +116,36 @@ function ProjectsPage() {
         "• Demonstrated proficiency in web development and teamwork skills",
       ],
       github: "https://github.com/niloufarmj/IE-Project-Reddit",
+      hasMedia: true,
+      media: [
+        {
+          type: 'video', 
+          src: bug0
+        },
+        {
+          type: 'video', 
+          src: bug1
+        },
+        {
+          type: 'video', 
+          src: bug2
+        }
+      ]
     },
     {
       title: "Gmail Demo",
-      onClick: () => setCurrentIndex(4),
+      onClick: () => menuItemClicked(4),
       explanations: [
         "• Developed a Gmail-like client-server application for the Advanced Programming course at the university, using Java and JavaFX in the MVC architecture",
         "• Designed and implemented the application’s user interface using JavaFX Scene Builder and FXML",
         "• Implemented features such as sending and receiving emails and managing user accounts",
       ],
       github: "https://github.com/niloufarmj/gmail_demo",
+      hasMedia: false
     },
     {
       title: "Jetpack Joyride",
-      onClick: () => setCurrentIndex(5),
+      onClick: () => menuItemClicked(5),
       explanations: [
         "• Created a clone of Jetpack Joyride game as university basic programming project using C++ and SBLD (refined version of SDL)",
         "• Implemented dynamic gameplay mechanics, allowing players to control a character equipped with a jetpack",
@@ -83,10 +154,17 @@ function ProjectsPage() {
         "• Showcased programming skills by implementing features like random obstacle generation, collision detection, and game state management"
       ],
       github: "https://github.com/niloufarmj/SBU-BP-JetpackJoyride/",
+      hasMedia: true,
+      media: [
+        {
+          type: 'video', 
+          src: jetpack
+        }
+      ]
     },
     {
       title: "Two Cars",
-      onClick: () => setCurrentIndex(6),
+      onClick: () => menuItemClicked(6),
       explanations: [
         "• Developed a clone of'Two Cars' game using C++ and the SBDL library as basic programming mini project",
         "• Implemented gameplay mechanics where players control two cars simultaneously to avoid obstacles",
@@ -95,10 +173,17 @@ function ProjectsPage() {
         "• Provided multiple game states, including a home page, game over screen, and pause functionality, to enhance the overall player experience",
       ],
       github: "https://github.com/niloufarmj/SBU-BP-Two-Cars",
+      hasMedia: true,
+      media: [
+        {
+          type: 'video', 
+          src: twoCars
+        }
+      ]
     },
     {
       title: "Hobby Projects",
-      onClick: () => setCurrentIndex(7),
+      onClick: () => menuItemClicked(7),
       explanations: [
         "• Dice Kid",
         "• Roll a Ball",
@@ -111,7 +196,8 @@ function ProjectsPage() {
         cars,
         clock
       ],
-      github: "https://github.com/niloufarmj/Hobby-Projects"
+      github: "https://github.com/niloufarmj/Hobby-Projects",
+      hasMedia: false
     },
     {
       title: "←",
@@ -157,6 +243,11 @@ function ProjectsPage() {
             github={projectDatas[currentIndex].github}
             videos={projectDatas[currentIndex].videos}
             opener={ currentIndex == 7 }
+            hasMedia={projectDatas[currentIndex].hasMedia}
+            media={projectDatas[currentIndex].media} 
+            about={about}
+            mediaClicked={() => setAbout(false)}
+            aboutClicked={() => setAbout(true)}
           />
         </Grid>
       </ThemeProvider>
