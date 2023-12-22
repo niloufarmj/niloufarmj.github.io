@@ -4,14 +4,14 @@ import { Grid, createTheme, ThemeProvider } from "@mui/material";
 import Gallary from "../Components/Gallary";
 import { useState } from "react";
 
-import acrylic1 from "../Assets/Media/Acrylic/_ (1).jpeg"
-import acrylic2 from "../Assets/Media/Acrylic/_ (2).jpeg"
-import acrylic3 from "../Assets/Media/Acrylic/_ (3).jpeg"
-import acrylic4 from "../Assets/Media/Acrylic/_ (4).jpeg"
-import acrylic5 from "../Assets/Media/Acrylic/_ (5).jpeg"
-import acrylic6 from "../Assets/Media/Acrylic/_ (6).jpeg"
-import acrylic7 from "../Assets/Media/Acrylic/_ (7).jpeg"
-import acrylic8 from "../Assets/Media/Acrylic/_ (8).jpeg"
+import acrylic1 from "../Assets/Media/Acrylic/1.jpeg"
+import acrylic2 from "../Assets/Media/Acrylic/2.jpeg"
+import acrylic3 from "../Assets/Media/Acrylic/3.jpeg"
+import acrylic4 from "../Assets/Media/Acrylic/4.jpeg"
+import acrylic5 from "../Assets/Media/Acrylic/5.jpeg"
+import acrylic6 from "../Assets/Media/Acrylic/6.jpeg"
+import acrylic7 from "../Assets/Media/Acrylic/7.jpeg"
+import acrylic8 from "../Assets/Media/Acrylic/8.jpeg"
 
 import rapid1 from "../Assets/Media/Rapid/1.jpg"
 import rapid2 from "../Assets/Media/Rapid/2.jpg"

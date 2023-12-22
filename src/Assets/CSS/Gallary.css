@@ -1,7 +1,7 @@
 .gallary-item {
     
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border: 2px solid rgb(164, 46, 207);
     border-radius: 10%;
     padding: 10px;
@@ -10,8 +10,8 @@
 }
 
 .gallary-item:hover {
-    width: 210px;
-    height: 210px;
+    width: 200px;
+    height: 200px;
     margin: 0;
     background-color: rgba(164, 46, 207, 0.4);
 }
