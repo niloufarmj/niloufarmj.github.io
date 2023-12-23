@@ -88,12 +88,12 @@ function CoursesPage() {
         "• Advanced React",
       ],
       certificates: [
-        "https://coursera.org/share/b79ba831134bbef23c36768ca071b9d4",
-        "https://coursera.org/share/e51a1003efbd0b7182aca531e7ebf6f0",
-        "https://coursera.org/share/9953c74eaeb424f9a3d65622b611e193",
-        "https://coursera.org/share/46ad3a2bc364ae1507ce7fd49a348c1c",
-        "https://coursera.org/share/4292a69ffca4738dfebf707a3e76d14b",
-        "https://coursera.org/share/d7b1009ecdb3db7421f52ad7b197af74"
+        "https://coursera.org/share/ec8dc2ea28111ffbc6cbce499cdeedde",
+        "https://coursera.org/share/eaf5bd5c8546f6e124d09582de0ebbdf",
+        "https://coursera.org/share/2a160d25ed35abde29bd8eaa17ebccb6",
+        "https://coursera.org/share/d10e9debe2d1a7d58943436de0e4e0bb",
+        "https://coursera.org/share/8ccefea9e5d14c9a0fc054a30d8c8ce1",
+        "https://coursera.org/share/b519f6e7bd0d76fa153549e87fb29618"
       ]
     },
     {
