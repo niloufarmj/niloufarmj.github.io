@@ -9,8 +9,9 @@ function SkillsPage() {
   const explainedTools = [
     "C++, C#, Java, Python, lua, JavaScript, Typescript, HTML, CSS",
     "React.js, Angular, Love2D, Flutter, JavaFX, Django, Node.js, .Net",
-    "RxJs, Bootstrap, Webpack, Threejs, MindAR, NavMesh, MLAgent",
+    "RxJs, Bootstrap, Threejs, MindAR, MLAgent",
     "Unity Engine, Android Studio, Git, Linux",
+    "Photoshop, Illustrator, Blender, 3DsMax, Figma",
     "Persian(native), English(IELTS Academic 7.5)",
   ];
 
@@ -54,8 +55,12 @@ function SkillsPage() {
         onClick: () => menuItemClicked(3),
       },
       {
-        title: "Speaking Languages",
+        title: "Design Tools",
         onClick: () => menuItemClicked(4),
+      },
+      {
+        title: "Speaking Languages",
+        onClick: () => menuItemClicked(5),
       },
       {
         title: "←",
