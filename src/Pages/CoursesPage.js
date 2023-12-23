@@ -7,6 +7,7 @@ import { Grid, createTheme, ThemeProvider } from "@mui/material";
 import flappy from "../Assets/Media/videos/FlappyBird.mp4"
 import pong from "../Assets/Media/videos/Pong.mp4"
 import match3 from "../Assets/Media/videos/Match3.mp4"
+import breakout from "../Assets/Media/videos/Breakout.mp4"
 
 function CoursesPage() {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ function CoursesPage() {
       videos:[
         pong,
         flappy,
-        "",
+        breakout,
         match3,
         ""
       ]
