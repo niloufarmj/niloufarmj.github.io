@@ -7,10 +7,10 @@ import { Grid, createTheme, ThemeProvider } from "@mui/material";
 function SkillsPage() {
   const [itemsDisplayIndex, setItemDisplayIndex] = useState(-1);
   const explainedTools = [
-    "C++, C#, Java, Python, JavaScript, Typescript, Flutter, HTML, CSS",
-    "React.js, Angular, Flutter, JavaFX, Django, Node.js, .Net",
+    "C++, C#, Java, Python, lua, JavaScript, Typescript, HTML, CSS",
+    "React.js, Angular, Love2D, Flutter, JavaFX, Django, Node.js, .Net",
     "RxJs, Bootstrap, Webpack, Threejs, MindAR, NavMesh, MLAgent",
-    "Unity Engine, Unreal Engine, Android Studio, Git, Linux",
+    "Unity Engine, Android Studio, Git, Linux",
     "Persian(native), English(IELTS Academic 7.5)",
   ];
 
