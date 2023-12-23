@@ -52,7 +52,7 @@ function JobExperiencePage() {
       title: "Unity Developer",
       onClick: () => menuItemClicked(0),
       explanations: [
-        "• Studio Rhino, Velenjak, Tehran, Iran, April 2023 – OnGoing",
+        "• Studio Rhino, Velenjak, Tehran, Iran, May 2023 – August 2023",
         "• Involved in the creation of 'Chandkhaan', an Android game inspired by 'Teamfight Tactics' from 'League of Legends.'",
         "• Implemented key features including the main menu, animations, combat mechanics, rounds, and tower customization.",
         "• Utilized Unity’s real-time 3D platform to design and enhance the user experience.",
@@ -84,7 +84,7 @@ function JobExperiencePage() {
       title: "Game Development and Design Internship",
       onClick: () => menuItemClicked(1),
       explanations: [
-        "• Concealland Studio, Velenjak, Tehran, Iran, Aug 2022 – Nov 2022",
+        "• Concealland Studio, Velenjak, Tehran, Iran, July 2022 – Nov 2022",
         "• Learning to design 3D models with 3Ds Max and Blender",
         "• Working with Unity engine and developing games in C#",
         "• Collaborating with teammates using GitLab",
@@ -121,7 +121,7 @@ function JobExperiencePage() {
       title: "Full-Stack Development",
       onClick: () => menuItemClicked(2),
       explanations: [
-        "• System Group, Vanak, Tehran, Iran, Nov 2020 - Jul 2022",
+        "• System Group, Vanak, Tehran, Iran, Aug 2021 - Jun 2022",
         "• Building Front-end of Fanoos using Angular and RxJs",
         "• Refactoring Back-end of Rahkaran to communicate with front-end using C# .Net",
         "• Planning and collaborating with teammates using Scrum and Skype for Business",
@@ -133,8 +133,8 @@ function JobExperiencePage() {
       title: "Front-end Development Internship",
       onClick: () => menuItemClicked(3),
       explanations: [
-        "• Walvira Enghelab, Tehran, Iran, Aug 2019 – Oct 2020",
-        "• Interned for 6 months, demonstrating exceptional performance, and subsequently promoted to a part-time role, where I contributed for an additional 6 months",
+        "• Walvira Enghelab, Tehran, Iran, Jan 2020 – Oct 2020",
+        "• Interned for 4 months, demonstrating exceptional performance, and subsequently promoted to a part-time role, where I contributed for an additional 6 months",
         "• Designed and developed dynamic and responsive websites using HTML, CSS, JavaScript and jQuery",
         "• Worked with REST APIs to retrieve and display data from databases",
       ],
