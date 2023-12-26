@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.969a934e.css",
-    "main.js": "/static/js/main.1f9c29b9.js",
+    "main.js": "/static/js/main.6d49d436.js",
     "static/js/787.676fbc64.chunk.js": "/static/js/787.676fbc64.chunk.js",
     "static/media/Bug2.mp4": "/static/media/Bug2.8fb4fca18e667ca14360.mp4",
     "static/media/Museumore.mp4": "/static/media/Museumore.0e15abd1a4b88fda5ea5.mp4",
@@ -18,6 +18,7 @@
     "static/media/House.mp4": "/static/media/House.63181939596e3dad0261.mp4",
     "static/media/DiceKid.mp4": "/static/media/DiceKid.75fcd7c0b2a7bed87860.mp4",
     "static/media/RollaBall.mp4": "/static/media/RollaBall.b6493af7dc5d73d5bc20.mp4",
+    "static/media/ProjectBoost.mp4": "/static/media/ProjectBoost.cd3d4c4b49b5e88ae2c9.mp4",
     "static/media/Fox.mp4": "/static/media/Fox.a642c1a4a28a0c140d28.mp4",
     "static/media/Pong.mp4": "/static/media/Pong.aa1d57fcdf4e5e6d2cf3.mp4",
     "static/media/DigitalClock.mp4": "/static/media/DigitalClock.4d16f20183699885208c.mp4",
@@ -66,11 +67,11 @@
     "static/media/youtube-white.png": "/static/media/youtube-white.5e904be60b911dc3331f.png",
     "index.html": "/index.html",
     "main.969a934e.css.map": "/static/css/main.969a934e.css.map",
-    "main.1f9c29b9.js.map": "/static/js/main.1f9c29b9.js.map",
+    "main.6d49d436.js.map": "/static/js/main.6d49d436.js.map",
     "787.676fbc64.chunk.js.map": "/static/js/787.676fbc64.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.969a934e.css",
-    "static/js/main.1f9c29b9.js"
+    "static/js/main.6d49d436.js"
   ]
 }
