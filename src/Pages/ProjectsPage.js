@@ -8,6 +8,7 @@ import cars from "../Assets/Media/videos/Cars.mp4"
 import diceKid from "../Assets/Media/videos/DiceKid.mp4"
 import clock from "../Assets/Media/videos/DigitalClock.mp4"
 import roll from "../Assets/Media/videos/RollaBall.mp4"
+import boost from "../Assets/Media/videos/ProjectBoost.mp4"
 
 import museumore from "../Assets/Media/videos/Museumore.mp4"
 import othello from "../Assets/Media/videos/Othello.mp4"
@@ -198,14 +199,16 @@ function ProjectsPage() {
       explanations: [
         "• Dice Kid",
         "• Roll a Ball",
+        "• Project Boost",
         "• Car Game",
         "• Digital Clock"
       ],
       videos:[
         diceKid, 
         roll,
+        boost,
         cars,
-        clock
+        clock,
       ],
       github: "https://github.com/niloufarmj/Hobby-Projects",
       hasMedia: false

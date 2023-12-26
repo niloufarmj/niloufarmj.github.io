@@ -47,7 +47,6 @@ function ArtWorksPage() {
   }
 
   useEffect(() => {
-    // Scroll to top when the currentIndex changes
     window.scrollTo({
       top: 0,
       behavior: "smooth",
