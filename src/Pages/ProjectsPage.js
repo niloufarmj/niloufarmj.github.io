@@ -9,9 +9,11 @@ import diceKid from "../Assets/Media/videos/DiceKid.mp4"
 import clock from "../Assets/Media/videos/DigitalClock.mp4"
 import roll from "../Assets/Media/videos/RollaBall.mp4"
 import boost from "../Assets/Media/videos/ProjectBoost.mp4"
+import angry from "../Assets/Media/videos/AngryBirds.mp4"
 
 import museumore from "../Assets/Media/videos/Museumore.mp4"
 import othello from "../Assets/Media/videos/Othello.mp4"
+import othello_AI from "../Assets/Media/videos/Othello-AI.mp4"
 import jetpack from "../Assets/Media/videos/Jetpack.mp4"
 import twoCars from "../Assets/Media/videos/2cars.mp4"
 import bug0 from "../Assets/Media/videos/Bug0.mp4"
@@ -33,7 +35,6 @@ function ProjectsPage() {
     setCurrentIndex(index)
     setAbout(true)
 
-    // Scroll to top of the page
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -85,6 +86,10 @@ function ProjectsPage() {
         {
           type: 'video', 
           src: othello
+        },
+        {
+          type: 'video', 
+          src: othello_AI
         }
       ]
     },
@@ -201,6 +206,7 @@ function ProjectsPage() {
         "• Roll a Ball",
         "• Project Boost",
         "• Car Game",
+        "• Angry Birds",
         "• Digital Clock"
       ],
       videos:[
@@ -208,6 +214,7 @@ function ProjectsPage() {
         roll,
         boost,
         cars,
+        angry,
         clock,
       ],
       github: "https://github.com/niloufarmj/Hobby-Projects",

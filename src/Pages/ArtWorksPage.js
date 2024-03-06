@@ -30,6 +30,8 @@ import oil5 from "../Assets/Media/Oil/5.jpg"
 
 import fox from "../Assets/Media/3D/Fox.mp4"
 import house from "../Assets/Media/3D/House.mp4"
+import plane from "../Assets/Media/3D/Plane.mp4"
+import coin from "../Assets/Media/3D/PishiCoin.mp4"
 
 
 function ArtWorksPage() {
@@ -100,7 +102,9 @@ function ArtWorksPage() {
       onClick: () => menuItemClicked(3),
       videos: [
         fox,
-        house
+        house,
+        plane,
+        coin
       ]
     },
     {

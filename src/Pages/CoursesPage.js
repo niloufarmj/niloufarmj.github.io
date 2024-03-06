@@ -41,7 +41,7 @@ function CoursesPage() {
         "• Flappy Bird",
         "• Breakout",
         "• Match 3",
-        "• Super Mario Bros",
+        "• Super Mario Bros"
       ],
       githubs: [
         "https://github.com/niloufarmj/CS50_Pong",
