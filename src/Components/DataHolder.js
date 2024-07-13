@@ -168,7 +168,9 @@ function DataHolder(params) {
                             <Player  playsInline src={value.src}></Player>
                           </div>
                         )) || <div style={{width: "80%"}}>
-                          <img className="dataholder-img" src={value.src} alt="Media" />
+                          <a href={value.href} target="_blank" rel="noreferrer">
+                            <img className="dataholder-img" src={value.src} alt="Media" />
+                          </a>
                           </div>}
                       </Grid>
                     );

@@ -4,6 +4,10 @@ import DataHolder from "../Components/DataHolder";
 import { useState, useEffect } from "react";
 import { Grid, createTheme, ThemeProvider } from "@mui/material";
 
+import pawQuants from "../Assets/Media/Works/PawQuants.jpeg"
+import qilin from "../Assets/Media/Works/Qilin.jpeg"
+import qpong from "../Assets/Media/Works/QPong.jpeg"
+
 import chandkhaan1 from "../Assets/Media/Works/chandkhaan1.jpg"
 import chandkhaan2 from "../Assets/Media/Works/chandkhaan2.jpg"
 import chandkhaan3 from "../Assets/Media/Works/chandkhaan3.jpg"
@@ -49,16 +53,44 @@ function JobExperiencePage() {
 
   const experienceDatas = [
     {
-      title: "Unity Developer",
+      title: "Game Developer",
       onClick: () => menuItemClicked(0),
+      explanations: [
+        "• Psiket Academy, Sharif University, Tehran, Iran, May 2024 – Present",
+        "• Created various Quantum Games including QPong, Qilin, PawQuants",
+        "• Implemented Quantum rules in educational games",
+        "• Utilized Unity’s platform to design and enhance the user experience.",
+        "• Worked on Projects as Indie Game Maker, with no other teammates"
+      ],
+      hasMedia: true,
+      media: [
+        {
+          type: 'image',
+          src: pawQuants,
+          href: "https://pawQuants.psiket.com"
+        },
+        {
+          type: 'image',
+          src: qpong,
+          href: "https://qpong.psiket.com"
+        },
+        {
+          type: 'image',
+          src: qilin,
+          href: "https://qilin.psiket.com"
+        }
+      ]
+    },
+    {
+      title: "Unity Developer",
+      onClick: () => menuItemClicked(1),
       explanations: [
         "• Studio Rhino, Velenjak, Tehran, Iran, May 2023 – August 2023",
         "• Involved in the creation of 'Chandkhaan', an Android game inspired by 'Teamfight Tactics' from 'League of Legends.'",
         "• Implemented key features including the main menu, animations, combat mechanics, rounds, and tower customization.",
         "• Utilized Unity’s real-time 3D platform to design and enhance the user experience.",
         "• Collaborated with team members through GitHub and ClickUp for efficient project management.",
-        "• Employed SignalRConnection for seamless communication between the client and server of 'Chandkhaan' to build multiplayer.",
-        "• Utilized Unity’s real-time 3D platform to design and enhance the user experience.",
+        "• Employed SignalRConnection for seamless communication between the client and server of 'Chandkhaan' to build multiplayer."
       ],
       hasMedia: true,
       media: [
@@ -82,7 +114,7 @@ function JobExperiencePage() {
     },
     {
       title: "Game Development and Design Internship",
-      onClick: () => menuItemClicked(1),
+      onClick: () => menuItemClicked(2),
       explanations: [
         "• Concealland Studio, Velenjak, Tehran, Iran, July 2022 – Nov 2022",
         "• Learning to design 3D models with 3Ds Max and Blender",
@@ -119,7 +151,7 @@ function JobExperiencePage() {
     },
     {
       title: "Full-Stack Development",
-      onClick: () => menuItemClicked(2),
+      onClick: () => menuItemClicked(3),
       explanations: [
         "• System Group, Vanak, Tehran, Iran, Aug 2021 - Jun 2022",
         "• Building Front-end of Fanoos using Angular and RxJs",
@@ -131,7 +163,7 @@ function JobExperiencePage() {
     },
     {
       title: "Front-end Development Internship",
-      onClick: () => menuItemClicked(3),
+      onClick: () => menuItemClicked(4),
       explanations: [
         "• Walvira Enghelab, Tehran, Iran, Jan 2020 – Oct 2020",
         "• Interned for 4 months, demonstrating exceptional performance, and subsequently promoted to a part-time role, where I contributed for an additional 6 months",
@@ -168,7 +200,7 @@ function JobExperiencePage() {
     },
     {
       title: "Teacher Assistance and Mentorship",
-      onClick: () => menuItemClicked(4),
+      onClick: () => menuItemClicked(5),
       explanations: [
         "• Basic Programming – in charge of challenges and homeworks – Dr. Sadeq Ali-akbari",
         "• Advanced Programming – in charge of homeworks and teaching project fundamentals (MVC arch + javafx) – Dr. Sadeq Ali-Akbari",
