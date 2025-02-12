@@ -56,7 +56,7 @@ function JobExperiencePage() {
       title: "Game Developer",
       onClick: () => menuItemClicked(0),
       explanations: [
-        "• Psiket Academy, Sharif University, Tehran, Iran, May 2024 – Present",
+        "• Psiket Academy, Sharif University, Tehran, Iran, May 2024 – Sep 2024",
         "• Created various Quantum Games including QPong, Qilin, PawQuants",
         "• Implemented Quantum rules in educational games",
         "• Utilized Unity’s platform to design and enhance the user experience.",

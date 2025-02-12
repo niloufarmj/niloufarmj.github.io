@@ -28,7 +28,7 @@ import up from "../Assets/Media/Works/userprofile.png"
 
 function ProjectsPage() {
   const navigate = useNavigate();
-  const [currentIndex, setCurrentIndex] = useState(9);
+  const [currentIndex, setCurrentIndex] = useState(12);
   const [about, setAbout] = useState(true)
 
   const menuItemClicked = (index) => {
@@ -51,8 +51,61 @@ function ProjectsPage() {
 
   const projectDatas = [
     {
-      title: "Museumore",
+      title: "Changing Localized Body Temperature and Thermal Perception in Virtual Reality",
       onClick: () => menuItemClicked(0),
+      explanations: [
+        "Developed a VR environment in Unity and Implemented hand tracking and thermal perception simulation with Meta Quest devices.",
+        "Collected data on hand positions, skin temperature, and survey responses to analyze thermal cues in VR (Prototype)"
+      ],
+      github: "https://github.com/niloufarmj/temperature-vr-effect",
+      hasMedia: true,
+      media: [
+        {
+          type: 'video', 
+          src: museumore
+        }
+      ],
+      
+    },
+    {
+      title: "Shattered Wonderland",
+      onClick: () => menuItemClicked(1),
+      explanations: [
+        "• Developed a game inspired by \"Alice in Wonderland\" with two levels: a platformer and a horror maze, using Unreal Engine, C++, and Unreal's Blueprint",
+        "• Collaborated with a team of 7, utilizing Git for version control, and created design document",
+        "• Designed Level 1, implementing features like save/load game, collectables, platforms, and special platforms, and rigged and animated Alice's character",
+        "• Designed and implemented HUD and UI/UX"
+      ],
+      github: "https://github.com/GameDevProject1/Game-Dev-Project",
+      hasMedia: true,
+      media: [
+        {
+          type: 'video', 
+          src: museumore
+        }
+      ],
+      
+    },
+    {
+      title: "Interactive Sakura Tree",
+      onClick: () => menuItemClicked(2),
+      explanations: [
+        "• Developed a 2D Sakura tree scene using OpenGL, GLFW, and GLAD, as part of coursework for Real-Time Graphics.",
+        "• Implemented dynamic transformations including interactive animations with mouse hover and falling blooms.",
+      ],
+      github: "https://github.com/niloufarmj/FH-OpenGL-HWs/tree/main/src/HW2",
+      hasMedia: true,
+      media: [
+        {
+          type: 'video', 
+          src: museumore
+        }
+      ],
+      
+    },
+    {
+      title: "Museumore",
+      onClick: () => menuItemClicked(3),
       explanations: [
         "• Augmented Reality Web Application For Museums and Galleries",
         "• Designed and developed a clean and modern UI using React",
@@ -73,7 +126,7 @@ function ProjectsPage() {
     },
     {
       title: "Othello Game",
-      onClick: () => menuItemClicked(1),
+      onClick: () => menuItemClicked(4),
       explanations: [
         "• An implementation of an AI player for the board game Othello",
         "• Implemented with Java and JavaFX",
@@ -95,7 +148,7 @@ function ProjectsPage() {
     },
     {
       title: "Reddit Clone",
-      onClick: () => menuItemClicked(2),
+      onClick: () => menuItemClicked(5),
       explanations: [
         "• Implemented a clone of Reddit using React and Express JS for a university Internet Engineering course project",
         "• Collaborated with a teammate via GitHub to develop and maintain the project",
@@ -126,7 +179,7 @@ function ProjectsPage() {
     },
     {
       title: "Wall Fallower Omni Bot",
-      onClick: () => menuItemClicked(3),
+      onClick: () => menuItemClicked(6),
       explanations: [
         "• Omni directional robot proto with a simple wall following controller",
         "• Utilized three main algorithms: bug 0, bug 1 and bug 2",
@@ -151,7 +204,7 @@ function ProjectsPage() {
     },
     {
       title: "Gmail Demo",
-      onClick: () => menuItemClicked(4),
+      onClick: () => menuItemClicked(7),
       explanations: [
         "• Developed a Gmail-like client-server application for the Advanced Programming course at the university, using Java and JavaFX in the MVC architecture",
         "• Designed and implemented the application’s user interface using JavaFX Scene Builder and FXML",
@@ -162,7 +215,7 @@ function ProjectsPage() {
     },
     {
       title: "Jetpack Joyride",
-      onClick: () => menuItemClicked(5),
+      onClick: () => menuItemClicked(8),
       explanations: [
         "• Created a clone of Jetpack Joyride game as university basic programming project using C++ and SBLD (refined version of SDL)",
         "• Implemented dynamic gameplay mechanics, allowing players to control a character equipped with a jetpack",
@@ -181,7 +234,7 @@ function ProjectsPage() {
     },
     {
       title: "Two Cars",
-      onClick: () => menuItemClicked(6),
+      onClick: () => menuItemClicked(9),
       explanations: [
         "• Developed a clone of'Two Cars' game using C++ and the SBDL library as basic programming mini project",
         "• Implemented gameplay mechanics where players control two cars simultaneously to avoid obstacles",
@@ -200,7 +253,7 @@ function ProjectsPage() {
     },
     {
       title: "Hobby Projects",
-      onClick: () => menuItemClicked(7),
+      onClick: () => menuItemClicked(10),
       explanations: [
         "• Dice Kid",
         "• Roll a Ball",
@@ -235,7 +288,7 @@ function ProjectsPage() {
   ];
 
   const menuData = projectDatas.map((value, index) => {
-    if (index < 9) return value;
+    if (index < 12) return value;
     else return undefined;
   });
 
@@ -263,7 +316,7 @@ function ProjectsPage() {
             explanation={projectDatas[currentIndex].explanations}
             github={projectDatas[currentIndex].github}
             videos={projectDatas[currentIndex].videos}
-            opener={ currentIndex === 7 }
+            opener={ currentIndex === 10 }
             hasMedia={projectDatas[currentIndex].hasMedia}
             media={projectDatas[currentIndex].media} 
             about={about}

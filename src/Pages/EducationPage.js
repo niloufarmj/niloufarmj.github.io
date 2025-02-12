@@ -12,7 +12,7 @@ import ili from "../Assets/Media/Diplomas/ili.jpeg"
 
 function EducationPage() {
   const navigate = useNavigate();
-  const [currentIndex, setCurrentIndex] = useState(4);
+  const [currentIndex, setCurrentIndex] = useState(5);
   const [about, setAbout] = useState(true)
 
   const menuItemClicked = (index) => {
@@ -36,8 +36,29 @@ function EducationPage() {
 
   const projectDatas = [
     {
-      title: "Bachelor in Computer Science",
+      title: "Master of Science in Interactive Media",
       onClick: () => menuItemClicked(0),
+      explanations: [
+        "• FH Univeristy of Upper Austria, Hagenburg Campus, Upper Austria, Austria",
+        "• Oct 2024 – Present",
+        "• Specialized in Game Development Track",
+        
+      ],
+      hasMedia: true,
+      media: [
+        {
+          type: "image",
+          src: uniEng
+        },
+        {
+          type: "image",
+          src: uniFa
+        }
+      ]
+    },
+    {
+      title: "Bachelor in Computer Science",
+      onClick: () => menuItemClicked(1),
       explanations: [
         "• Shahid Beheshti University, Velenjak, Tehran, Iran",
         "• Jan 2018 – Dec 2023",
@@ -59,7 +80,7 @@ function EducationPage() {
     },
     {
       title: "Diploma of Mathematics and Physics",
-      onClick: () => menuItemClicked(1),
+      onClick: () => menuItemClicked(2),
       explanations: [
         "• Abou-Ali Sina Highschool, Sattarkhan, Tehran, Iran",
         "• Jan 2016 – Dec 2018",
@@ -79,7 +100,7 @@ function EducationPage() {
     },
     {
       title: "Completion of English Advanced Level ",
-      onClick: () => menuItemClicked(2),
+      onClick: () => menuItemClicked(3),
       explanations: [
         "• Iran Language Institute, Ekbatan, Tehran, Iran",
         "• Jan 2012 – Sep 2016",
@@ -109,7 +130,7 @@ function EducationPage() {
   ];
 
   const menuData = projectDatas.map((value, index) => {
-    if (index < 4) return value;
+    if (index < 5) return value;
     else return undefined;
   });
 
