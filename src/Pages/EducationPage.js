@@ -44,16 +44,9 @@ function EducationPage() {
         "• Specialized in Game Development Track",
         
       ],
-      hasMedia: true,
+      hasMedia: false,
       media: [
-        {
-          type: "image",
-          src: uniEng
-        },
-        {
-          type: "image",
-          src: uniFa
-        }
+        
       ]
     },
     {
