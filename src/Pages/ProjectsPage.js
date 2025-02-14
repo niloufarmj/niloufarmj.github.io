@@ -11,6 +11,10 @@ import roll from "../Assets/Media/videos/RollaBall.mp4"
 import boost from "../Assets/Media/videos/ProjectBoost.mp4"
 import angry from "../Assets/Media/videos/AngryBirds.mp4"
 
+
+import temperature from "../Assets/Media/videos/Temperature.mp4"
+import alice from "../Assets/Media/videos/Alice.mp4"
+import sakura from "../Assets/Media/videos/Sakura.mp4"
 import museumore from "../Assets/Media/videos/Museumore.mp4"
 import othello from "../Assets/Media/videos/Othello.mp4"
 import othello_AI from "../Assets/Media/videos/Othello-AI.mp4"
@@ -54,15 +58,19 @@ function ProjectsPage() {
       title: "Changing Localized Body Temperature and Thermal Perception in Virtual Reality",
       onClick: () => menuItemClicked(0),
       explanations: [
-        "Developed a VR environment in Unity and Implemented hand tracking and thermal perception simulation with Meta Quest devices.",
-        "Collected data on hand positions, skin temperature, and survey responses to analyze thermal cues in VR (Prototype)"
+        "• Developed a VR environment using Unity and Meta Quest devices for realistic hand tracking.",
+        "• Simulated thermal perception with a stylized virtual heater model, manipulating material emission properties to create a sense of warmth.",
+        "• Designed an experimental setup with three phases: left heater off/right heater on, left heater on/right heater off, both heaters off. ",
+        "• Collected data on hand positions, skin temperature, and survey responses using PicoLog software and custom software solutions. ",
+        "• Implemented a user-friendly UI for surveys and guidance, focusing on user comfort and immersion. ",
+        "• Pending real participant testing and data analysis to explore individual differences in thermal perception and broader VR applications."
       ],
       github: "https://github.com/niloufarmj/temperature-vr-effect",
       hasMedia: true,
       media: [
         {
           type: 'video', 
-          src: museumore
+          src: temperature
         }
       ],
       
@@ -81,7 +89,7 @@ function ProjectsPage() {
       media: [
         {
           type: 'video', 
-          src: museumore
+          src: alice
         }
       ],
       
@@ -90,15 +98,18 @@ function ProjectsPage() {
       title: "Interactive Sakura Tree",
       onClick: () => menuItemClicked(2),
       explanations: [
-        "• Developed a 2D Sakura tree scene using OpenGL, GLFW, and GLAD, as part of coursework for Real-Time Graphics.",
-        "• Implemented dynamic transformations including interactive animations with mouse hover and falling blooms.",
+        "• Developed 2D scene using OpenGL, GLFW, and GLAD for rendering and window management. ",
+        "• Created a sakura tree with falling blooms using custom shaders and 2D transformations.",
+        "• Implemented interactive features where hovering the mouse over blooms causes them to rotate. ",
+        "• Utilized GLM for matrix transformations and STB Image for loading textures.",
+        "• Managed bloom animations with random number generation for natural falling effects."
       ],
       github: "https://github.com/niloufarmj/FH-OpenGL-HWs/tree/main/src/HW2",
       hasMedia: true,
       media: [
         {
           type: 'video', 
-          src: museumore
+          src: sakura
         }
       ],
       
