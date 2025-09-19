@@ -32,7 +32,7 @@ import up from "../Assets/Media/Works/userprofile.png"
 
 function ProjectsPage() {
   const navigate = useNavigate();
-  const [currentIndex, setCurrentIndex] = useState(12);
+  const [currentIndex, setCurrentIndex] = useState(14);
   const [about, setAbout] = useState(true)
 
   const menuItemClicked = (index) => {
@@ -55,8 +55,46 @@ function ProjectsPage() {
 
   const projectDatas = [
     {
-      title: "Changing Localized Body Temperature and Thermal Perception in Virtual Reality",
+      title: "Holy Mountain — VR Interactive Environment",
       onClick: () => menuItemClicked(0),
+      explanations: [
+        "• Second-semester project | Solo lead, with faculty reviews",
+        "• Built a VR Alps simulation with an interactive tree lifecycle: collect seeds from dead trees → choose species on an in-world panel → plant → grow → protect.",
+        "• Implemented VR mechanics: inventory, teleport/snap locomotion, and stone-throwing defense; polished in-world UI flows. ",
+        "• Developed AI animal behavior (NavMesh, perception/targeting of saplings) with time-sliced sensing and object pooling to cut CPU spikes; growth pauses/resumes when plants are eaten."
+      ],
+      github: "https://github.com/niloufarmj/Holy_Mountain_VR",
+      hasMedia: true,
+      media: [
+        {
+          type: 'video', 
+          src: ""
+        }
+      ],
+      
+    },
+    {
+      title: "Mars Rover Simulation",
+      onClick: () => menuItemClicked(1),
+      explanations: [
+        "• Implemented the drilling system end-to-end: custom URP shader that creates crater-like holes using procedural textures and runtime parameters (non-destructive—no terrain geometry edits).",
+        "• Orchestrated the arm animation sequence (triggered via input) with staged joint rotations, drill spawn, hole progression, and retraction, synced to shader timelines.",
+        "• Added terrain-aware VFX & particles (dust/debris around contact point) and hooked parameters to the drilling state for consistent visuals. ",
+        "• Profiled and tuned for real-time performance (GPU-friendly material, lean updates, clean state machine)."
+      ],
+      github: "https://github.com/leonhardrobin/mars-rover-simulator",
+      hasMedia: true,
+      media: [
+        {
+          type: 'video', 
+          src: ""
+        }
+      ],
+      
+    },
+    {
+      title: "Changing Localized Body Temperature and Thermal Perception in Virtual Reality",
+      onClick: () => menuItemClicked(2),
       explanations: [
         "• Developed a VR environment using Unity and Meta Quest devices for realistic hand tracking.",
         "• Simulated thermal perception with a stylized virtual heater model, manipulating material emission properties to create a sense of warmth.",
@@ -77,7 +115,7 @@ function ProjectsPage() {
     },
     {
       title: "Shattered Wonderland",
-      onClick: () => menuItemClicked(1),
+      onClick: () => menuItemClicked(3),
       explanations: [
         "• Developed a game inspired by \"Alice in Wonderland\" with two levels: a platformer and a horror maze, using Unreal Engine, C++, and Unreal's Blueprint",
         "• Collaborated with a team of 7, utilizing Git for version control, and created design document",
@@ -96,7 +134,7 @@ function ProjectsPage() {
     },
     {
       title: "Interactive Sakura Tree",
-      onClick: () => menuItemClicked(2),
+      onClick: () => menuItemClicked(4),
       explanations: [
         "• Developed 2D scene using OpenGL, GLFW, and GLAD for rendering and window management. ",
         "• Created a sakura tree with falling blooms using custom shaders and 2D transformations.",
@@ -116,7 +154,7 @@ function ProjectsPage() {
     },
     {
       title: "Museumore",
-      onClick: () => menuItemClicked(3),
+      onClick: () => menuItemClicked(5),
       explanations: [
         "• Augmented Reality Web Application For Museums and Galleries",
         "• Designed and developed a clean and modern UI using React",
@@ -137,7 +175,7 @@ function ProjectsPage() {
     },
     {
       title: "Othello Game",
-      onClick: () => menuItemClicked(4),
+      onClick: () => menuItemClicked(6),
       explanations: [
         "• An implementation of an AI player for the board game Othello",
         "• Implemented with Java and JavaFX",
@@ -159,7 +197,7 @@ function ProjectsPage() {
     },
     {
       title: "Reddit Clone",
-      onClick: () => menuItemClicked(5),
+      onClick: () => menuItemClicked(7),
       explanations: [
         "• Implemented a clone of Reddit using React and Express JS for a university Internet Engineering course project",
         "• Collaborated with a teammate via GitHub to develop and maintain the project",
@@ -190,7 +228,7 @@ function ProjectsPage() {
     },
     {
       title: "Wall Fallower Omni Bot",
-      onClick: () => menuItemClicked(6),
+      onClick: () => menuItemClicked(8),
       explanations: [
         "• Omni directional robot proto with a simple wall following controller",
         "• Utilized three main algorithms: bug 0, bug 1 and bug 2",
@@ -215,7 +253,7 @@ function ProjectsPage() {
     },
     {
       title: "Gmail Demo",
-      onClick: () => menuItemClicked(7),
+      onClick: () => menuItemClicked(9),
       explanations: [
         "• Developed a Gmail-like client-server application for the Advanced Programming course at the university, using Java and JavaFX in the MVC architecture",
         "• Designed and implemented the application’s user interface using JavaFX Scene Builder and FXML",
@@ -226,7 +264,7 @@ function ProjectsPage() {
     },
     {
       title: "Jetpack Joyride",
-      onClick: () => menuItemClicked(8),
+      onClick: () => menuItemClicked(10),
       explanations: [
         "• Created a clone of Jetpack Joyride game as university basic programming project using C++ and SBLD (refined version of SDL)",
         "• Implemented dynamic gameplay mechanics, allowing players to control a character equipped with a jetpack",
@@ -245,7 +283,7 @@ function ProjectsPage() {
     },
     {
       title: "Two Cars",
-      onClick: () => menuItemClicked(9),
+      onClick: () => menuItemClicked(11),
       explanations: [
         "• Developed a clone of'Two Cars' game using C++ and the SBDL library as basic programming mini project",
         "• Implemented gameplay mechanics where players control two cars simultaneously to avoid obstacles",
@@ -264,7 +302,7 @@ function ProjectsPage() {
     },
     {
       title: "Hobby Projects",
-      onClick: () => menuItemClicked(10),
+      onClick: () => menuItemClicked(12),
       explanations: [
         "• Dice Kid",
         "• Roll a Ball",
@@ -299,7 +337,7 @@ function ProjectsPage() {
   ];
 
   const menuData = projectDatas.map((value, index) => {
-    if (index < 12) return value;
+    if (index < 14) return value;
     else return undefined;
   });
 
@@ -327,7 +365,7 @@ function ProjectsPage() {
             explanation={projectDatas[currentIndex].explanations}
             github={projectDatas[currentIndex].github}
             videos={projectDatas[currentIndex].videos}
-            opener={ currentIndex === 10 }
+            opener={ currentIndex === 12 }
             hasMedia={projectDatas[currentIndex].hasMedia}
             media={projectDatas[currentIndex].media} 
             about={about}

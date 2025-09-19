@@ -53,8 +53,40 @@ function JobExperiencePage() {
 
   const experienceDatas = [
     {
-      title: "Game Developer",
+      title: "Unity/Unreal Development Internship",
       onClick: () => menuItemClicked(0),
+      explanations: [
+        "• FreshFX, Salzburg, Austria, July 2025 – Present",
+        "• Prototyped interactive experiences in Unity and Unreal Engine with a focus on real-time avatars and XR/3D UX.",
+        "• Built a conversational avatar in Unreal that answers user prompts via a Python RAG backend (socket/HTTP bridge), including state logic for listening → answering → idle and clean Blueprint modules.",
+        "• Unity: shipped features for a public interactive application (scene/state flow, polished UI, media handling/export, performance tuning) without disclosing project specifics.",
+        "• Led AI-assisted content pipelines: evaluated multiple assistants/models and iterated prompt design for image and video generation used in apps and advertising; set up batch runs and quality checks to meet brand constraints."
+      ],
+      hasMedia: true,
+      media: [
+        {
+          type: 'image',
+          src: "",
+          href: ""
+        }
+      ]
+    },
+    {
+      title: "Tutoring",
+      onClick: () => menuItemClicked(1),
+      explanations: [
+        "• FH Upper Austria, Hagenberg, Austria, March 2025 – June 2025",
+        "• Mixed Reality, Object-Oriented Programming, Online Multimedia, Digital Signal Processing",
+        "• Graded programming and theory assignments with standardized rubrics; delivered actionable, bilingual feedback (EN/DE) and consistent marking across cohorts.",
+        "• Prepared sample solutions, starter templates, and test harnesses (JUnit, MATLAB scripts, small Python checks) to validate correctness and edge cases.",
+        "• Supported Mixed Reality coursework: XR rig setup, input/locomotion patterns, performance profiling, build issues, and version control (Git) hygiene."
+      ],
+      hasMedia: false,
+      
+    },
+    {
+      title: "Game Developer",
+      onClick: () => menuItemClicked(2),
       explanations: [
         "• Psiket Academy, Sharif University, Tehran, Iran, May 2024 – Sep 2024",
         "• Created various Quantum Games including QPong, Qilin, PawQuants",
@@ -83,7 +115,7 @@ function JobExperiencePage() {
     },
     {
       title: "Unity Developer",
-      onClick: () => menuItemClicked(1),
+      onClick: () => menuItemClicked(3),
       explanations: [
         "• Studio Rhino, Velenjak, Tehran, Iran, May 2023 – August 2023",
         "• Involved in the creation of 'Chandkhaan', an Android game inspired by 'Teamfight Tactics' from 'League of Legends.'",
@@ -114,7 +146,7 @@ function JobExperiencePage() {
     },
     {
       title: "Game Development and Design Internship",
-      onClick: () => menuItemClicked(2),
+      onClick: () => menuItemClicked(4),
       explanations: [
         "• Concealland Studio, Velenjak, Tehran, Iran, July 2022 – Nov 2022",
         "• Learning to design 3D models with 3Ds Max and Blender",
@@ -151,7 +183,7 @@ function JobExperiencePage() {
     },
     {
       title: "Full-Stack Development",
-      onClick: () => menuItemClicked(3),
+      onClick: () => menuItemClicked(5),
       explanations: [
         "• System Group, Vanak, Tehran, Iran, Aug 2021 - Jun 2022",
         "• Building Front-end of Fanoos using Angular and RxJs",
@@ -163,7 +195,7 @@ function JobExperiencePage() {
     },
     {
       title: "Front-end Development Internship",
-      onClick: () => menuItemClicked(4),
+      onClick: () => menuItemClicked(6),
       explanations: [
         "• Walvira Enghelab, Tehran, Iran, Jan 2020 – Oct 2020",
         "• Interned for 4 months, demonstrating exceptional performance, and subsequently promoted to a part-time role, where I contributed for an additional 6 months",
@@ -200,7 +232,7 @@ function JobExperiencePage() {
     },
     {
       title: "Teacher Assistance and Mentorship",
-      onClick: () => menuItemClicked(5),
+      onClick: () => menuItemClicked(7),
       explanations: [
         "• Basic Programming – in charge of challenges and homeworks – Dr. Sadeq Ali-akbari",
         "• Advanced Programming – in charge of homeworks and teaching project fundamentals (MVC arch + javafx) – Dr. Sadeq Ali-Akbari",
