@@ -51,8 +51,8 @@ function HomePage() {
     title: "Hi There! This is Niloufar.",
     photo: myPhoto,
     explanation: [
-      "I'm a 23-year-old computer engineering graduate from Iran, deeply passionate about game development, art, and design. With a strong background in front-end development and a keen eye for aesthetics, I bring a unique blend of technical expertise and artistic flair to my creations. ",
-      "I love crafting captivating games and immersive experiences that marry pixel-perfect visuals with engaging gameplay. My journey is driven by a commitment to continuous learning and exploring new frontiers in game development, AR, and digital art. ",
+      "I'm a 25-year-old computer engineering graduate from Iran, currently studying interactive media in Upper Austria, deeply passionate about game development, art, and design. With a strong background in front-end development and a keen eye for aesthetics, I bring a unique blend of technical expertise and artistic flair to my creations. ",
+      "I love crafting captivating games and immersive experiences that marry pixel-perfect visuals with engaging gameplay. My journey is driven by a commitment to continuous learning and exploring new frontiers in game development, AR, VR, and digital art. ",
       "Let's embark on an exhilarating adventure together, where we can leverage my diverse skill set and unwavering passion to create magic through pixels, code, and boundless imagination.",
     ],
   };

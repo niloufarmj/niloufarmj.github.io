@@ -12,6 +12,8 @@ import boost from "../Assets/Media/videos/ProjectBoost.mp4"
 import angry from "../Assets/Media/videos/AngryBirds.mp4"
 
 
+import mountain from "../Assets/Media/videos/HolyMountain.mp4"
+import rover from "../Assets/Media/videos/MarsRover.mp4"
 import temperature from "../Assets/Media/videos/Temperature.mp4"
 import alice from "../Assets/Media/videos/Alice.mp4"
 import sakura from "../Assets/Media/videos/Sakura.mp4"
@@ -68,7 +70,7 @@ function ProjectsPage() {
       media: [
         {
           type: 'video', 
-          src: ""
+          src: mountain
         }
       ],
       
@@ -87,7 +89,7 @@ function ProjectsPage() {
       media: [
         {
           type: 'video', 
-          src: ""
+          src: rover
         }
       ],
       

@@ -13,8 +13,8 @@ import chandkhaan2 from "../Assets/Media/Works/chandkhaan2.jpg"
 import chandkhaan3 from "../Assets/Media/Works/chandkhaan3.jpg"
 import chandkhaan4 from "../Assets/Media/Works/chandkhaan4.jpg"
 
-// import ropart1 from "../Assets/Media/videos/Ropart1.mp4"
-// import ropart2 from "../Assets/Media/videos/Ropart2.mp4"
+import ropart1 from "../Assets/Media/videos/Ropart1.mp4"
+import ropart2 from "../Assets/Media/videos/Ropart2.mp4"
 import ropart3 from "../Assets/Media/videos/Ropart3.mp4"
 import under from "../Assets/Media/videos/UnderGround.mp4"
 import mapna1 from "../Assets/Media/Works/mapna1.jpg"
@@ -57,6 +57,7 @@ function JobExperiencePage() {
       onClick: () => menuItemClicked(0),
       explanations: [
         "• FreshFX, Salzburg, Austria, July 2025 – Present",
+        "• https://www.freshfx.at/",
         "• Prototyped interactive experiences in Unity and Unreal Engine with a focus on real-time avatars and XR/3D UX.",
         "• Built a conversational avatar in Unreal that answers user prompts via a Python RAG backend (socket/HTTP bridge), including state logic for listening → answering → idle and clean Blueprint modules.",
         "• Unity: shipped features for a public interactive application (scene/state flow, polished UI, media handling/export, performance tuning) without disclosing project specifics.",
@@ -76,6 +77,7 @@ function JobExperiencePage() {
       onClick: () => menuItemClicked(1),
       explanations: [
         "• FH Upper Austria, Hagenberg, Austria, March 2025 – June 2025",
+        "• https://fh-ooe.at/",
         "• Mixed Reality, Object-Oriented Programming, Online Multimedia, Digital Signal Processing",
         "• Graded programming and theory assignments with standardized rubrics; delivered actionable, bilingual feedback (EN/DE) and consistent marking across cohorts.",
         "• Prepared sample solutions, starter templates, and test harnesses (JUnit, MATLAB scripts, small Python checks) to validate correctness and edge cases.",
@@ -89,6 +91,7 @@ function JobExperiencePage() {
       onClick: () => menuItemClicked(2),
       explanations: [
         "• Psiket Academy, Sharif University, Tehran, Iran, May 2024 – Sep 2024",
+        "• https://psiket.com/qgame",
         "• Created various Quantum Games including QPong, Qilin, PawQuants",
         "• Implemented Quantum rules in educational games",
         "• Utilized Unity’s platform to design and enhance the user experience.",
@@ -118,6 +121,7 @@ function JobExperiencePage() {
       onClick: () => menuItemClicked(3),
       explanations: [
         "• Studio Rhino, Velenjak, Tehran, Iran, May 2023 – August 2023",
+        "• https://www.playloh.com/",
         "• Involved in the creation of 'Chandkhaan', an Android game inspired by 'Teamfight Tactics' from 'League of Legends.'",
         "• Implemented key features including the main menu, animations, combat mechanics, rounds, and tower customization.",
         "• Utilized Unity’s real-time 3D platform to design and enhance the user experience.",
@@ -155,14 +159,14 @@ function JobExperiencePage() {
       ],
       hasMedia: true,
       media: [
-        // {
-        //   type: 'video',
-        //   src: ropart1
-        // },
-        // {
-        //   type: 'video',
-        //   src: ropart2
-        // },
+        {
+           type: 'video',
+           src: ropart1
+        },
+        {
+          type: 'video',
+          src: ropart2
+        },
         {
           type: 'video',
           src: ropart3
@@ -186,6 +190,7 @@ function JobExperiencePage() {
       onClick: () => menuItemClicked(5),
       explanations: [
         "• System Group, Vanak, Tehran, Iran, Aug 2021 - Jun 2022",
+        "• https://en.systemgroup.net/",
         "• Building Front-end of Fanoos using Angular and RxJs",
         "• Refactoring Back-end of Rahkaran to communicate with front-end using C# .Net",
         "• Planning and collaborating with teammates using Scrum and Skype for Business",
@@ -198,6 +203,7 @@ function JobExperiencePage() {
       onClick: () => menuItemClicked(6),
       explanations: [
         "• Walvira Enghelab, Tehran, Iran, Jan 2020 – Oct 2020",
+        "• https://walvira.com/",
         "• Interned for 4 months, demonstrating exceptional performance, and subsequently promoted to a part-time role, where I contributed for an additional 6 months",
         "• Designed and developed dynamic and responsive websites using HTML, CSS, JavaScript and jQuery",
         "• Worked with REST APIs to retrieve and display data from databases",
