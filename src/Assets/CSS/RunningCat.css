@@ -1,0 +1,63 @@
+.running-cat-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.cat-runner {
+  position: absolute;
+  top: 16px;
+  left: -80px;
+  animation: cat-traverse 14s linear infinite;
+}
+
+.cat-body {
+  display: inline-block;
+  animation: cat-bob 0.22s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+  filter: drop-shadow(0 0 6px rgba(164, 46, 207, 0.6));
+}
+
+@keyframes cat-traverse {
+  0%   { left: -80px;             transform: scaleX(1); }
+  49%  { left: calc(100% + 80px); transform: scaleX(1); }
+  50%  { left: calc(100% + 80px); transform: scaleX(-1); }
+  99%  { left: -80px;             transform: scaleX(-1); }
+  100% { left: -80px;             transform: scaleX(1); }
+}
+
+@keyframes cat-bob {
+  from { transform: translateY(0px) rotate(-2deg); }
+  to   { transform: translateY(-5px) rotate(2deg); }
+}
+
+/* Leg swing animations */
+.leg-fl { animation: leg-front 0.22s ease-in-out infinite alternate; transform-origin: top center; }
+.leg-bl { animation: leg-back  0.22s ease-in-out infinite alternate-reverse; transform-origin: top center; }
+.leg-fr { animation: leg-front 0.22s ease-in-out infinite alternate-reverse; transform-origin: top center; }
+.leg-br { animation: leg-back  0.22s ease-in-out infinite alternate; transform-origin: top center; }
+
+@keyframes leg-front {
+  from { transform: rotate(-18deg); }
+  to   { transform: rotate(18deg); }
+}
+
+@keyframes leg-back {
+  from { transform: rotate(12deg); }
+  to   { transform: rotate(-22deg); }
+}
+
+.tail-anim {
+  animation: tail-wag 0.4s ease-in-out infinite alternate;
+  transform-origin: 0% 50%;
+}
+
+@keyframes tail-wag {
+  from { transform: rotate(-15deg); }
+  to   { transform: rotate(15deg); }
+}

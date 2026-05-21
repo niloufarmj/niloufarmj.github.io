@@ -10,6 +10,10 @@
     }
 }
 
+.menu-title {
+    white-space: nowrap;
+}
+
 .menu-wrapper {
     font-size: 18px;
     position: relative;
@@ -27,6 +31,12 @@
     line-height: 1.5;
     text-decoration: none;
     display: block;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+.menu-item:hover {
+    color: #fff;
 }
 
 .menu-item :hover {
@@ -39,6 +49,12 @@
     transition: all .3s ease-in-out;
     display: inline-block;
     position: relative;
+    white-space: nowrap;
+}
+
+.menu-item-span:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(47, 140, 255, 0.7), 0 0 20px rgba(164, 46, 207, 0.4);
 }
 
 .menu-item-span:before {

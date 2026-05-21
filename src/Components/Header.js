@@ -22,7 +22,7 @@ function Header() {
   return (
     <>
       <div className="header">
-        <img className="logo" width="60px" height="60px" src={logo} alt="logo"/>
+        <img className="logo" width="120px" height="120px" src={logo} alt="logo"/>
         <div className="header-right">
           <a
             href="https://www.github.com/niloufarmj"
@@ -32,7 +32,7 @@ function Header() {
             target="_blank"
             rel="noreferrer"
           >
-            <img width="40px" height="40px" src={github} alt="github"/>
+            <img width="80px" height="80px" src={github} alt="github"/>
           </a>
           <a
             href="https://www.linkedin.com/in/niloufar-moradi-jam/"
@@ -42,7 +42,7 @@ function Header() {
             target="_blank"
             rel="noreferrer"
           >
-            <img width="40px" height="40px" src={linkedin} alt="linkedin" />
+            <img width="80px" height="80px" src={linkedin} alt="linkedin" />
           </a>
           {/*
           <a
@@ -53,7 +53,7 @@ function Header() {
             target="_blank"
             rel="noreferrer"
           >
-            <img width="40px" height="40px" src={quera} alt="quera" />
+            <img width="80px" height="80px" src={quera} alt="quera" />
           </a>
           */}
           <a
@@ -64,7 +64,7 @@ function Header() {
             target="_blank"
             rel="noreferrer"
           >
-            <img width="40px" height="40px" src={medium} alt="medium" />
+            <img width="80px" height="80px" src={medium} alt="medium" />
           </a>
           <a
             href="https://youtube.com/@NiloufarMJ?si=zLUjRpunvuK3EQFs"
@@ -74,7 +74,7 @@ function Header() {
             target="_blank"
             rel="noreferrer"
           >
-            <img width="40px" height="40px" src={youtube} alt="youtube" />
+            <img width="80px" height="80px" src={youtube} alt="youtube" />
           </a>
         </div>
       </div>

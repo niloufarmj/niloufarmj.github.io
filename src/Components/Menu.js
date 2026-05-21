@@ -7,7 +7,7 @@ function Menu(params) {
     <>
       <Grid item xs={12} sm={12} md={5} lg={params.lg != null ? params.lg : 4} xl={4} custom={5}>
         <div style={{ paddingLeft:"10%", paddingRight:"10%" }}>
-          <h1>{params.title}</h1>
+          <h1 className="menu-title">{params.title}</h1>
           <div>
             <svg
               width="50px"

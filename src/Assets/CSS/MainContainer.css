@@ -4,8 +4,10 @@
 }
 
 .inner-container {
-  top: -300px;
-  padding: 3%;
+  top: -300px; /* Kept from your original setup */
+  padding: 3% 1%;
+  position: relative; /* CRITICAL: Allows children to use z-index positioning */
+  z-index: 2;
 }
 
 .main-container .main-container-inner .inner-container {
@@ -16,7 +18,24 @@
   border-radius: 5px;
   flex-wrap: wrap;
   flex-basis: 100%;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make sure your interactive page content sits clearly on top */
+.page-content {
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative; /* Allows z-index to activate */
+  z-index: 10; /* Cleanly lifts your photo and menu above the SVG layer background */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.page-content::-webkit-scrollbar {
+  display: none;
 }
 
 .center {
@@ -42,9 +61,20 @@
 }
 
 @media screen and (min-width: 900px) {
-  .main-container .main-container-inner {
-    max-height: 791px;
+  .main-container {
     height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-bottom: 5%;
+  }
+
+  .main-container .main-container-inner {
+    height: 100%;
+    max-height: none;
+  }
+
+  .main-container .main-container-inner .inner-container {
+    height: 100%;
   }
 }
 

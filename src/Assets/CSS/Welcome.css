@@ -1,75 +1,199 @@
+/* ── Home page wrapper ── */
+.home-content {
+    padding: 0px 12px 0;
+}
+
+/* ── Hero row: photo left, name/tagline right ── */
+.home-hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 0 8px;
+    flex-wrap: wrap;
+}
+
+.home-hero-text {
+    flex: 1;
+    min-width: 155px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    
+}
+
+.home-name {
+    color: whitesmoke;
+    font-size: clamp(38px, 5vw, 70px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+    margin-left: 20px;
+}
+
+.home-tagline {
+    color: var(--grad-1);
+    font-size: clamp(21px, 3vw, 30px);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    min-height: 36px;
+    margin-left: 20px;
+}
+
+/* ── Bio text (DataHolder pages — other pages only) ── */
+.body-intro {
+    font-weight: 100;
+    line-height: 1.65;
+    font-size: 17px;
+    color: hsl(273, 4%, 58%);
+    display: block;
+    position: relative;
+    margin-top: 16px;
+    padding-left: 30px;
+}
+
+.body-intro::before {
+    content: " ";
+    width: 2px;
+    background: linear-gradient(0deg, var(--grad-2) 0%, var(--grad-1) 100%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.body-intro p {
+    margin-bottom: 14px;
+}
+
+/* ── Home page bio (larger font, word-hover capable) ── */
+.home-bio {
+    font-weight: 100;
+    line-height: 1.65;
+    font-size: 22px;
+    color: hsl(273, 4%, 58%);
+    display: block;
+    position: relative;
+    margin-top: 16px;
+    padding-left: 30px;
+}
+
+.home-bio::before {
+    content: " ";
+    width: 2px;
+    background: linear-gradient(0deg, var(--grad-2) 0%, var(--grad-1) 100%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.home-bio p {
+    margin-bottom: 22px;
+    overflow: visible;
+    line-height: 2.2;  /* extra vertical room for the wave scale effect */
+}
+
+/* ── Bio word hover glow ── */
+.bio-word {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.18s ease, text-shadow 0.18s ease, color 0.18s ease;
+    cursor: default;
+}
+
+.bio-word:hover {
+    transform: scale(2);
+    z-index: 50;
+    color: white;
+    text-shadow:
+        0 0 6px rgba(255, 105, 180, 1),
+        0 0 15px rgba(255, 105, 180, 0.8),
+        0 0 30px rgba(47, 140, 255, 0.8),
+        0 0 50px rgba(164, 46, 207, 0.6),
+        0 0 80px rgba(47, 140, 255, 0.3);
+}
+
+/* ── Profile photo ── */
+.my-photo {
+    width: clamp(130px, 25vw, 360px);
+    height: clamp(130px, 25vw, 360px);
+    object-fit: cover;
+    border: 2px solid rgb(164, 46, 207);
+    border-radius: 50%;
+    padding: 4px;
+    display: block;
+    box-shadow:
+        0 0 0 2px rgb(164, 46, 207),
+        0 0 20px rgba(164, 46, 207, 0.35),
+        0 0 50px rgba(47, 140, 255, 0.15);
+    animation: photo-pulse 3.5s ease-in-out infinite;
+    transition: transform 0.15s ease-out;
+    flex-shrink: 0;
+}
+
+.photo-wrapper {
+    perspective: 600px;
+    display: inline-block;
+    cursor: default;
+    flex-shrink: 0;
+}
+
+.photo-tilt {
+    display: inline-block;
+    border-radius: 50%;
+    transition: transform 0.15s ease-out;
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 600px) {
+    .home-bio {
+        font-size: 16px;
+        margin-right: 16px;
+    }
+
+    .body-intro {
+        font-size: 15px;
+        margin-right: 16px;
+    }
+}
+
+/* clamp() handles responsive sizing — no fixed breakpoints needed */
+
+/* ── DataHolder legacy (other pages) ── */
 .main-message {
     display: inline-block;
+    transition: transform 0.3s ease;
 }
 
 .main-intro {
     color: whitesmoke;
-    font-size: 70px;
+    font-size: 50px;
     padding-left: 20px;
     display: flex;
-    align-items: center; 
-    text-align: "justify";
-    text-justify: "inter-word";
+    align-items: center;
 }
 
 @media screen and (max-width: 1095px) {
-    .main-intro {
-        font-size: 60px;
-    }
-    .my-photo {
-        margin-top: 20px;
-    }
-    .title {
-        padding-top: 50px;
-    }
+    .main-intro { font-size: 42px; }
 }
 
 @media screen and (max-width: 500px) {
     .main-intro {
-        font-size: 50px;
-    }
-
-    .main-intro {
+        font-size: 34px;
         display: block;
     }
-
-    .my-photo {
-        margin-left: 0px !important;
-        margin-top: 20px;
-    }
-
-    .body-intro {
-        margin-right: 30px;
-    }
 }
 
-.body-intro {
-    margin-left: 30px;
-    font-size: .9em;
-    font-weight: 100;
-    line-height: 1.6;
-    font-size: 20px;
-    color: hsl(273, 4%, 55%);
-    display: block;
-    position: relative;
-    margin-top: 5%;
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.body-intro ::before {
-    content: " ";
-    width: 2px;
-    background: linear-gradient(0deg,var(--grad-2)0%,var(--grad-1)100%);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -30px;
+.dataholder-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
-
-.my-photo {
-    
-    width: 250px;
-    border: 2px solid rgb(164, 46, 207);
-    border-radius: 50%;
-    padding: 4px;
-}
-

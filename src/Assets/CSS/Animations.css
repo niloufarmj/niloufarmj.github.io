@@ -1,0 +1,237 @@
+/* =============================================
+   SCROLL REVEAL
+   ============================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.55s; }
+
+
+/* =============================================
+   FLOATING BACKGROUND PARTICLES
+   ============================================= */
+@keyframes float-particle {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.6);
+    opacity: 0;
+  }
+  8% { opacity: 0.55; }
+  90% { opacity: 0.2; }
+  100% {
+    transform: translateY(-100vh) rotate(360deg) scale(0.3);
+    opacity: 0;
+  }
+}
+
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+  animation: float-particle linear infinite;
+}
+
+/* Sparkle variant */
+@keyframes sparkle {
+  0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+  50%       { transform: scale(1) rotate(180deg); opacity: 0.8; }
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: sparkle ease-in-out infinite;
+  pointer-events: none;
+}
+
+
+/* =============================================
+   PHOTO GLOW + 3D TILT
+   ============================================= */
+.photo-wrapper {
+  perspective: 600px;
+  display: inline-block;
+}
+
+.photo-tilt {
+  transition: transform 0.15s ease-out;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.my-photo {
+  display: block;
+  width: 220px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow:
+    0 0 0 2px rgb(164, 46, 207),
+    0 0 20px rgba(164, 46, 207, 0.35),
+    0 0 50px rgba(47, 140, 255, 0.15);
+  animation: photo-pulse 3.5s ease-in-out infinite;
+  transition: transform 0.15s ease-out;
+}
+
+@keyframes photo-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 2px rgb(164, 46, 207),
+      0 0 20px rgba(164, 46, 207, 0.35),
+      0 0 50px rgba(47, 140, 255, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 0 3px rgb(47, 140, 255),
+      0 0 35px rgba(164, 46, 207, 0.6),
+      0 0 70px rgba(47, 140, 255, 0.3);
+  }
+}
+
+
+/* =============================================
+   GRADIENT BORDER CORNERS — animated pulse
+   ============================================= */
+@keyframes corner-glow {
+  0%, 100% { opacity: 0.75; filter: drop-shadow(0 0 4px rgba(47, 140, 255, 0.3)); }
+  50%       { opacity: 1;    filter: drop-shadow(0 0 12px rgba(164, 46, 207, 0.6)); }
+}
+
+.svg svg {
+  animation: corner-glow 4s ease-in-out infinite;
+}
+
+
+/* =============================================
+   MENU ITEM — glowing underline on hover
+   ============================================= */
+.menu-item-span:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(47, 140, 255, 0.7);
+}
+
+
+/* =============================================
+   TITLE GRADIENT SHIMMER
+   ============================================= */
+.title-shimmer {
+  background: linear-gradient(
+    90deg,
+    #fff 20%,
+    var(--grad-1) 40%,
+    var(--grad-2) 60%,
+    #fff 80%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  from { background-position: 200% center; }
+  to   { background-position: -200% center; }
+}
+
+
+/* =============================================
+   TYPEWRITER CURSOR BLINK
+   ============================================= */
+.type-cursor {
+  display: inline-block;
+  width: 3px;
+  background: var(--grad-1);
+  animation: blink 0.8s step-end infinite;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+
+/* =============================================
+   PROJECT / CONTENT CARDS — subtle hover lift
+   ============================================= */
+.main-message {
+  transition: transform 0.3s ease;
+}
+
+.main-message:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =============================================
+   NEON GLOW BADGE  (skill tags, etc.)
+   ============================================= */
+@keyframes badge-glow {
+  0%, 100% { box-shadow: 0 0 6px rgba(47, 140, 255, 0.3); }
+  50%       { box-shadow: 0 0 14px rgba(164, 46, 207, 0.6); }
+}
+
+.neon-badge {
+  animation: badge-glow 2.5s ease-in-out infinite;
+}
+
+
+/* =============================================
+   PAGE ENTER TRANSITION
+   ============================================= */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-enter {
+  animation: page-enter 0.5s ease forwards;
+}

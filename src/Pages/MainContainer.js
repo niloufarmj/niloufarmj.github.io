@@ -4,17 +4,17 @@ import Footer from "../Components/Footer";
 import EducationPage from "./EducationPage";
 import JobExperiencePage from "./JobExperiencePage";
 import ProjectsPage from "./ProjectsPage";
-import SkillsPage from "./SkillsPage"
+import SkillsPage from "./SkillsPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "../Assets/CSS/MainContainer.css";
+import "../Assets/CSS/Animations.css";
 import { Grid } from "@mui/material";
 import CoursesPage from "./CoursesPage";
 import ArtWorksPage from "./ArtWorksPage";
-
 function MainContainer() {
   return (
     <>
-    <Grid></Grid>
+      <Grid></Grid>
       <div className="main-container">
         <div className="main-container-inner">
           <div className="svg">
@@ -43,17 +43,19 @@ function MainContainer() {
 
           <div className="inner-container">
             <Header />
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/education" element={<EducationPage />} />
-                <Route path="/courses" element={<CoursesPage />} />
-                <Route path="/workexperience" element={<JobExperiencePage />} />
-                <Route path="/projects" element={<ProjectsPage />} />
-                <Route path="/skills" element={<SkillsPage />} />
-                <Route path="/artwork" element={<ArtWorksPage />} />
-              </Routes>
-            </BrowserRouter>
+            <div className="page-content">
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/education" element={<EducationPage />} />
+                  <Route path="/courses" element={<CoursesPage />} />
+                  <Route path="/workexperience" element={<JobExperiencePage />} />
+                  <Route path="/projects" element={<ProjectsPage />} />
+                  <Route path="/skills" element={<SkillsPage />} />
+                  <Route path="/artwork" element={<ArtWorksPage />} />
+                </Routes>
+              </BrowserRouter>
+            </div>
             <Footer />
 
             <div className="svg">
