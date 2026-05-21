@@ -117,8 +117,9 @@
 
 /* ── Profile photo ── */
 .my-photo {
-    width: clamp(130px, 25vw, 360px);
-    height: clamp(130px, 25vw, 360px);
+    margin-top: 20px;
+    width: clamp(100px, 21vw, 300px);
+    height: clamp(100px, 21vw, 300px);
     object-fit: cover;
     border: 2px solid rgb(164, 46, 207);
     border-radius: 50%;

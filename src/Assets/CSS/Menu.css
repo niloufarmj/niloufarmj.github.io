@@ -15,7 +15,7 @@
 }
 
 .menu-wrapper {
-    font-size: 18px;
+    font-size: 22px;
     position: relative;
     display: block;
     top: -60px;
@@ -42,7 +42,7 @@
 .menu-item :hover {
     scale: 1.07;
     letter-spacing: 0.7px;
-    margin-left: 4px;
+    margin-left: 6px;
 }
 
 .menu-item-span {

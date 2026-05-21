@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { Player } from "video-react";
 import "video-react/dist/video-react.css";
@@ -274,6 +274,88 @@ const PROJECTS = [
   },
 ];
 
+/* ── Star burst on button click ── */
+function StarBurst({ x, y, onDone }) {
+  useEffect(() => {
+    const t = setTimeout(onDone, 750);
+    return () => clearTimeout(t);
+  }, [onDone]);
+
+  const stars = useMemo(() => Array.from({ length: 6 }, (_, i) => {
+    const angle = (i / 6) * 360 + (Math.random() - 0.5) * 25;
+    const dist  = 35 + Math.random() * 45;
+    const rad   = (angle * Math.PI) / 180;
+    return { endX: Math.cos(rad) * dist, endY: Math.sin(rad) * dist,
+             size: 7 + Math.random() * 6, delay: Math.random() * 60 };
+  }), []);
+
+  return createPortal(
+    <div style={{ position: "fixed", left: x, top: y, pointerEvents: "none", zIndex: 9999 }}>
+      {stars.map((s, i) => (
+        <div key={i} className="star-particle" style={{
+          position: "absolute", width: s.size, height: s.size,
+          left: -s.size / 2, top: -s.size / 2,
+          background: "#ffffff",
+          boxShadow: "0 0 6px 2px rgba(47,140,255,0.9), 0 0 14px 4px rgba(164,46,207,0.6)",
+          "--end-x": `${s.endX}px`, "--end-y": `${s.endY}px`,
+          animationDelay: `${s.delay}ms`,
+        }} />
+      ))}
+    </div>,
+    document.body
+  );
+}
+
+/* ── Word-wave hover effect (same as home bio) ── */
+function BulletText({ text }) {
+  const [hoveredIdx, setHoveredIdx] = useState(null);
+  const words = text.split(" ");
+  const GLOW = "0 0 6px rgba(255,105,180,1), 0 0 15px rgba(255,105,180,0.8), 0 0 30px rgba(47,140,255,0.8)";
+
+  return (
+    <>
+      {words.flatMap((word, i) => {
+        const dist = hoveredIdx !== null ? Math.abs(i - hoveredIdx) : Infinity;
+        let scale = 1, ty = 0, shadow = "none", color = "inherit", zIndex = "auto";
+        if      (dist === 0) { scale = 1.08; ty = -3; shadow = GLOW; color = "white"; zIndex = 50; }
+        else if (dist === 1) { scale = 0.9;  ty = -1.5; shadow = "0 0 6px rgba(47,140,255,0.2)"; zIndex = 20; }
+        else if (dist === 2) { scale = 0.97; ty = -0.5; zIndex = 10; }
+        const span = (
+          <span key={i} style={{
+            display: "inline-block", position: "relative", cursor: "default",
+            transition: "transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), text-shadow 0.25s ease, color 0.25s ease",
+            transform: `scale(${scale}) translateY(${ty}px)`,
+            textShadow: shadow, color, zIndex, margin: "0 3px",
+          }}
+            onMouseEnter={() => setHoveredIdx(i)}
+            onMouseLeave={() => setHoveredIdx(null)}
+          >{word}</span>
+        );
+        return i < words.length - 1 ? [span, " "] : [span];
+      })}
+    </>
+  );
+}
+
+/* ── 3-D tilt wrapper + profile-photo border/glow/pulse ── */
+function TiltFrame({ children, onClick }) {
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const move = (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    setTilt({
+      x: ((e.clientX - r.left  - r.width  / 2) / r.width)  * 12,
+      y: ((e.clientY - r.top   - r.height / 2) / r.height) * -12,
+    });
+  };
+  return (
+    <div className="tilt-frame" onMouseMove={move} onMouseLeave={() => setTilt({ x: 0, y: 0 })} onClick={onClick}>
+      <div style={{ transform: `perspective(600px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`, transition: "transform 0.15s ease-out" }}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
 /* ── Modal hobby accordion item ── */
 function ModalHobbyItem({ item }) {
   const [open, setOpen] = useState(false);
@@ -348,7 +430,9 @@ function ProjectModal({ project, onClose }) {
             {project.explanations && project.explanations.length > 0 && (
               <div className="modal-bullets">
                 {project.explanations.map((text, i) => (
-                  <p key={i}>{text}</p>
+                  <p key={i} style={{ lineHeight: 2.1, overflow: "visible" }}>
+                    <BulletText text={text} />
+                  </p>
                 ))}
               </div>
             )}
@@ -365,22 +449,14 @@ function ProjectModal({ project, onClose }) {
               <div className="modal-media-grid">
                 {project.media.map((item, i) => (
                   <div key={i} className="modal-media-item">
-                    {item.type === "video" ? (
-                      <Player playsInline src={item.src} />
-                    ) : (
-                      <img
-                        src={item.src}
-                        alt={`${project.title} ${i + 1}`}
-                        onClick={() => setFullscreenItem(item)}
-                      />
-                    )}
-                    <button
-                      className="media-expand-btn"
-                      title="View fullscreen"
-                      onClick={() => setFullscreenItem(item)}
-                    >
-                      ⛶
-                    </button>
+                    <TiltFrame onClick={() => setFullscreenItem(item)}>
+                      {item.type === "video" ? (
+                        <Player playsInline src={item.src} className="project-media" />
+                      ) : (
+                        <img src={item.src} alt={`${project.title} ${i + 1}`} className="project-media" />
+                      )}
+                    </TiltFrame>
+                    <button className="media-expand-btn" title="View fullscreen" onClick={() => setFullscreenItem(item)}>⛶</button>
                   </div>
                 ))}
               </div>
@@ -417,34 +493,22 @@ function CarouselPreview({ project }) {
     const first = project.media[0];
     if (first.type === "video") {
       return (
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          src={first.src}
-          className="carousel-preview-video"
-        />
+        <TiltFrame>
+          <video autoPlay muted loop playsInline src={first.src} className="project-media carousel-preview-video" />
+        </TiltFrame>
       );
     }
     return (
-      <img
-        src={first.src}
-        alt={project.title}
-        className="carousel-preview-img"
-      />
+      <TiltFrame>
+        <img src={first.src} alt={project.title} className="project-media carousel-preview-img" />
+      </TiltFrame>
     );
   }
   if (project.hobby && project.hobbyItems && project.hobbyItems.length > 0) {
     return (
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        src={project.hobbyItems[0].video}
-        className="carousel-preview-video"
-      />
+      <TiltFrame>
+        <video autoPlay muted loop playsInline src={project.hobbyItems[0].video} className="project-media carousel-preview-video" />
+      </TiltFrame>
     );
   }
   return (
@@ -455,7 +519,7 @@ function CarouselPreview({ project }) {
 }
 
 /* ── Single carousel slide ── */
-function CarouselSlide({ project, onMoreInfo }) {
+function CarouselSlide({ project, onMoreInfoClick }) {
   return (
     <div className="carousel-slide">
       <div className="carousel-slide-inner">
@@ -468,7 +532,7 @@ function CarouselSlide({ project, onMoreInfo }) {
           </span>
           <h2 className="carousel-title">{project.title}</h2>
           <p className="carousel-short-desc">{project.shortDesc}</p>
-          <button className="carousel-more-btn" onClick={onMoreInfo}>
+          <button className="carousel-more-btn" onClick={onMoreInfoClick}>
             More Info ↗
           </button>
         </div>
@@ -482,6 +546,13 @@ function ProjectsPage() {
   const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [bursts, setBursts] = useState([]);
+  const burstId = useRef(0);
+  const spawnBurst = useCallback((e) => {
+    const id = burstId.current++;
+    setBursts((prev) => [...prev, { id, x: e.clientX, y: e.clientY }]);
+  }, []);
+  const removeBurst = useCallback((id) => setBursts((prev) => prev.filter((b) => b.id !== id)), []);
   const [animKey, setAnimKey] = useState(0);
   const lastScrollTime = useRef(0);
   const activeIndexRef = useRef(0);
@@ -549,14 +620,19 @@ function ProjectsPage() {
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
     >
-      <div className="carousel-back-btn" onClick={() => navigate("/")}>
+      <div className="carousel-back-btn" onClick={(e) => {
+        spawnBurst(e);
+        const mainEl = document.querySelector(".page-content .main");
+        if (mainEl) mainEl.classList.add("page-exit");
+        setTimeout(() => navigate("/"), 520);
+      }}>
         ← Home
       </div>
 
       <CarouselSlide
         key={animKey}
         project={project}
-        onMoreInfo={() => setShowModal(true)}
+        onMoreInfoClick={(e) => { spawnBurst(e); setTimeout(() => setShowModal(true), 180); }}
       />
 
       <div className="carousel-dots">
@@ -582,6 +658,10 @@ function ProjectsPage() {
       {showModal && (
         <ProjectModal project={project} onClose={() => setShowModal(false)} />
       )}
+
+      {bursts.map((b) => (
+        <StarBurst key={b.id} x={b.x} y={b.y} onDone={() => removeBurst(b.id)} />
+      ))}
     </div>
   );
 }

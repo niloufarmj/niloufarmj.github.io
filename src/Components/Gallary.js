@@ -3,12 +3,10 @@ import "../Assets/CSS/Welcome.css";
 import React from "react";
 import { Player } from "video-react";
 import "../Assets/CSS/Gallary.css";
+import { PortfolioImg, TiltFrame } from "./PortfolioMedia";
 
 function Gallary(params) {
- 
-  const hasValue = (obj) => {
-    return !(obj === null || obj === undefined)
-  }
+  const hasValue = (obj) => !(obj === null || obj === undefined);
 
   return (
     <>
@@ -21,59 +19,45 @@ function Gallary(params) {
                   <div className="title">{params.title}</div>
                 </div>
               </Grid>
-              
             </Grid>
           </div>
           <span className="body-intro">
             <Grid container>
-                {hasValue(params.items) && params.items.map((value, index) => {
-                    return(
-                        <Grid item xl>
-                            <img
-                                alt=" "
-                                className="gallary-item"
-                                src={value}
-                            />
-                        </Grid>
-                    )
-                        
-                    })
-                }
-                {hasValue(params.videos) && 
+              {hasValue(params.items) && params.items.map((value, index) => (
+                <Grid item xl key={index}>
+                  <PortfolioImg
+                    src={value}
+                    alt=""
+                    className="gallary-item"
+                    style={{ width: "180px", height: "180px", objectFit: "cover" }}
+                  />
+                </Grid>
+              ))}
+              {hasValue(params.videos) && (
                 <Grid container spacing={2}>
-                  { params.videos.map((value, index) => {
-                    return(
-                      <Grid
-                        item
-                        xs={12}
-                        key={index}
-                      >
-                        <div style={{ marginBottom: "20px", marginTop: "20px"}}>
-                            <Player  playsInline src={value}></Player>
+                  {params.videos.map((value, index) => (
+                    <Grid item xs={12} key={index}>
+                      <div style={{ marginBottom: "20px", marginTop: "20px" }}>
+                        <TiltFrame>
+                          <div className="portfolio-video-wrap">
+                            <Player playsInline src={value} />
                           </div>
-                      </Grid>
-                    )
-                        
-                  })}
-                  </Grid>
-                }
-                {hasValue(params.link) &&
-                    <Grid item xl>
-                        <div className="gallary-item gallary-link">
-                            <a 
-                                target="_blank"
-                                rel="noreferrer"
-                                href={params.link}
-                            >
-                                click to see more!
-                            </a>
-                        </div>
-                    
+                        </TiltFrame>
+                      </div>
                     </Grid>
-                }
-                
+                  ))}
+                </Grid>
+              )}
+              {hasValue(params.link) && (
+                <Grid item xl>
+                  <div className="gallary-item gallary-link">
+                    <a target="_blank" rel="noreferrer" href={params.link}>
+                      click to see more!
+                    </a>
+                  </div>
+                </Grid>
+              )}
             </Grid>
-            
           </span>
         </div>
       </Grid>

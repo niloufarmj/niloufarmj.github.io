@@ -1,37 +1,45 @@
 .gallary-item {
-    
-    width: 180px;
-    height: 180px;
-    border: 2px solid rgb(164, 46, 207);
-    border-radius: 10%;
-    padding: 10px;
-    margin: 10px;
-    transition: all .3s ease-in-out;
-}
-
-.gallary-item:hover {
-    width: 200px;
-    height: 200px;
-    margin: 0;
-    background-color: rgba(164, 46, 207, 0.4);
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin: 10px;
 }
 
 .gallary-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dataholder-img {
-    border: 2px solid rgb(164, 46, 207);
-    border-radius: 5%;
-    padding: 8px;
-    margin-left: 5px;
-    margin-right: 10px;
-    transition: all .3s ease-in-out;
-    width: 100%;
+  width: 100%;
+  display: block;
 }
 
-.dataholder-img:hover {
-    scale: 1.05;
+/* ── Shared portfolio media styling (border/glow/pulse) ── */
+.portfolio-media {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid rgb(164, 46, 207);
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow:
+    0 0 0 2px rgb(164, 46, 207),
+    0 0 18px rgba(164, 46, 207, 0.4),
+    0 0 45px rgba(47, 140, 255, 0.18);
+  animation: photo-pulse 3.5s ease-in-out infinite;
+  transition: transform 0.15s ease-out;
+}
+
+/* ── Wrapper for video-react Player with glow ── */
+.portfolio-video-wrap {
+  border: 2px solid rgb(164, 46, 207);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 2px rgb(164, 46, 207),
+    0 0 18px rgba(164, 46, 207, 0.4),
+    0 0 45px rgba(47, 140, 255, 0.18);
+  animation: photo-pulse 3.5s ease-in-out infinite;
 }

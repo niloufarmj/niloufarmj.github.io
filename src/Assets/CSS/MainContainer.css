@@ -32,6 +32,13 @@
   z-index: 10; /* Cleanly lifts your photo and menu above the SVG layer background */
   scrollbar-width: none;
   -ms-overflow-style: none;
+
+  /* Creates a smooth fade at the top (and bottom, if you want!) */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 50px, black calc(100% - 30px), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 50px, black calc(100% - 30px), transparent 100%);
+  
+  /* Push the content down slightly so it doesn't start in the transparent zone */
+  padding-top: 20px;
 }
 
 .page-content::-webkit-scrollbar {

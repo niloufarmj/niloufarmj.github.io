@@ -2,6 +2,28 @@
    PROJECTS PAGE — full-screen carousel
    ============================================= */
 
+/* ── Profile-style border/glow/pulse on all project images & videos ── */
+.project-media {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid rgb(164, 46, 207);
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow:
+    0 0 0 2px rgb(164, 46, 207),
+    0 0 18px rgba(164, 46, 207, 0.4),
+    0 0 45px rgba(47, 140, 255, 0.18);
+  animation: photo-pulse 3.5s ease-in-out infinite;
+  transition: transform 0.15s ease-out;
+}
+
+/* ── 3-D tilt wrapper ── */
+.tilt-frame {
+  display: block;
+  cursor: pointer;
+}
+
 .projects-carousel-page {
   position: relative;
   width: 100%;
@@ -18,24 +40,32 @@
   position: absolute;
   top: 24px;
   left: 24px;
-  color: #ffffff; /* Shifted to clean white */
-  background: rgba(255, 255, 255, 0.08); /* Frosted visual container backing */
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 110;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #ccc;
+  font-family: Montserrat-Regular;
+  font-size: 1em;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  transition: all 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  z-index: 110; /* Mount cleanly over inner page targets */
   user-select: none;
-  padding: 8px 16px;
-  border-radius: 20px;
+  display: inline-block;
+  transition: color 0.25s ease;
+}
+
+.carousel-back-btn::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(270deg, var(--grad-2) 0%, var(--grad-1) 100%);
+  margin-top: 2px;
+  transition: opacity 0.3s ease;
 }
 
 .carousel-back-btn:hover {
-  background: var(--grad-1);
   color: #fff;
-  box-shadow: 0 0 12px rgba(47, 140, 255, 0.6);
-  transform: translateX(-2px);
+  text-shadow: 0 0 10px rgba(47, 140, 255, 0.7), 0 0 20px rgba(164, 46, 207, 0.4);
 }
 
 /* ── Slide ── */
@@ -146,26 +176,31 @@
 }
 
 .carousel-more-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--grad-1);
   background: none;
-  border: 1px solid rgba(47, 140, 255, 0.35);
-  border-radius: 20px;
-  padding: 9px 22px;
-  font-size: 14px;
+  border: none;
+  padding: 0;
+  color: #ccc;
   font-family: Montserrat-Regular;
+  font-size: 1em;
   cursor: pointer;
-  transition: all 0.22s ease;
-  width: fit-content;
+  display: inline-block;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.carousel-more-btn::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(270deg, var(--grad-2) 0%, var(--grad-1) 100%);
+  margin-top: 2px;
+  transition: opacity 0.3s ease;
 }
 
 .carousel-more-btn:hover {
-  background: rgba(47, 140, 255, 0.1);
-  border-color: rgba(47, 140, 255, 0.7);
-  color: white;
-  transform: translateY(-2px);
+  color: #fff;
+  text-shadow: 0 0 10px rgba(47, 140, 255, 0.7), 0 0 20px rgba(164, 46, 207, 0.4);
 }
 
 /* ── Navigation dots ── */

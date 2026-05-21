@@ -1,9 +1,11 @@
 import { Grid } from "@mui/material";
 import "../Assets/CSS/Welcome.css";
+import "../Assets/CSS/Gallary.css";
 import React from "react";
 import { Player } from "video-react";
 import { useState } from "react";
 import "video-react/dist/video-react.css";
+import { PortfolioImg, TiltFrame } from "./PortfolioMedia";
 
 function DataHolder(params) {
   let [itemOpened, setItemOpened] = useState([
@@ -163,15 +165,23 @@ function DataHolder(params) {
                       >
                         {" "}
                         {/* Set sm=6 if there is more than one media item, otherwise set sm=12 to take up the full width */}
-                        {(value.type === "video" && (
-                          <div style={{width: "90%", marginBottom: "20px", marginTop: "20px"}}>
-                            <Player  playsInline src={value.src}></Player>
+                        {value.type === "video" ? (
+                          <div style={{ marginBottom: "20px", marginTop: "20px" }}>
+                            <TiltFrame>
+                              <div className="portfolio-video-wrap">
+                                <Player playsInline src={value.src} />
+                              </div>
+                            </TiltFrame>
                           </div>
-                        )) || <div style={{width: "80%"}}>
-                          <a href={value.href} target="_blank" rel="noreferrer">
-                            <img className="dataholder-img" src={value.src} alt="Media" />
-                          </a>
-                          </div>}
+                        ) : (
+                          <div style={{ width: "80%" }}>
+                            <PortfolioImg
+                              src={value.src}
+                              alt="Media"
+                              className="dataholder-img"
+                            />
+                          </div>
+                        )}
                       </Grid>
                     );
                   })}

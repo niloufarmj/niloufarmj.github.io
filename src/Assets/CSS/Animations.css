@@ -84,7 +84,7 @@
   width: 4px;
   height: 4px;
   background: white;
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(50% 0%, 54% 46%, 100% 50%, 54% 54%, 50% 100%, 46% 54%, 0% 50%, 46% 46%);
   animation: sparkle ease-in-out infinite;
   pointer-events: none;
 }
@@ -225,6 +225,30 @@
 
 
 /* =============================================
+   MENU CLICK — STAR BURST PARTICLES
+   ============================================= */
+.star-particle {
+  clip-path: polygon(50% 0%, 54% 46%, 100% 50%, 54% 54%, 50% 100%, 46% 54%, 0% 50%, 46% 46%);
+  animation: star-fly 0.7s ease-out forwards;
+}
+
+@keyframes star-fly {
+  0% {
+    transform: translate(0, 0) scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(calc(var(--end-x) * 0.4), calc(var(--end-y) * 0.4)) scale(1.1) rotate(120deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--end-x), var(--end-y)) scale(0.3) rotate(400deg);
+    opacity: 0;
+  }
+}
+
+
+/* =============================================
    PAGE ENTER TRANSITION
    ============================================= */
 @keyframes page-enter {
@@ -234,4 +258,14 @@
 
 .page-enter {
   animation: page-enter 0.5s ease forwards;
+}
+
+@keyframes page-exit {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(-14px) scale(0.97); }
+}
+
+.page-exit {
+  animation: page-exit 0.45s ease forwards;
+  pointer-events: none;
 }
