@@ -36,11 +36,26 @@
   animation: page-enter 0.5s ease forwards;
 }
 
-.carousel-back-btn {
+.carousel-header {
   position: absolute;
   top: 24px;
-  left: 24px;
+  left: 56px;
   z-index: 110;
+}
+
+.carousel-page-title {
+  margin: 12px 0 0 0;
+  font-size: clamp(26px, 2.6vw, 40px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  background: linear-gradient(120deg, var(--grad-2) 0%, #e07bf0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.carousel-back-btn {
   background: none;
   border: none;
   padding: 0;
@@ -75,7 +90,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 38px 56px 38px 14px;  /* right pad: 56 accounts for dots */
+  padding: 38px 0;  /* side gaps come from centering the 85%-wide inner row */
   animation: carousel-enter 0.42s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
@@ -86,46 +101,56 @@
 
 .carousel-slide-inner {
   display: flex;
-  gap: 36px;
+  gap: 5%;                /* 5% gap between the two boxes */
   align-items: stretch;   /* both columns fill available height */
+  justify-content: center;
   width: 100%;
-  max-width: 920px;
+  max-width: none;
   height: 100%;
-  max-height: 460px;
+  max-height: 560px;
 }
 
 /* ── Preview panel: fills height, no fixed aspect-ratio ── */
 /* Expand the Project Preview Area */
 .carousel-preview {
-  flex: 0 0 65%; /* Increased preview footprint from 52% to 65% */
-  max-width: 65%;
-  border-radius: 14px;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  flex: 0 0 40%; /* 40% of the screen for the media box */
+  max-width: 40%;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 240px;
 }
 
-.carousel-preview-video {
+/* tilt frame fills the box; its inner wrapper centres the media */
+.carousel-preview .tilt-frame {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  display: block;
 }
 
-.carousel-preview-img {
+.carousel-preview .tilt-frame > div {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fit inside the box, keeping aspect: landscape media fills the width,
+   portrait media fills the height. */
+.carousel-preview-video,
+.carousel-preview-img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   display: block;
 }
 
 .carousel-preview-placeholder {
   width: 100%;
   height: 100%;
+  border-radius: 14px;
   background: linear-gradient(135deg, rgba(47, 140, 255, 0.12), rgba(164, 46, 207, 0.18));
   display: flex;
   align-items: center;
@@ -139,7 +164,8 @@
 
 /* ── Info panel ── */
 .carousel-info {
-  flex: 1;
+  flex: 0 0 40%; /* 40% of the screen for the info box */
+  max-width: 40%;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -184,6 +210,8 @@
   font-size: 1em;
   cursor: pointer;
   display: inline-block;
+  align-self: flex-start; /* don't stretch to the column width — keep underline = text width */
+  width: fit-content;
   position: relative;
   transition: color 0.25s ease;
 }
@@ -249,9 +277,10 @@
 
 .carousel-scroll-hint {
   position: absolute;
-  top: 32px;
-  right: 48px;
-  bottom: auto; /* Clears old bottom assignment rule */
+  bottom: 24px;
+  left: 56px;
+  top: auto;
+  right: auto;
   color: rgba(255, 255, 255, 0.4);
   font-size: 11px;
   text-transform: uppercase;

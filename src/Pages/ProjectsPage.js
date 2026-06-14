@@ -24,6 +24,9 @@ import twoCars    from "../Assets/Media/videos/2cars.mp4";
 import bug0       from "../Assets/Media/videos/Bug0.mp4";
 import bug1       from "../Assets/Media/videos/Bug1.mp4";
 import bug2       from "../Assets/Media/videos/Bug2.mp4";
+import thesisShader from "../Assets/Media/videos/thesis-texttoshader.mp4";
+import beerPong    from "../Assets/Media/videos/BeerPong.mp4";
+import pickupAgent from "../Assets/Media/videos/PickupDeliveryAgent.mp4";
 
 import cp    from "../Assets/Media/Works/communitypage.png";
 import hp    from "../Assets/Media/Works/homepage.png";
@@ -43,7 +46,8 @@ const PROJECTS = [
       "• 26-state chatbot UI (Unity IMGUI + HTTP server on port 7723) allows fully conversational asset creation; also supports bulk knowledge-base ingestion via Auto Learn.",
       "• Experiment across 200 runs (5 LLMs × 2 pipelines × 20 shapes): Gemini 3.1 Pro achieved 93.3% success, VLM 8.53/10, at $0.036/shape. RAG raised success rate +5 pp and VLM quality +0.74 pts over baseline.",
     ],
-    hasMedia: false,
+    hasMedia: true,
+    media: [{ type: "video", src: thesisShader }],
   },
   {
     emoji: "🍺",
@@ -57,7 +61,8 @@ const PROJECTS = [
       "• Includes game-state management (turn system, scoring, win/loss flow), cup fill animations, and splash VFX.",
       "• Documented as a development cookbook — step-by-step setup covering Meta Quest Link, XR Plugin Management, passthrough layer configuration, and hand-physics integration.",
     ],
-    hasMedia: false,
+    hasMedia: true,
+    media: [{ type: "video", src: beerPong }],
   },
   {
     emoji: "🤖",
@@ -70,7 +75,8 @@ const PROJECTS = [
       "• Agent learns optimal routing strategies — picking up packages and delivering them to goal locations — handling variable map layouts and multiple simultaneous tasks.",
       "• Evaluated convergence curves, reward shaping strategies, and the impact of state representation (local vs. global observation windows).",
     ],
-    hasMedia: false,
+    hasMedia: true,
+    media: [{ type: "video", src: pickupAgent }],
   },
   {
     emoji: "🥽",
@@ -523,9 +529,6 @@ function CarouselSlide({ project, onMoreInfoClick }) {
   return (
     <div className="carousel-slide">
       <div className="carousel-slide-inner">
-        <div className="carousel-preview">
-          <CarouselPreview project={project} />
-        </div>
         <div className="carousel-info">
           <span className="carousel-badge">
             {project.emoji} {project.category}
@@ -535,6 +538,9 @@ function CarouselSlide({ project, onMoreInfoClick }) {
           <button className="carousel-more-btn" onClick={onMoreInfoClick}>
             More Info ↗
           </button>
+        </div>
+        <div className="carousel-preview">
+          <CarouselPreview project={project} />
         </div>
       </div>
     </div>
@@ -620,13 +626,16 @@ function ProjectsPage() {
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
     >
-      <div className="carousel-back-btn" onClick={(e) => {
-        spawnBurst(e);
-        const mainEl = document.querySelector(".page-content .main");
-        if (mainEl) mainEl.classList.add("page-exit");
-        setTimeout(() => navigate("/"), 520);
-      }}>
-        ← Home
+      <div className="carousel-header">
+        <div className="carousel-back-btn" onClick={(e) => {
+          spawnBurst(e);
+          const mainEl = document.querySelector(".page-content .main");
+          if (mainEl) mainEl.classList.add("page-exit");
+          setTimeout(() => navigate("/"), 520);
+        }}>
+          ← Home
+        </div>
+        <h1 className="carousel-page-title">Projects</h1>
       </div>
 
       <CarouselSlide
