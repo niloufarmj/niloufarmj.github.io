@@ -9,11 +9,13 @@
     pointer-events: none;
   }
 
-  .header a,
+  /* Only always-clickable header bits get pointer-events back. The mobile-nav panel
+     is intentionally left out so its closed (invisible) state can't intercept clicks
+     — its links re-enable via `.mobile-nav.open` below. */
+  .header-right a,
   .header .logo,
-  .header button,
-  .header .mobile-nav,
-  .header .mobile-nav-backdrop {
+  .hamburger,
+  .mobile-nav-backdrop {
     pointer-events: auto;
   }
   
