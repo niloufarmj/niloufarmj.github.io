@@ -9,6 +9,7 @@
 }
 
 .loading-content {
+  display: inline-block;
   color: hsl(0, 0%, 28%);
   font-size: 70px !important;
   font-weight: bold !important;
@@ -16,35 +17,51 @@
   letter-spacing: 7px !important;
   cursor: pointer;
   text-transform: uppercase;
-}
+  padding: 40px;
 
-@media screen and (max-width: 500px) {
-  .loading-content {
-    font-size: 50px !important;
-  }
-}
-
-.loading-content {
-  padding: 64px;
+  /* gradient shimmer fill */
   background: linear-gradient(
     to right,
     hsl(0, 0%, 30%) 0,
     hsl(275, 95%, 48%) 10%,
     hsl(0, 0%, 30%) 20%
   );
+  background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 4s linear;
+  animation: shine 4s linear infinite;
+}
+
+/* blinking typewriter cursor (own fill colour so the gradient doesn't hide it) */
+.loading-content::after {
+  content: "|";
+  margin-left: 6px;
+  color: hsl(275, 95%, 62%);
+  -webkit-text-fill-color: hsl(275, 95%, 62%);
+  animation: cursor-blink 0.8s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 @keyframes shine {
-  0% {
-    background-position: 0;
+  to {
+    background-position: 200% center;
   }
-  60% {
-    background-position: 900px;
-  }
-  100% {
-    background-position: 1600px;
+}
+
+@media screen and (max-width: 600px) {
+  .loading-content {
+    font-size: 38px !important;
+    letter-spacing: 4px !important;
+    padding: 20px;
   }
 }

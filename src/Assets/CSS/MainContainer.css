@@ -73,9 +73,28 @@
   align-items: center;
 }
 
-/* On mobile, take the top-left corner SVG out of normal flow (it otherwise adds a
-   ~300px gap at the bottom) and let the inner container start at the top normally. */
+/* ── Mobile: fixed-height shell on every page. The top/bottom corner borders stay
+   put and only the page content scrolls (mirrors the desktop shell, minus the zoom
+   transform). The top-left corner SVG is taken out of flow so it doesn't add a
+   ~300px gap, and the inner container starts at the top. ── */
 @media screen and (max-width: 900px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .main-container {
+    height: 100vh;
+    height: 100dvh;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .main-container .main-container-inner {
+    height: 100%;
+  }
+
   .main-container-inner > .svg:not(.corner-br) {
     position: absolute;
     top: 0;
@@ -85,6 +104,11 @@
 
   .main-container .main-container-inner .inner-container {
     top: 0;
+    height: 100%;
+  }
+
+  .page-content {
+    margin-top: 0;
   }
 }
 

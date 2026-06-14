@@ -535,25 +535,55 @@
 
 /* ── Responsive ── */
 @media screen and (max-width: 700px) {
-  .carousel-slide-inner {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    height: auto;
-    max-height: none;
+  /* shift the header down + right so it clears the top-left corner border */
+  .carousel-header {
+    top: 34px;
+    left: 30px;
   }
 
-  .carousel-preview {
-    flex: none;
-    max-width: 100%;
-    width: 100%;
-    aspect-ratio: 16 / 9;
+  .carousel-page-title {
+    font-size: clamp(22px, 7vw, 32px);
   }
 
   .carousel-slide {
     overflow-y: auto;
     align-items: flex-start;
-    padding: 48px 28px 52px;
+    padding: 100px 22px 64px;
+  }
+
+  /* stack the two boxes; both go full width (fixes the cramped / overlapping video) */
+  .carousel-slide-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    height: auto;
+    max-height: none;
+  }
+
+  .carousel-info,
+  .carousel-preview {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .carousel-info {
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .carousel-more-btn {
+    align-self: center;
+  }
+
+  .carousel-title {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+
+  /* media box keeps a clean 16:9 frame; the video fits inside (no black backing) */
+  .carousel-preview {
+    aspect-ratio: 16 / 9;
   }
 
   .carousel-scroll-hint { display: none; }

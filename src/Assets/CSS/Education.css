@@ -87,6 +87,7 @@
 /* Narrative Section style - 50% Bigger text */
 .edu-intro-narrative {
   padding-left: 20px;
+  padding-right: 15px;
   border-left: 2px solid var(--grad-1);
   color: hsl(273, 4%, 62%);
   font-size: clamp(20px, 2.25vw, 24px); /* 50% larger than original 14-16px */
@@ -442,12 +443,30 @@
 }
 
 @media screen and (max-width: 700px) {
+  /* extra top/left padding so the header + back button clear the top-left corner border */
   .education-container {
-    padding: 16px 12px 40px;
+    padding: 30px 14px 40px 40px;
+  }
+
+  /* No expand scale / neighbour-shift on mobile — expanding only reveals content.
+     (!important overrides the inline transforms set in JS.) */
+  .edu-card.expanded {
+    transform: none !important;
+  }
+
+  .edu-left-col,
+  .timeline-item,
+  .timeline-line {
+    transform: none !important;
+  }
+
+  .timeline-dot {
+    transform: translateX(-50%) !important; /* keep only the centering offset */
   }
 
   .edu-card {
     padding: 20px 24px;
+    margin-right: 15px;
   }
 
   .edu-card-header {

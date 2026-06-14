@@ -227,32 +227,8 @@
         margin-right: 16px;
     }
 
-    /* ── Home is a fixed-height shell on mobile: bottom border stays visible and
-          only the bio scrolls. Scoped to body.home-active so other pages still
-          scroll normally. ── */
-    body.home-active {
-        overflow: hidden;
-        height: 100vh;
-        height: 100dvh;
-    }
-
-    body.home-active .main-container {
-        height: 100vh;
-        height: 100dvh;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-
-    body.home-active .main-container-inner,
-    body.home-active .inner-container {
-        height: 100%;
-    }
-
-    body.home-active .page-content {
-        margin-top: 0;
-    }
-
-    /* flex chain so the leftover height collapses onto the scrollable bio */
+    /* Home page: the mobile shell (set globally in MainContainer.css) plus this flex
+       chain makes only the bio scroll while everything else stays put. */
     .home-page-content {
         height: 100%;
         display: flex;

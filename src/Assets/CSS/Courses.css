@@ -223,6 +223,7 @@
 @media screen and (max-width: 700px) {
   .course-row {
     padding: 20px 22px;
+    margin-right: 10px;
   }
 
   .course-head {
