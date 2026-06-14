@@ -121,6 +121,7 @@ function MainContainer() {
     <>
       <StarryNight />
       <Grid></Grid>
+      <BrowserRouter>
       <div className="main-container">
         <div className="main-container-inner">
           <div className="svg">
@@ -150,17 +151,15 @@ function MainContainer() {
           <div className="inner-container">
             <Header />
             <div className="page-content">
-              <BrowserRouter>
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/education" element={<EducationPage />} />
-                  <Route path="/courses" element={<CoursesPage />} />
-                  <Route path="/workexperience" element={<JobExperiencePage />} />
-                  <Route path="/projects" element={<ProjectsPage />} />
-                  <Route path="/skills" element={<SkillsPage />} />
-                  <Route path="/artwork" element={<ArtWorksPage />} />
-                </Routes>
-              </BrowserRouter>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/education" element={<EducationPage />} />
+                <Route path="/courses" element={<CoursesPage />} />
+                <Route path="/workexperience" element={<JobExperiencePage />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/skills" element={<SkillsPage />} />
+                <Route path="/artwork" element={<ArtWorksPage />} />
+              </Routes>
             </div>
             <Footer />
           </div>
@@ -197,6 +196,7 @@ function MainContainer() {
           </div>
         </div>
       </div>
+      </BrowserRouter>
     </>
   );
 }

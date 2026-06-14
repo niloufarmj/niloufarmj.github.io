@@ -10,6 +10,13 @@
     }
 }
 
+/* On mobile the home "Content Pages" menu is replaced by the header hamburger */
+@media screen and (max-width: 900px) {
+    .menu-content-pages {
+        display: none !important;
+    }
+}
+
 .menu-title {
     white-space: nowrap;
 }

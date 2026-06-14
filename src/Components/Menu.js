@@ -78,6 +78,7 @@ function Menu(params) {
         lg={params.lg != null ? params.lg : 4}
         xl={params.xl != null ? params.xl : 4}
         custom={5}
+        className={params.align === "right" ? "menu-content-pages" : undefined}
         sx={
           params.align === "right"
             ? { position: "sticky", top: 24, alignSelf: "flex-start" }

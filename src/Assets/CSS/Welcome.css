@@ -177,11 +177,24 @@
         align-items: center;
         text-align: center;
         gap: 20px;
+        flex: 1;
+        min-height: 0;
+    }
+
+    /* center the photo in the column (override the sticky flex-start used on desktop) */
+    .photo-wrapper {
+        align-self: center;
+        position: static;
+        top: auto;
+        margin-top: 1vh; /* sit the photo a bit higher */
+        flex-shrink: 0;
     }
 
     .home-hero-text {
         align-items: center;
         text-align: center;
+        flex: 1;
+        min-height: 0;
     }
 
     .home-name {
@@ -199,14 +212,76 @@
 
     .home-bio {
         font-size: 16px;
-        margin-top: 24px;
+        margin-top: 18px;
         padding-left: 20px;
-        margin-right: 0;
+        margin-right: 20px;
+        padding-right: 10px;
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
     }
 
     .body-intro {
         font-size: 15px;
         margin-right: 16px;
+    }
+
+    /* ── Home is a fixed-height shell on mobile: bottom border stays visible and
+          only the bio scrolls. Scoped to body.home-active so other pages still
+          scroll normally. ── */
+    body.home-active {
+        overflow: hidden;
+        height: 100vh;
+        height: 100dvh;
+    }
+
+    body.home-active .main-container {
+        height: 100vh;
+        height: 100dvh;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    body.home-active .main-container-inner,
+    body.home-active .inner-container {
+        height: 100%;
+    }
+
+    body.home-active .page-content {
+        margin-top: 0;
+    }
+
+    /* flex chain so the leftover height collapses onto the scrollable bio */
+    .home-page-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .home-page-content > .MuiGrid-container {
+        flex: 1;
+        min-height: 0;
+    }
+
+    .home-page-content .MuiGrid-item {
+        height: 100%;
+        min-height: 0;
+    }
+
+    .home-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        padding: 0 14px; /* drop the desktop 16% right padding (menu gap) on mobile */
+    }
+
+    .home-bio-scroll {
+        flex: 1;
+        min-height: 0;
+        max-height: none;
     }
 }
 

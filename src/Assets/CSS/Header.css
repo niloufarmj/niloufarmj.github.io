@@ -10,7 +10,10 @@
   }
 
   .header a,
-  .header .logo {
+  .header .logo,
+  .header button,
+  .header .mobile-nav,
+  .header .mobile-nav-backdrop {
     pointer-events: auto;
   }
   
@@ -47,5 +50,172 @@
   .header-right {
     float: right;
   }
-  
+
+  /* ── Hamburger + mobile nav: hidden on desktop ── */
+  .hamburger,
+  .mobile-nav,
+  .mobile-nav-backdrop {
+    display: none;
+  }
+
+  /* =============================================
+     MOBILE — hamburger replaces the menu + socials
+     ============================================= */
+  @media screen and (max-width: 900px) {
+    .header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      overflow: visible;
+      padding: 18px 20px; /* 10% more breathing room from the edges */
+    }
+
+    /* logo: smaller + a bit more gap from the corner */
+    .logo {
+      width: 77px;
+      height: 77px;
+      padding-left: 0;
+      margin: 6px 0 0 8px;
+    }
+
+    /* desktop social row moves into the hamburger */
+    .header-right {
+      display: none;
+    }
+
+    /* ── Hamburger button (same line, right) ── */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 46px;
+      height: 46px;
+      padding: 11px;
+      margin: 8px 8px 0 0;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 11px;
+      cursor: pointer;
+      transition: border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .hamburger:hover {
+      border-color: rgba(47, 140, 255, 0.5);
+    }
+
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background: #ddd;
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ── Backdrop ── */
+    .mobile-nav-backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: 120;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    /* ── Dropdown panel ── */
+    .mobile-nav {
+      display: block;
+      position: absolute;
+      top: 100%;
+      right: 16px;
+      z-index: 130;
+      width: min(290px, 82vw);
+      padding: 10px;
+      background: rgba(13, 13, 24, 0.97);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      box-shadow: 0 14px 44px rgba(0, 0, 0, 0.55);
+      transform-origin: top right;
+      transform: translateY(-8px) scale(0.97);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .mobile-nav.open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-nav-link {
+      background: none;
+      border: none;
+      text-align: left;
+      color: #ccc;
+      font-family: inherit;
+      font-size: 15px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+    }
+
+    .mobile-nav-link:hover,
+    .mobile-nav-link:active {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      padding-left: 18px;
+    }
+
+    /* ── Social links = last row of the panel ── */
+    .mobile-nav-socials {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 8px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-nav-socials a {
+      float: none;
+      padding: 0;
+    }
+
+    .mobile-nav-socials a:hover {
+      scale: 1;
+      filter: none;
+    }
+
+    .mobile-nav-socials img {
+      width: 34px;
+      height: 34px;
+      opacity: 0.8;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .mobile-nav-socials a:hover img {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+  }
+
  

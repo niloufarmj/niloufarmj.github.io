@@ -48,6 +48,12 @@ function HomePage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
+  // Mark the home route so the mobile fixed-height shell applies only here.
+  useEffect(() => {
+    document.body.classList.add("home-active");
+    return () => document.body.classList.remove("home-active");
+  }, []);
+
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left - rect.width / 2) / rect.width) * 16;

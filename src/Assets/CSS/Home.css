@@ -71,6 +71,7 @@
 
     .contact {
         margin-left: 10% !important;
+        margin-bottom: 8vh; /* lift the email clear of the bottom border */
     }
 }
 

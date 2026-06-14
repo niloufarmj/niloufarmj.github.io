@@ -73,6 +73,21 @@
   align-items: center;
 }
 
+/* On mobile, take the top-left corner SVG out of normal flow (it otherwise adds a
+   ~300px gap at the bottom) and let the inner container start at the top normally. */
+@media screen and (max-width: 900px) {
+  .main-container-inner > .svg:not(.corner-br) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .main-container .main-container-inner .inner-container {
+    top: 0;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .main-container {
     padding: 3%;
