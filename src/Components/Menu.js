@@ -70,8 +70,27 @@ function Menu(params) {
 
   return (
     <>
-      <Grid item xs={12} sm={12} md={5} lg={params.lg != null ? params.lg : 4} xl={4} custom={5}>
-        <div style={{ paddingLeft: "10%", paddingRight: "10%" }}>
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={5}
+        lg={params.lg != null ? params.lg : 4}
+        xl={params.xl != null ? params.xl : 4}
+        custom={5}
+        sx={
+          params.align === "right"
+            ? { position: "sticky", top: 24, alignSelf: "flex-start" }
+            : undefined
+        }
+      >
+        <div
+          style={
+            params.align === "right"
+              ? { paddingLeft: "8%", paddingRight: "0%" }
+              : { paddingLeft: "10%", paddingRight: "10%" }
+          }
+        >
           <h1 className="menu-title">{params.title}</h1>
           <div>
             <svg

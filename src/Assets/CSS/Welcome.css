@@ -1,25 +1,27 @@
 /* ── Home page wrapper ── */
 .home-content {
-    padding: 0px 12px 0;
+    /* right padding opens a gap between the content column and the menu column */
+    padding: 0 16% 0 12px;
 }
 
 /* ── Hero row: photo left, name/tagline right ── */
 .home-hero {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 16px;
+    align-items: center; /* photo centered against the full name + tagline + bio stack */
+    gap: 140px;
     padding: 8px 0 8px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .home-hero-text {
     flex: 1;
-    min-width: 155px;
+    min-width: 260px;
     display: flex;
     flex-direction: column;
     gap: 6px;
-    
+
 }
 
 .home-name {
@@ -29,7 +31,7 @@
     line-height: 1.15;
     margin-bottom: 4px;
     letter-spacing: -0.5px;
-    margin-left: 20px;
+    margin-left: 0;
 }
 
 .home-tagline {
@@ -38,7 +40,7 @@
     font-weight: 400;
     letter-spacing: 0.5px;
     min-height: 36px;
-    margin-left: 20px;
+    margin-left: 0;
 }
 
 /* ── Bio text (DataHolder pages — other pages only) ── */
@@ -70,13 +72,15 @@
 /* ── Home page bio (larger font, word-hover capable) ── */
 .home-bio {
     font-weight: 100;
-    line-height: 1.65;
-    font-size: 22px;
+    font-size: clamp(18px, 1.65vw, 22px); /* Seamlessly scales down on smaller screens */
+    line-height: 1.5; /* Clean, modern standard proportion */
     color: hsl(273, 4%, 58%);
     display: block;
     position: relative;
-    margin-top: 16px;
-    padding-left: 30px;
+    margin-top: 18px;
+    padding-left: 24px;
+    clear: both;
+    width: 100%;
 }
 
 .home-bio::before {
@@ -93,6 +97,21 @@
     margin-bottom: 22px;
     overflow: visible;
     line-height: 2.2;  /* extra vertical room for the wave scale effect */
+}
+
+/* Only the bio paragraphs scroll — photo, name, tagline and menu stay static.
+   Scrollbar is hidden to match the rest of the site. Tune max-height to taste. */
+.home-bio-scroll {
+    max-height: 52vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-right: 4px;
+}
+
+.home-bio-scroll::-webkit-scrollbar {
+    display: none;
 }
 
 /* ── Bio word hover glow ── */
@@ -117,9 +136,9 @@
 
 /* ── Profile photo ── */
 .my-photo {
-    margin-top: 20px;
-    width: clamp(100px, 21vw, 300px);
-    height: clamp(100px, 21vw, 300px);
+    margin-top: 0;
+    width: clamp(153px, 19vw, 305px);
+    height: clamp(153px, 19vw, 305px);
     object-fit: cover;
     border: 2px solid rgb(164, 46, 207);
     border-radius: 50%;
@@ -139,6 +158,10 @@
     display: inline-block;
     cursor: default;
     flex-shrink: 0;
+    /* Stay put while the bio scrolls past (scroll happens inside .page-content). */
+    position: sticky;
+    top: 24px;
+    align-self: flex-start;
 }
 
 .photo-tilt {
@@ -149,9 +172,36 @@
 
 /* ── Responsive ── */
 @media screen and (max-width: 600px) {
+    .home-hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .home-hero-text {
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-name {
+        margin-left: 0;
+        font-size: clamp(32px, 8vw, 42px);
+        text-align: center;
+    }
+
+    .home-tagline {
+        margin-left: 0;
+        font-size: clamp(18px, 5vw, 24px);
+        text-align: center;
+        min-height: auto;
+    }
+
     .home-bio {
         font-size: 16px;
-        margin-right: 16px;
+        margin-top: 24px;
+        padding-left: 20px;
+        margin-right: 0;
     }
 
     .body-intro {

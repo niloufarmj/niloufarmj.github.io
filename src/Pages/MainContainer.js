@@ -98,6 +98,25 @@ function StarryNight() {
 }
 
 function MainContainer() {
+  // Auto-zoom: scale the whole UI down on smaller screens so a laptop at 100%
+  // browser-zoom matches the large-monitor look (replaces the manual "67% zoom" trick).
+  useEffect(() => {
+    const REF_WIDTH = 2200;  // viewport width the design is tuned for (large monitor)
+    const MIN_SCALE = 0.6;   // never shrink past this
+    const BREAKPOINT = 1280; // below this, fall back to the normal responsive layout
+
+    const applyScale = () => {
+      const w = window.innerWidth;
+      const scale =
+        w >= BREAKPOINT ? Math.min(1, Math.max(MIN_SCALE, w / REF_WIDTH)) : 1;
+      document.documentElement.style.setProperty("--ui-scale", scale);
+    };
+
+    applyScale();
+    window.addEventListener("resize", applyScale);
+    return () => window.removeEventListener("resize", applyScale);
+  }, []);
+
   return (
     <>
       <StarryNight />
@@ -144,39 +163,37 @@ function MainContainer() {
               </BrowserRouter>
             </div>
             <Footer />
+          </div>
 
-            <div className="svg">
-              <svg
-                width="300"
-                height="300"
-                data-name="corner-bottom-right"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{
-                  pointerEvents: "none",
-                  float: "right",
-                  marginTop: "-230px",
-                }}
-                data-inlinesvg=".inlineSvgFile-7"
-              >
-                <defs>
-                  <linearGradient
-                    id="grad2"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
-                    <stop offset="0" className="gradient1"></stop>
-                    <stop offset=".5" className="gradient2"></stop>
-                    <stop offset="1" className="gradient1"></stop>
-                  </linearGradient>
-                </defs>
-                <path
-                  fill="url('#grad2')"
-                  d="M292 300H0l20-20h255a5 5 0 0 0 5-5V20l20-20v292a8 8 0 0 1-8 8Z"
-                ></path>
-              </svg>
-            </div>
+          {/* Bottom-right corner — absolutely pinned to the shell so it mirrors the
+              top-left corner's inset and never moves while content scrolls. */}
+          <div className="svg corner-br">
+            <svg
+              width="300"
+              height="300"
+              data-name="corner-bottom-right"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ pointerEvents: "none" }}
+              data-inlinesvg=".inlineSvgFile-7"
+            >
+              <defs>
+                <linearGradient
+                  id="grad2"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0" className="gradient1"></stop>
+                  <stop offset=".5" className="gradient2"></stop>
+                  <stop offset="1" className="gradient1"></stop>
+                </linearGradient>
+              </defs>
+              <path
+                fill="url('#grad2')"
+                d="M292 300H0l20-20h255a5 5 0 0 0 5-5V20l20-20v292a8 8 0 0 1-8 8Z"
+              ></path>
+            </svg>
           </div>
         </div>
       </div>

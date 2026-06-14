@@ -1,6 +1,23 @@
 .main-container {
   padding: 5%;
   padding-bottom: 10%;
+  position: relative; /* positioning context for the pinned bottom-right corner */
+}
+
+.main-container-inner {
+  position: relative;
+}
+
+/* Bottom-right corner: pinned to the inner shell's bottom-right padding edge so it
+   sits symmetrically to the top-left corner and stays put while content scrolls.
+   (.svg.corner-br beats the later, lower-specificity .svg { position: relative }.) */
+.svg.corner-br {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: block;
+  line-height: 0;
 }
 
 .inner-container {
@@ -33,12 +50,17 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 
+  /* Lift the whole content box (mask included) up into the dead space under the
+     header. Because the entire box moves, the top of the name/menu is NOT clipped.
+     Tune this single value to taste; more negative = higher. */
+  margin-top: -6vh;
+
   /* Creates a smooth fade at the top (and bottom, if you want!) */
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 50px, black calc(100% - 30px), transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 50px, black calc(100% - 30px), transparent 100%);
-  
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8px, black calc(100% - 30px), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 8px, black calc(100% - 30px), transparent 100%);
+
   /* Push the content down slightly so it doesn't start in the transparent zone */
-  padding-top: 20px;
+  padding-top: 6px;
 }
 
 .page-content::-webkit-scrollbar {
@@ -68,8 +90,25 @@
 }
 
 @media screen and (min-width: 900px) {
+  /* Full-screen app shell: clip the document to the viewport so nothing scrolls the
+     page itself. Only .page-content scrolls internally, keeping the corner borders,
+     header and footer static. This also absorbs the extra layout height created by
+     the auto-zoom transform below (transform scales rendering, not the layout box). */
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* Auto-zoom: the whole dashboard is scaled by --ui-scale (set in MainContainer.js)
+     so a smaller screen at 100% browser-zoom looks like a large monitor — same look
+     everywhere. The container is sized at 100/scale so it still fills the viewport
+     after the transform. --ui-scale defaults to 1 (no scaling). */
   .main-container {
-    height: 100vh;
+    transform-origin: top left;
+    transform: scale(var(--ui-scale, 1));
+    width: calc(100vw / var(--ui-scale, 1));
+    height: calc(100vh / var(--ui-scale, 1));
     box-sizing: border-box;
     overflow: hidden;
     padding-bottom: 5%;
@@ -140,3 +179,9 @@ svg:not(:root) {
 .svg-buttom {
   display: inline;
 }
+
+.inner-container {
+  position: relative; /* Anchor container */
+}
+
+

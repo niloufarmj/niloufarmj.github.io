@@ -5,6 +5,9 @@
     padding-left: 50px;
 }
 
+/* (Vertical lift is handled by .page-content margin-top in MainContainer.css —
+   doing it here clipped the top of the name/menu against the scroll box.) */
+
 @media screen and (max-width: 500px) {
     .main {
         padding-left: 20px;
@@ -20,7 +23,8 @@
     padding-top: 20px;
     font-size: 20px;
     align-items: end;
-    margin-left: 70%;
+    margin-left: 78%;
+    margin-bottom: 13vh; /* keep the email above the pinned bottom-right corner */
     text-decoration: none;
     transition: color 0.3s ease;
 }

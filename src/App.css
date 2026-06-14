@@ -3,4 +3,5 @@ body {
   font-family: Montserrat-Regular;
 
   color: #ffffffa8;
+  overflow-x: hidden;
 }

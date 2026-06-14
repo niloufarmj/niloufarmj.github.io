@@ -131,7 +131,7 @@ function HomePage() {
           <Grid container alignItems="flex-start">
 
             {/* Left: hero (photo + name side-by-side) + bio */}
-            <Grid item xs={12} sm={12} md={7} lg={7} xl={8}>
+            <Grid item xs={12} sm={12} md={8} lg={9} xl={9}>
               <div className="home-content">
 
                 {/* Hero row: photo left | name + tagline right */}
@@ -172,27 +172,28 @@ function HomePage() {
                         style={{ display: "inline-block" }}
                       />
                     </div>
+                    {/* Bio paragraphs — word-hover wave ripple (now beside the photo).
+                        Only this inner box scrolls, so the photo + name + menu stay put. */}
+                    <div className="home-bio">
+                      <div className="home-bio-scroll">
+                        {bios.map((text, i) => (
+                          <p
+                            key={i}
+                            className={`reveal reveal-delay-${i + 1}`}
+                            style={{ textAlign: "justify" }}
+                          >
+                            <BioText text={text} />
+                          </p>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                {/* Bio paragraphs — word-hover wave ripple */}
-                <div className="home-bio">
-                  {bios.map((text, i) => (
-                    <p
-                      key={i}
-                      className={`reveal reveal-delay-${i + 1}`}
-                      style={{ textAlign: "justify" }}
-                    >
-                      <BioText text={text} />
-                    </p>
-                  ))}
-                </div>
-
               </div>
             </Grid>
 
             {/* Right: Menu (renders its own Grid item internally) */}
-            <Menu align="right" title={menuData.title} items={menuData.items} />
+            <Menu align="right" lg={3} xl={3} title={menuData.title} items={menuData.items} />
 
           </Grid>
         </ThemeProvider>

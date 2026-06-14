@@ -106,7 +106,6 @@
 
 .my-photo {
   display: block;
-  width: 220px;
   border: 2px solid transparent;
   background-clip: padding-box;
   border-radius: 50%;

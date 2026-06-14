@@ -1,0 +1,479 @@
+/* =============================================
+   EDUCATION TIMELINE STYLE
+   ============================================= */
+
+.education-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 10px 3% 40px; /* Reduced top padding and margins to reclaim space */
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+/* ── Left column styling ── */
+.edu-left-col {
+  position: sticky;
+  top: 24px;
+  height: fit-content; /* Critical: allows sticky element to stick within the flex/grid item height */
+  padding-right: 20px;
+  box-sizing: border-box;
+  /* animate the slight left shift when a card is expanded */
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Back button ── */
+.edu-back-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #ccc;
+  font-family: inherit;
+  font-size: 1.1em;
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  margin-bottom: 24px;
+  transition: color 0.25s ease;
+}
+
+.edu-back-btn::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(270deg, var(--grad-2) 0%, var(--grad-1) 100%);
+  margin-top: 2px;
+  transition: opacity 0.3s ease;
+}
+
+.edu-back-btn:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(47, 140, 255, 0.7), 0 0 20px rgba(164, 46, 207, 0.4);
+}
+
+/* ── Header ── */
+.edu-header {
+  margin-bottom: 30px;
+}
+
+.edu-pretitle {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--grad-1);
+  margin-bottom: 8px;
+}
+
+.edu-title {
+  color: whitesmoke;
+  font-size: clamp(34px, 4.2vw, 58px);
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.edu-subtitle {
+  color: hsl(273, 4%, 62%);
+  font-size: clamp(14px, 1.5vw, 17px);
+  font-weight: 300;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Narrative Section style - 50% Bigger text */
+.edu-intro-narrative {
+  padding-left: 20px;
+  border-left: 2px solid var(--grad-1);
+  color: hsl(273, 4%, 62%);
+  font-size: clamp(20px, 2.25vw, 24px); /* 50% larger than original 14-16px */
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+.edu-intro-narrative p {
+  margin-bottom: 18px;
+}
+
+.edu-intro-narrative p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Timeline (Right Column) ── */
+.timeline-wrapper {
+  position: relative;
+  padding-left: 36px;
+  margin-top: 10px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 6px;
+  top: 30px;
+  bottom: 30px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--grad-1), var(--grad-2));
+  opacity: 0.35;
+  /* animate the left shift when a card is expanded */
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+  /* animate the up/down shift when a neighbouring card is expanded */
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Timeline Dots ── */
+.timeline-dot {
+  position: absolute;
+  left: -29px; /* centers the dot on the line (line center sits at 7px) */
+  top: 38px; /* Adjusted to align with larger card title */
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+  /* animate the left shift (with the line) when a card is expanded */
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.timeline-dot.cyan-dot {
+  border: 2px solid var(--grad-1);
+  background: #0d0d18;
+  box-shadow: 0 0 10px rgba(47, 140, 255, 0.6);
+}
+
+.timeline-dot.cyan-dot::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--grad-1);
+}
+
+.timeline-dot.purple-dot {
+  background: var(--grad-2);
+  box-shadow: 0 0 10px rgba(164, 46, 207, 0.7);
+}
+
+/* ── Cards ── */
+.edu-card {
+  background: rgba(13, 13, 24, 0.45);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 28px 36px; /* Slightly increased padding for larger font sizes */
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+}
+
+.edu-card.purple-theme {
+  border: 1px solid rgba(164, 46, 207, 0.2);
+  box-shadow: 0 0 15px rgba(164, 46, 207, 0.03);
+}
+
+.edu-card.purple-theme:hover {
+  border-color: rgba(164, 46, 207, 0.45);
+  box-shadow: 0 0 25px rgba(164, 46, 207, 0.12);
+  transform: translateY(-2px);
+}
+
+.edu-card.blue-theme {
+  border: 1px solid rgba(47, 140, 255, 0.2);
+  box-shadow: 0 0 15px rgba(47, 140, 255, 0.03);
+}
+
+.edu-card.blue-theme:hover {
+  border-color: rgba(47, 140, 255, 0.45);
+  box-shadow: 0 0 25px rgba(47, 140, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Expanded ("highlights") card grows 15% in every direction and lifts above its
+   neighbours. The .edu-card `transition: all` makes both the grow and the collapse
+   back to original size smooth and animated. */
+.edu-card.expanded {
+  transform: scale(1.1);
+  transform-origin: center;
+  position: relative;
+  z-index: 5;
+  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.45);
+}
+
+/* Keep the 15% scale on hover (otherwise the theme :hover rules would drop it). */
+.edu-card.purple-theme.expanded:hover,
+.edu-card.blue-theme.expanded:hover {
+  transform: scale(1.1) translateY(-2px);
+}
+
+/* Card layout details */
+.edu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+.edu-title-group {
+  flex: 1;
+}
+
+.edu-card-title {
+  color: whitesmoke;
+  font-size: clamp(25px, 3vw, 33px); /* 1.5x larger than original */
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  line-height: 1.25;
+}
+
+.edu-date-badge {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 17px; /* 1.5x larger than original */
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.edu-institution {
+  font-size: clamp(20px, 2.25vw, 22.5px); /* 1.5x larger than original */
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.inst-highlight {
+  color: var(--grad-1);
+  font-weight: 500;
+}
+
+.inst-sub {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.edu-track-badge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(47, 140, 255, 0.08);
+  border: 1px solid rgba(47, 140, 255, 0.25);
+  color: var(--grad-1);
+  font-size: 16px; /* 1.5x larger than original */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+
+.edu-stats-highlight {
+  margin-top: 10px;
+  color: #c084fc; /* Light violet/purple */
+  font-size: 20px; /* 1.5x larger than original */
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Expanded section */
+.edu-details {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  animation: details-fade-in 0.3s ease forwards;
+}
+
+@keyframes details-fade-in {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.edu-bullets-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.edu-bullet-item {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 21px; /* 1.5x larger than original */
+  line-height: 1.7;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 24px;
+}
+
+.edu-bullet-item::before {
+  content: "•";
+  color: var(--grad-1);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.purple-theme .edu-bullet-item::before {
+  color: var(--grad-2);
+}
+
+/* Media Gallery inside Expanded Cards */
+.edu-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.edu-media-item {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edu-media-item:hover {
+  transform: scale(1.04);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.edu-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Action toggle button */
+.edu-toggle-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 16.5px; /* 1.5x larger than original */
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: color 0.2s ease;
+}
+
+.edu-card:hover .edu-toggle-btn {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.edu-toggle-btn:hover {
+  color: #fff !important;
+}
+
+/* ── Fullscreen viewer ── */
+.edu-fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 8, 16, 0.93);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  animation: edu-fade-in 0.25s ease forwards;
+}
+
+@keyframes edu-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.edu-fullscreen-inner {
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  overflow: hidden;
+  animation: edu-zoom-in 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes edu-zoom-in {
+  from { transform: scale(0.95); }
+  to   { transform: scale(1); }
+}
+
+.edu-fullscreen-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Responsive adjustments ── */
+@media screen and (max-width: 900px) {
+  .edu-left-col {
+    position: static;
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .timeline-wrapper {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .education-container {
+    padding: 16px 12px 40px;
+  }
+
+  .edu-card {
+    padding: 20px 24px;
+  }
+
+  .edu-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .edu-date-badge {
+    align-self: flex-start;
+  }
+
+  .timeline-wrapper {
+    padding-left: 24px;
+  }
+
+  .timeline-line {
+    left: 4px;
+    top: 16px;
+    bottom: 16px;
+  }
+
+  .timeline-dot {
+    left: -19px; /* centers the dot on the line (mobile line center sits at 5px) */
+    width: 12px;
+    height: 12px;
+    top: 28px;
+  }
+}
