@@ -1,0 +1,295 @@
+/* =============================================
+   WORK EXPERIENCE — single-column timeline
+   (shares the Education timeline / dots / fullscreen styles)
+   ============================================= */
+
+.work-intro {
+  max-width: 820px;
+  margin-bottom: 34px;
+}
+
+/* Gradient page title (Education uses a flat title; Work is gradient per the design) */
+.work-page-title {
+  font-size: clamp(34px, 4.2vw, 58px);
+  font-weight: 700;
+  margin: 6px 0 14px 0;
+  letter-spacing: -0.5px;
+  line-height: 1.05;
+  background: linear-gradient(100deg, var(--grad-1) 10%, var(--grad-2) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.work-timeline {
+  margin-top: 4px;
+}
+
+/* ── Cards ── */
+.work-card {
+  position: relative;
+  background: rgba(13, 13, 24, 0.45);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 28px 36px;
+  cursor: pointer;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.work-card.purple-theme {
+  border-color: rgba(164, 46, 207, 0.2);
+  box-shadow: 0 0 15px rgba(164, 46, 207, 0.03);
+}
+
+.work-card.blue-theme {
+  border-color: rgba(47, 140, 255, 0.2);
+  box-shadow: 0 0 15px rgba(47, 140, 255, 0.03);
+}
+
+.work-card:hover {
+  transform: translateY(-2px);
+}
+
+.work-card.purple-theme:hover {
+  border-color: rgba(164, 46, 207, 0.45);
+  box-shadow: 0 0 25px rgba(164, 46, 207, 0.12);
+}
+
+.work-card.blue-theme:hover {
+  border-color: rgba(47, 140, 255, 0.45);
+  box-shadow: 0 0 25px rgba(47, 140, 255, 0.12);
+}
+
+/* Expanded: only the BORDER changes (to the gradient) + a soft outer glow.
+   The fill is left completely untouched. The gradient border is drawn by a masked
+   ::before ring so the translucent fill never shows the gradient through it. */
+.work-card.expanded {
+  border-color: transparent;
+  box-shadow: 0 0 30px rgba(47, 140, 255, 0.18), 0 12px 45px rgba(0, 0, 0, 0.5);
+}
+
+.work-card.expanded::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px; /* border thickness */
+  background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ── Card header ── */
+.work-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.work-title-group {
+  flex: 1;
+}
+
+.work-card-title {
+  color: whitesmoke;
+  font-size: clamp(25px, 3vw, 33px);
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  line-height: 1.25;
+}
+
+.work-company {
+  font-size: clamp(18px, 2vw, 21px);
+  line-height: 1.45;
+}
+
+.work-company-name {
+  color: var(--grad-1);
+  font-weight: 500;
+}
+
+.work-card.purple-theme .work-company-name {
+  color: #c084fc;
+}
+
+.work-company-sub {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.work-date-badge {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* ── Collapsible body (smooth grid-rows animation to auto height) ── */
+.work-details {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+.work-details-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.work-card.expanded .work-details {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.work-card.expanded .work-details-inner {
+  padding-top: 18px;
+  margin-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ── Bullets (word-hover bubble effect via <BioText/>) ── */
+.work-bullets-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work-bullet-item {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 2;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 24px;
+  overflow: visible;
+}
+
+.work-bullet-item::before {
+  content: "•";
+  color: var(--grad-1);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.work-card.purple-theme .work-bullet-item::before {
+  color: var(--grad-2);
+}
+
+/* ── Tag chips ── */
+.work-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.work-tag {
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.work-tag:hover {
+  border-color: var(--grad-1);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(47, 140, 255, 0.25);
+}
+
+/* ── Media gallery ── */
+.work-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.work-media-item {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.work-media-item:hover {
+  transform: scale(1.04);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.work-media-video {
+  cursor: default;
+}
+
+.work-media-img,
+.work-media-vid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Toggle button ── */
+.work-toggle-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: color 0.2s ease;
+}
+
+.work-card:hover .work-toggle-btn {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.work-toggle-btn:hover {
+  color: #fff !important;
+}
+
+@media screen and (max-width: 700px) {
+  .work-card {
+    padding: 20px 24px;
+  }
+
+  .work-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .work-date-badge {
+    align-self: flex-start;
+  }
+}

@@ -4,6 +4,14 @@
     padding: 8px 10px;
     position: relative;
     z-index: 100;
+    /* Don't let the header's empty middle area intercept clicks on page content
+       that sits beneath it (e.g. the "← Home" button). Links re-enable below. */
+    pointer-events: none;
+  }
+
+  .header a,
+  .header .logo {
+    pointer-events: auto;
   }
   
   /* Style the header links */

@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { Grid } from "@mui/material";
+import BioText from "../Components/BioText";
 import "../Assets/CSS/Education.css";
 
 import uniEng from "../Assets/Media/Diplomas/uni - diploma.jpeg";
@@ -239,7 +240,7 @@ function EducationPage() {
 
                             return (
                               <li key={bIndex} className="edu-bullet-item">
-                                {cleanText}
+                                <BioText text={cleanText} />
                               </li>
                             );
                           })}
