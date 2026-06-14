@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.18d972be.css",
-    "main.js": "/static/js/main.7a4bb7ab.js",
+    "main.css": "/static/css/main.71a6d7ea.css",
+    "main.js": "/static/js/main.512ef116.js",
     "static/js/787.676fbc64.chunk.js": "/static/js/787.676fbc64.chunk.js",
     "static/media/HolyMountain.mp4": "/static/media/HolyMountain.7b66fb94df635f3f26b3.mp4",
     "static/media/Alice.mp4": "/static/media/Alice.b476edbe5cae3b4c6583.mp4",
@@ -36,6 +36,7 @@
     "static/media/DigitalClock.mp4": "/static/media/DigitalClock.4d16f20183699885208c.mp4",
     "static/media/8.jpeg": "/static/media/8.d0cb628f62c218f70984.jpeg",
     "static/media/Othello.mp4": "/static/media/Othello.90d52af62b07a9563f70.mp4",
+    "static/media/hellbrunn-freshfx.PNG": "/static/media/hellbrunn-freshfx.dcce68711d801ea701d9.PNG",
     "static/media/login.png": "/static/media/login.b2d2fe145098c0e17294.png",
     "static/media/5.jpeg": "/static/media/5.24062b7a6b81ca4ee18b.jpeg",
     "static/media/متوسطه - مدرک.jpg": "/static/media/متوسطه - مدرک.98fd736e30923b8443e7.jpg",
@@ -43,6 +44,7 @@
     "static/media/3.jpg": "/static/media/3.cd5c3839799a4053d86c.jpg",
     "static/media/دانشگاه - مدرک.jpg": "/static/media/دانشگاه - مدرک.88c0545438a94b6f644d.jpg",
     "static/media/5.jpg": "/static/media/5.0b821cb802fb27288221.jpg",
+    "static/media/me.jpeg": "/static/media/me.488bdd048df4628b6fdc.jpeg",
     "static/media/4.jpg": "/static/media/4.79f94309f4ff583fa218.jpg",
     "static/media/school - diploma.jpeg": "/static/media/school - diploma.f749352bc382bb9865a0.jpeg",
     "static/media/2.jpg": "/static/media/2.75b113cfbe4e5a3e6e54.jpg",
@@ -53,7 +55,9 @@
     "static/media/7.jpeg": "/static/media/7.7875d825a270345bb4b5.jpeg",
     "static/media/1.jpg": "/static/media/1.223060560f43cf0c7ee4.jpg",
     "static/media/8.jpg": "/static/media/8.f22127549837832cb532.jpg",
+    "static/media/luna-freshfx.PNG": "/static/media/luna-freshfx.c4c5a3a54d5fc7ae7ed5.PNG",
     "static/media/7.jpg": "/static/media/7.fb6c7a021526252d3fb7.jpg",
+    "static/media/Innsbruck_tourismus_freshfx.avif": "/static/media/Innsbruck_tourismus_freshfx.61801940854d5c85dd73.avif",
     "static/media/morning.jpg": "/static/media/morning.65fc044af47a682ad463.jpg",
     "static/media/6.jpg": "/static/media/6.2f5347c4ab869b661efb.jpg",
     "static/media/chandkhaan1.jpg": "/static/media/chandkhaan1.471dcd3e8af5394975b6.jpg",
@@ -73,7 +77,6 @@
     "static/media/PawQuants.jpeg": "/static/media/PawQuants.2d5b1b4e263c309a2aee.jpeg",
     "static/media/linkedin-gray.png": "/static/media/linkedin-gray.f0e4f026fd1d1a8d2447.png",
     "static/media/linkedin-white.png": "/static/media/linkedin-white.4a7ef277243267c25788.png",
-    "static/media/me.jpeg": "/static/media/me.e929e2907a0343879c1e.jpeg",
     "static/media/yalda.jpeg": "/static/media/yalda.9f03654834537f71206c.jpeg",
     "static/media/QPong.jpeg": "/static/media/QPong.bebc960c6f9ce91214e2.jpeg",
     "static/media/calculator.jpg": "/static/media/calculator.4f4d690bcd7d809f4d72.jpg",
@@ -81,12 +84,12 @@
     "static/media/Qilin.jpeg": "/static/media/Qilin.4ff2b988b544412f11fc.jpeg",
     "static/media/youtube-white.png": "/static/media/youtube-white.5e904be60b911dc3331f.png",
     "index.html": "/index.html",
-    "main.18d972be.css.map": "/static/css/main.18d972be.css.map",
-    "main.7a4bb7ab.js.map": "/static/js/main.7a4bb7ab.js.map",
+    "main.71a6d7ea.css.map": "/static/css/main.71a6d7ea.css.map",
+    "main.512ef116.js.map": "/static/js/main.512ef116.js.map",
     "787.676fbc64.chunk.js.map": "/static/js/787.676fbc64.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.18d972be.css",
-    "static/js/main.7a4bb7ab.js"
+    "static/css/main.71a6d7ea.css",
+    "static/js/main.512ef116.js"
   ]
 }
