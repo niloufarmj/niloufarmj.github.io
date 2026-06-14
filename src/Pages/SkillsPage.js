@@ -1,136 +1,79 @@
-import "../Assets/CSS/Tools.css";
-import { useState, useEffect } from "react";
-import Menu from "../Components/Menu";
 import { useNavigate } from "react-router-dom";
-import { Grid, createTheme, ThemeProvider } from "@mui/material";
+import { useState } from "react";
+import "../Assets/CSS/Education.css";
+import "../Assets/CSS/WorkExperience.css";
+import "../Assets/CSS/Skills.css";
+
+const SKILLS_DATA = [
+  {
+    title: "Programming Languages",
+    skills: ["C++", "C#", "Java", "Python", "Lua", "JavaScript", "TypeScript", "HTML", "CSS"],
+  },
+  {
+    title: "Frameworks",
+    skills: ["React.js", "Angular", "Love2D", "Flutter", "JavaFX", "Django", "Node.js", ".NET"],
+  },
+  {
+    title: "Libraries / Plugins",
+    skills: ["OpenGL", "GLAD", "RxJS", "Bootstrap", "Three.js", "MindAR", "MLAgent"],
+  },
+  {
+    title: "Dev Tools",
+    skills: ["Unity Engine", "Unreal Engine", "Android Studio", "Git", "Linux"],
+  },
+  {
+    title: "Design Tools",
+    skills: ["Photoshop", "Illustrator", "Blender", "Figma"],
+  },
+  {
+    title: "Languages",
+    skills: ["Persian (native)", "English (IELTS 7.5)", "German (A2)"],
+  },
+];
 
 function SkillsPage() {
-  const [itemsDisplayIndex, setItemDisplayIndex] = useState(-1);
-  const explainedTools = [
-    "C++, C#, Java, Python, lua, JavaScript, Typescript, HTML, CSS",
-    "React.js, Angular, Love2D, Flutter, JavaFX, Django, Node.js, .Net",
-    "OpenGl, GLAD, RxJs, Bootstrap, Threejs, MindAR, MLAgent",
-    "Unity Engine, Unreal Engine, Android Studio, Git, Linux",
-    "Photoshop, Illustrator, Blender, Figma",
-    "Persian(native), English(IELTS Academic 7.5), Deutch(A2)",
-  ];
-
-  const menuItemClicked = (index) => {
-    setItemDisplayIndex(index)
-
-    // Scroll to top of the page
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
-
-  useEffect(() => {
-    // Scroll to top when the currentIndex changes
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, [itemsDisplayIndex]);
-
   const navigate = useNavigate();
+  const [isExiting, setIsExiting] = useState(false);
 
-  const menuData = {
-    title: "Technical Skills",
-    items: [
-      {
-        title: "Programming Languages",
-        onClick: () => menuItemClicked(0),
-      },
-      {
-        title: "Frameworks",
-        onClick: () => menuItemClicked(1),
-      },
-      {
-        title: "Libraries and Plugins",
-        onClick: () => menuItemClicked(2),
-      },
-      {
-        title: "Dev Tools",
-        onClick: () => menuItemClicked(3),
-      },
-      {
-        title: "Design Tools",
-        onClick: () => menuItemClicked(4),
-      },
-      {
-        title: "Speaking Languages",
-        onClick: () => menuItemClicked(5),
-      },
-      {
-        title: "←",
-        onClick: () => navigate("/"),
-      },
-    ],
+  const handleBack = () => {
+    setIsExiting(true);
+    setTimeout(() => navigate("/"), 450);
   };
 
-  const theme = createTheme({
-    breakpoints: {
-      values: {
-        xs: 0,
-        sm: 600,
-        md: 900,
-        lg: 1280,
-        xl: 1920,
-        custom: 1000, // Custom breakpoint at 1000px
-      },
-    },
-  });
-
   return (
-    <>
-      <ThemeProvider theme={theme} >
-        <Grid container>
-          <Menu align="left" title={menuData.title} items={menuData.items} />
+    <div className={`education-container skills-container page-enter ${isExiting ? "page-exit" : ""}`}>
+      {/* Intro header */}
+      <div className="work-intro">
+        <button className="edu-back-btn" onClick={handleBack}>
+          ← Home
+        </button>
+        <span className="edu-pretitle">— TOOLKIT</span>
+        <h1 className="work-page-title">Skills</h1>
+        <p className="edu-subtitle">
+          A full-stack creative-technical stack — from engine internals and shaders to web
+          frameworks and design tools.
+        </p>
+      </div>
 
-          <Grid item xs={11} sm={11} md={6} lg={7} xl={4} custom={6}>
-            <div className="tools">
-              <span className={"menu-item tool-animation"}>
-                {explainedTools[itemsDisplayIndex]}
-              </span>
-
-              <div
-                className="body-intro"
-                style={{ paddingRight: "10% !important" }}
-              >
-                <p style={{ textAlign: "justify", textJustify: "inter-word" }}>
-                  My programming journey began during my university years, where I delved into languages like C/C++,
-                   Java, Python, and Lua. Courses like Data Structures and Algorithm Design fueled my passion
-                    for programming and computer science. I applied these learnings to various projects and internships, 
-                    starting as a frontend intern and mastering HTML, CSS, JavaScript, and jQuery.
-
-                </p>
-                <p style={{ textAlign: "justify", textJustify: "inter-word" }}>
-                As I transitioned into a fullstack developer, I honed my skills in Angular 
-                and revamped C# code. Along the way, I discovered the exciting world of 
-                game development, where I gained proficiency in C#, Unity, Lua, and Love2D.
-                 I also explored Python and the Django framework.
-
-
-                </p>
-                <p style={{ textAlign: "justify", textJustify: "inter-word" }}>
-                To expand my knowledge, I turned to online platforms like Udemy and Coursera, 
-                where I acquired skills in Angular, React, Flutter, and more. 
-                Additionally, I've dabbled in digital art tools like 3ds Max, Blender, and Illustrator 
-                for modeling and design.
-                Throughout my journey, I've embraced version control using Git, 
-                allowing for efficient collaboration and code management.
-                </p>
-
-                <p style={{ textAlign: "justify", textJustify: "inter-word" }}>
-                I'm excited to continue growing in these areas and explore new possibilities in the ever-evolving world of technology.
-                </p>
-              </div>
+      {/* Category grid */}
+      <div className="skills-grid">
+        {SKILLS_DATA.map((cat, i) => (
+          <div className="skill-card" key={i}>
+            <div className="skill-card-header">
+              <span className="skill-dot" />
+              <h2 className="skill-card-title">{cat.title}</h2>
             </div>
-          </Grid>
-        </Grid>
-      </ThemeProvider>
-    </>
+            <div className="skill-chips">
+              {cat.skills.map((s, j) => (
+                <span className="skill-chip" key={j}>
+                  {s}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
