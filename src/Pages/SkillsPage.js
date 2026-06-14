@@ -7,15 +7,15 @@ import "../Assets/CSS/Skills.css";
 const SKILLS_DATA = [
   {
     title: "Programming Languages",
-    skills: ["C++", "C#", "Java", "Python", "Lua", "JavaScript", "TypeScript", "HTML", "CSS"],
+    skills: ["C++", "C#", "Java", "hlsl", "Python", "Lua", "JavaScript", "TypeScript", "PHP", "HTML", "CSS"],
   },
   {
     title: "Frameworks",
-    skills: ["React.js", "Angular", "Love2D", "Flutter", "JavaFX", "Django", "Node.js", ".NET"],
+    skills: ["React.js", "Angular", "View.js", "Love2D", "Flutter", "JavaFX", "Django", "Node.js", ".NET"],
   },
   {
     title: "Libraries / Plugins",
-    skills: ["OpenGL", "GLAD", "RxJS", "Bootstrap", "Three.js", "MindAR", "MLAgent"],
+    skills: ["OpenGL", "GLAD", "RxJS", "Bootstrap", "Three.js", "MindAR", "MLAgent", "OpenCV", "TensorFlow", "Yolo", "ImagineWebAR"],
   },
   {
     title: "Dev Tools",
@@ -23,11 +23,27 @@ const SKILLS_DATA = [
   },
   {
     title: "Design Tools",
-    skills: ["Photoshop", "Illustrator", "Blender", "Figma"],
+    skills: ["Photoshop", "Illustrator", "Blender", "Figma", "Canva", "After Effects"],
+  },
+  {
+    title: "AI Tools",
+    skills: [
+      "Tavus API",
+      "Equos API",
+      "Akool API",
+      "LemonSlice API",
+      "Runway",
+      "Seedance",
+      "Nano Banana",
+      "KlingAI",
+      "Grok Imagine",
+      "Sora",
+      "Claude Code",
+    ],
   },
   {
     title: "Languages",
-    skills: ["Persian (native)", "English (IELTS 7.5)", "German (A2)"],
+    skills: ["Persian (native)", "English (IELTS Academic 7.5)", "German (A2)"],
   },
 ];
 
